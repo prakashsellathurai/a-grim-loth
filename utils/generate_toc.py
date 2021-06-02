@@ -29,8 +29,8 @@ def file_line(file_name, full_path, level):
 # Walks a given directory to create a TOC out of it.
 def walk_directory(path = '.', exclude = ['.github','.git', '.idea','.exe'], level = 0):
     result, files = [], os.listdir(path)
-    print(files)
-    exclude_files = ['README.md','generate_toc.py','generate-markdown.yaml','.github']
+
+    exclude_files = ['README.md','generate_toc.py','generate-markdown.yaml','.github','.gitignore','LICENSE']
     # Sort by directory/name
     # files.sort(lambda x, y : sort_files(os.path.join(path, x), os.path.join(path, y)))
     for file_name in files:
