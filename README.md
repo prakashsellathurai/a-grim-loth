@@ -1,6 +1,7 @@
 ## Table of Contents:
 [//]: # (TOCSTART)
 
+- [.gitignore](./.gitignore)
 - python
 	- sorting
 		- [selection-sort](./python/sorting/selection-sort.py)
