@@ -183,5 +183,6 @@
 	- Arrays
 		- [kth-smallest-sum-subarray](./cpp/Arrays/kth-smallest-sum-subarray.cpp)
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
+- [LICENSE](./LICENSE)
 
 [//]: # (TOCEND)
