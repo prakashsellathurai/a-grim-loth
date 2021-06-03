@@ -183,5 +183,16 @@
 	- Arrays
 		- [kth-smallest-sum-subarray](./cpp/Arrays/kth-smallest-sum-subarray.cpp)
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
+	- Dynamic-Programming
+		- Longest-Increasing-subsequence
+			- [lis](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis.cpp)
+			- [lis-nlogn](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-nlogn.cpp)
+			- [lis-decending](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-decending.cpp)
+		- Longest-common-subsequence
+			- [Lcs-basic](./cpp/Dynamic-Programming/Longest-common-subsequence/Lcs-basic.cpp)
+			- [reducedspace](./cpp/Dynamic-Programming/Longest-common-subsequence/reducedspace.cpp)
+		- subset-sum
+			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
+			- [coin-change](./cpp/Dynamic-Programming/subset-sum/coin-change.cpp)
 
 [//]: # (TOCEND)
