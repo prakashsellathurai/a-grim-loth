@@ -181,6 +181,8 @@
 		- [hash-func](./cpp/strings/hash-func.cpp)
 		- [trie](./cpp/strings/trie.cpp)
 	- Arrays
+		- [reverse-array](./cpp/Arrays/reverse-array.cpp)
+		- [move-all-0s-to-left-while-maintaining-order](./cpp/Arrays/move-all-0s-to-left-while-maintaining-order.cpp)
 		- [kth-smallest-sum-subarray](./cpp/Arrays/kth-smallest-sum-subarray.cpp)
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
 	- Dynamic-Programming
