@@ -32,7 +32,7 @@ def walk_directory(path = '.', exclude = ['.github','.git', '.idea','.exe'], lev
 
     exclude_files = ['README.md','generate_toc.py','generate-markdown.yaml','.github','.gitignore','LICENSE']
     # Sort by directory/name
-    # files.sort(lambda x, y : sort_files(os.path.join(path, x), os.path.join(path, y)))
+    files.sort()
     for file_name in files:
         full_path = os.path.join(path, file_name)
         # Skip the file if its in the exclude list.
