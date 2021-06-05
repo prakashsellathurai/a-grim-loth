@@ -190,6 +190,8 @@
 			- [lis](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis.cpp)
 			- [lis-nlogn](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-nlogn.cpp)
 			- [lis-decending](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-decending.cpp)
+		- Max-sum-on-line
+			- [basic](./cpp/Dynamic-Programming/Max-sum-on-line/basic.cpp)
 		- Longest-common-subsequence
 			- [Lcs-basic](./cpp/Dynamic-Programming/Longest-common-subsequence/Lcs-basic.cpp)
 			- [reducedspace](./cpp/Dynamic-Programming/Longest-common-subsequence/reducedspace.cpp)
