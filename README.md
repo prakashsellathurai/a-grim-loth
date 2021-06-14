@@ -7,6 +7,8 @@
 		- [kth-smallest-sum-subarray](./cpp/Arrays/kth-smallest-sum-subarray.cpp)
 		- [move-all-0s-to-left-while-maintaining-order](./cpp/Arrays/move-all-0s-to-left-while-maintaining-order.cpp)
 		- [reverse-array](./cpp/Arrays/reverse-array.cpp)
+	- Conjectures
+		- [Taxicab-Number](./cpp/Conjectures/Taxicab-Number.cpp)
 	- Dynamic-Programming
 		- Longest-Increasing-subsequence
 			- [lis-decending](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-decending.cpp)
