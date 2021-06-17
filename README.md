@@ -24,6 +24,8 @@
 			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
+	- Lists
+		- [singly-linked-list](./cpp/Lists/singly-linked-list.cpp)
 	- Sorting-algorithms
 		- [Quick-sort](./cpp/Sorting-algorithms/Quick-sort.md)
 		- [stable-sort](./cpp/Sorting-algorithms/stable-sort.cpp)
