@@ -29,6 +29,8 @@
 	- Sorting-algorithms
 		- [Quick-sort](./cpp/Sorting-algorithms/Quick-sort.md)
 		- [stable-sort](./cpp/Sorting-algorithms/stable-sort.cpp)
+	- Trees
+		- [binary-search-tree](./cpp/Trees/binary-search-tree.cpp)
 	- computataional-geometry
 		- [graham-scan-convex-hull](./cpp/computataional-geometry/graham-scan-convex-hull.cpp)
 	- range-queries
