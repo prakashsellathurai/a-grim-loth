@@ -44,6 +44,7 @@
 		- [smallest-subarray](./cpp/range-queries/smallest-subarray.cpp)
 		- [special-sequence](./cpp/range-queries/special-sequence.cpp)
 	- strings
+		- [Rabin-karp-string-search](./cpp/strings/Rabin-karp-string-search.cpp)
 		- [count-similar-substrings](./cpp/strings/count-similar-substrings.cpp)
 		- [fast_hash](./cpp/strings/fast_hash.cpp)
 		- [hash-func](./cpp/strings/hash-func.cpp)
