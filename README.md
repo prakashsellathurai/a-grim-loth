@@ -1,7 +1,6 @@
 ## Table of Contents:
 [//]: # (TOCSTART)
 
-- [CONTRIBUTING](./CONTRIBUTING.md)
 - cpp
 	- Arrays
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
