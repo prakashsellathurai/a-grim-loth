@@ -1,5 +1,10 @@
+// Write a program to reverse the direction of a given singly-linked list. In
+// other words, after the reversal all pointers should now point backwards. Your
+// algorithm should take linear time.
+
 #include <iostream>
 #include <ostream>
+#include <stack>
 typedef struct list {
   int item;
   list *next;
@@ -64,18 +69,34 @@ void deleteItem(list **l, int x) {
     free(p);
   }
 }
-int main() {
-  list *root = NULL;
 
-  inserList(&root, 1);
+void reverseLinkedlist(list **root) {
+  std::stack<list *> stackBucket;
+  list *ptr = *root;
+  stackBucket.push(ptr);
+  while (ptr->next != NULL) {
+    stackBucket.push(ptr->next);
+    ptr = ptr->next;
+  }
+  *root = ptr;
+  while (!stackBucket.empty()) {
+    ptr->next = stackBucket.top();
+    stackBucket.pop();
+    ptr = ptr->next;
+  }
+  ptr->next = NULL;
+}
+int main() {
+  list *root = NULL; // This will be the unchanging first listal to a null pointer
+
+  inserList(&root, 10);
   inserList(&root, 2);
-   inserList(&root, 0);
+  inserList(&root, 0);
   inserList(&root, 5);
   inserList(&root, 14);
-  std::cout << "After insert option : ";
   PrintList(root);
-  std::cout << "searching 3 in the list : " << ((searchList(root, 3) != 0) ? "Found" : "Not Found")<< std::endl;
-  deleteItem(&root, 5);
-  std::cout << "after deletion : ";
+  reverseLinkedlist(&root);
+  std::cout << "After reversal" << std::endl;
+
   PrintList(root);
 }
