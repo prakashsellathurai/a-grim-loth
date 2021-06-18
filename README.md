@@ -31,6 +31,8 @@
 	- Sorting-algorithms
 		- [Quick-sort](./cpp/Sorting-algorithms/Quick-sort.md)
 		- [stable-sort](./cpp/Sorting-algorithms/stable-sort.cpp)
+	- Stacks
+		- [balanced-paranthesis](./cpp/Stacks/balanced-paranthesis.cpp)
 	- Trees
 		- [binary-search-tree](./cpp/Trees/binary-search-tree.cpp)
 	- computataional-geometry
