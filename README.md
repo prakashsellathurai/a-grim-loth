@@ -25,6 +25,7 @@
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Lists
+		- [reverse-linked-list](./cpp/Lists/reverse-linked-list.cpp)
 		- [singly-linked-list](./cpp/Lists/singly-linked-list.cpp)
 	- Queues
 		- [Priority-queue](./cpp/Queues/Priority-queue.cpp)
