@@ -26,6 +26,8 @@
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Lists
 		- [singly-linked-list](./cpp/Lists/singly-linked-list.cpp)
+	- Queues
+		- [Priority-queue](./cpp/Queues/Priority-queue.cpp)
 	- Sorting-algorithms
 		- [Quick-sort](./cpp/Sorting-algorithms/Quick-sort.md)
 		- [stable-sort](./cpp/Sorting-algorithms/stable-sort.cpp)
