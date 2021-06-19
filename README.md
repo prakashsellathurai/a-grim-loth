@@ -9,6 +9,9 @@
 		- [reverse-array](./cpp/Arrays/reverse-array.cpp)
 	- Conjectures
 		- [Taxicab-Number](./cpp/Conjectures/Taxicab-Number.cpp)
+	- Dictionaries
+		- [ceaser-cipher-decrypt](./cpp/Dictionaries/ceaser-cipher-decrypt.cpp)
+		- [dictionaries-implementation-benchmark](./cpp/Dictionaries/dictionaries-implementation-benchmark.cpp)
 	- Dynamic-Programming
 		- Longest-Increasing-subsequence
 			- [lis-decending](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-decending.cpp)
