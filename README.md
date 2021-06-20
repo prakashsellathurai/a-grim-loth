@@ -29,6 +29,8 @@
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Lists
+		- [find-loop-in-linked-list](./cpp/Lists/find-loop-in-linked-list.cpp)
+		- [find-middle-linkedlist](./cpp/Lists/find-middle-linkedlist.cpp)
 		- [reverse-linked-list](./cpp/Lists/reverse-linked-list.cpp)
 		- [singly-linked-list](./cpp/Lists/singly-linked-list.cpp)
 	- Queues
@@ -38,8 +40,11 @@
 		- [stable-sort](./cpp/Sorting-algorithms/stable-sort.cpp)
 	- Stacks
 		- [balanced-paranthesis](./cpp/Stacks/balanced-paranthesis.cpp)
+		- [reverse-words-in-sentence](./cpp/Stacks/reverse-words-in-sentence.cpp)
 	- Trees
 		- [binary-search-tree](./cpp/Trees/binary-search-tree.cpp)
+		- [binary-tree-equality](./cpp/Trees/binary-tree-equality.cpp)
+		- [bst-linked-list](./cpp/Trees/bst-linked-list.cpp)
 	- computataional-geometry
 		- [graham-scan-convex-hull](./cpp/computataional-geometry/graham-scan-convex-hull.cpp)
 	- range-queries
@@ -151,6 +156,7 @@
 		- [radix-sort](./python/sorting/radix-sort.py)
 		- [selection-sort](./python/sorting/selection-sort.py)
 	- strings
+		- [find-max-frequent-words-with-trie](./python/strings/find-max-frequent-words-with-trie.py)
 		- [group-identical-strings](./python/strings/group-identical-strings.py)
 		- [rolling-polynomial-hash](./python/strings/rolling-polynomial-hash.py)
 		- [suffix-trie](./python/strings/suffix-trie.py)
