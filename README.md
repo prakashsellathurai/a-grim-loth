@@ -12,6 +12,7 @@
 	- Dictionaries
 		- [ceaser-cipher-decrypt](./cpp/Dictionaries/ceaser-cipher-decrypt.cpp)
 		- [dictionaries-implementation-benchmark](./cpp/Dictionaries/dictionaries-implementation-benchmark.cpp)
+		- [search-string-magazine-cutting](./cpp/Dictionaries/search-string-magazine-cutting.cpp)
 	- Dynamic-Programming
 		- Longest-Increasing-subsequence
 			- [lis-decending](./cpp/Dynamic-Programming/Longest-Increasing-subsequence/lis-decending.cpp)
