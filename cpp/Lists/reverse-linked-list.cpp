@@ -86,8 +86,24 @@ void reverseLinkedlist(list **root) {
   }
   ptr->next = NULL;
 }
+void reverseIterativeLinkedlist(list **root) {
+
+ 
+   list *prev = NULL;
+   list *curr = *root;
+   list *next_ = NULL;
+
+  while (curr != NULL) {
+    next_ = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next_;
+  }
+  *root = prev;
+}
 int main() {
-  list *root = NULL; // This will be the unchanging first listal to a null pointer
+  list *root =
+      NULL; // This will be the unchanging first listal to a null pointer
 
   inserList(&root, 10);
   inserList(&root, 2);
@@ -97,6 +113,9 @@ int main() {
   PrintList(root);
   reverseLinkedlist(&root);
   std::cout << "After reversal" << std::endl;
+  PrintList(root);
+  reverseIterativeLinkedlist(&root);
 
+  std::cout << "Again After reversal" << std::endl;
   PrintList(root);
 }
