@@ -28,6 +28,8 @@
 			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
+	- Heaps
+		- [min-heap](./cpp/Heaps/min-heap.cpp)
 	- Lists
 		- [find-loop-in-linked-list](./cpp/Lists/find-loop-in-linked-list.cpp)
 		- [find-middle-linkedlist](./cpp/Lists/find-middle-linkedlist.cpp)
@@ -35,9 +37,10 @@
 		- [singly-linked-list](./cpp/Lists/singly-linked-list.cpp)
 	- Queues
 		- [Priority-queue](./cpp/Queues/Priority-queue.cpp)
-	- Sorting-algorithms
-		- [Quick-sort](./cpp/Sorting-algorithms/Quick-sort.md)
-		- [stable-sort](./cpp/Sorting-algorithms/stable-sort.cpp)
+	- Sorting
+		- [Heap-sort](./cpp/Sorting/Heap-sort.cpp)
+		- [Quick-sort](./cpp/Sorting/Quick-sort.md)
+		- [stable-sort](./cpp/Sorting/stable-sort.cpp)
 	- Stacks
 		- [balanced-paranthesis](./cpp/Stacks/balanced-paranthesis.cpp)
 		- [reverse-words-in-sentence](./cpp/Stacks/reverse-words-in-sentence.cpp)
