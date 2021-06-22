@@ -23,12 +23,15 @@ public:
   int n;
   int q[MAXSIZE];
 
-  void make_heap(int *arr, int n) {
-    this->n = 0;
+  void make_fast_heap(int *arr, int n) {
+    this->n = n;
     *this->q = *new int[n + 1];
 
-    for (unsigned i = 0; i < n; ++i) {
-      insert(arr[i]);
+    for (int i = 0; i < n; ++i)
+      this->q[i + 1] = arr[i];
+
+    for (int i = this->n; i >= 1; i--) {
+      bubble_down(i);
     }
   }
 
@@ -101,8 +104,8 @@ protected:
 void heapSort(int *array, int n) {
 
   MinHeap pq;
-  
-  pq.make_heap(array, n);
+
+  pq.make_fast_heap(array, n);
   for (int i = 0; i < n; ++i) {
     array[i] = pq.extract_min();
   }
