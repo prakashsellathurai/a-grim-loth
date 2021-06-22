@@ -8,7 +8,7 @@ int partition(int arr[], int l, int h) {
     p = h;
     firsthigh = l;
     
-    for(i = l; i < h; ++i) {
+    for(i = l; i < p; ++i) {
        if(arr[i]<arr[p]){
            swap(arr[i], arr[firsthigh]);
            firsthigh++;
@@ -39,7 +39,7 @@ void print_arr(int array[], int n) {
 }
 int main(int argc, char const *argv[]) {
 
-  int array[] = {22, 4, 5, 4, 8, 7, 8, 7, 8, 9, 10, 1, 0};
+  int array[] = {22, 4, 5, 4, 8, 7, 8, 7, 8, 9, 10, 1, 0,22};
   int n = sizeof(array) / sizeof(array[0]);
   print_arr(array, n);
   QuickSort(array, 0, n -1);
