@@ -65,6 +65,9 @@
 		- [number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries](./cpp/range-queries/number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries.cpp)
 		- [smallest-subarray](./cpp/range-queries/smallest-subarray.cpp)
 		- [special-sequence](./cpp/range-queries/special-sequence.cpp)
+	- searching
+		- [binary-search](./cpp/searching/binary-search.cpp)
+		- [counting-occurences-via-binary-search](./cpp/searching/counting-occurences-via-binary-search.cpp)
 	- strings
 		- [Rabin-karp-string-search](./cpp/strings/Rabin-karp-string-search.cpp)
 		- [count-similar-substrings](./cpp/strings/count-similar-substrings.cpp)
