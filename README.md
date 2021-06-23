@@ -29,6 +29,7 @@
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Heaps
+		- [Fast-Heap](./cpp/Heaps/Fast-Heap.cpp)
 		- [K-th-element-compare-with-x](./cpp/Heaps/K-th-element-compare-with-x.cpp)
 		- [min-heap](./cpp/Heaps/min-heap.cpp)
 	- Lists
@@ -41,12 +42,13 @@
 	- Sorting
 		- [Bucket-sort](./cpp/Sorting/Bucket-sort.cpp)
 		- [Counting-sort](./cpp/Sorting/Counting-sort.cpp)
-		- [Fast-Heap](./cpp/Sorting/Fast-Heap.cpp)
 		- [Heap-sort](./cpp/Sorting/Heap-sort.cpp)
 		- [Merge-sort](./cpp/Sorting/Merge-sort.cpp)
 		- [Quick-sort](./cpp/Sorting/Quick-sort.cpp)
 		- [Quick-sort](./cpp/Sorting/Quick-sort.md)
+		- [Radix-sort](./cpp/Sorting/Radix-sort.cpp)
 		- [Randomized-Quick-sort](./cpp/Sorting/Randomized-Quick-sort.cpp)
+		- [Shell-sort](./cpp/Sorting/Shell-sort.cpp)
 		- [stable-sort](./cpp/Sorting/stable-sort.cpp)
 	- Stacks
 		- [balanced-paranthesis](./cpp/Stacks/balanced-paranthesis.cpp)
@@ -68,6 +70,8 @@
 	- searching
 		- [binary-search](./cpp/searching/binary-search.cpp)
 		- [counting-occurences-via-binary-search](./cpp/searching/counting-occurences-via-binary-search.cpp)
+		- [meta-binary-search-one-sided-binary-search](./cpp/searching/meta-binary-search-one-sided-binary-search.cpp)
+		- [square-root](./cpp/searching/square-root.cpp)
 	- strings
 		- [Rabin-karp-string-search](./cpp/strings/Rabin-karp-string-search.cpp)
 		- [count-similar-substrings](./cpp/strings/count-similar-substrings.cpp)
