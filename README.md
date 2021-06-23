@@ -39,6 +39,8 @@
 	- Queues
 		- [Priority-queue](./cpp/Queues/Priority-queue.cpp)
 	- Sorting
+		- [Bucket-sort](./cpp/Sorting/Bucket-sort.cpp)
+		- [Counting-sort](./cpp/Sorting/Counting-sort.cpp)
 		- [Fast-Heap](./cpp/Sorting/Fast-Heap.cpp)
 		- [Heap-sort](./cpp/Sorting/Heap-sort.cpp)
 		- [Merge-sort](./cpp/Sorting/Merge-sort.cpp)
