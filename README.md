@@ -70,8 +70,11 @@
 	- searching
 		- [binary-search](./cpp/searching/binary-search.cpp)
 		- [counting-occurences-via-binary-search](./cpp/searching/counting-occurences-via-binary-search.cpp)
+		- [majority-voting-algorithm](./cpp/searching/majority-voting-algorithm.cpp)
 		- [meta-binary-search-one-sided-binary-search](./cpp/searching/meta-binary-search-one-sided-binary-search.cpp)
 		- [square-root](./cpp/searching/square-root.cpp)
+	- selection
+		- [Quick-select](./cpp/selection/Quick-select.cpp)
 	- strings
 		- [Rabin-karp-string-search](./cpp/strings/Rabin-karp-string-search.cpp)
 		- [count-similar-substrings](./cpp/strings/count-similar-substrings.cpp)
