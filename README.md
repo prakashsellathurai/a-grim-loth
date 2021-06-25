@@ -75,6 +75,8 @@
 		- [square-root](./cpp/searching/square-root.cpp)
 	- selection
 		- [Quick-select](./cpp/selection/Quick-select.cpp)
+		- [find-median-in-linear-time](./cpp/selection/find-median-in-linear-time.cpp)
+		- [majority-voting-algorithm](./cpp/selection/majority-voting-algorithm.cpp)
 	- strings
 		- [Rabin-karp-string-search](./cpp/strings/Rabin-karp-string-search.cpp)
 		- [count-similar-substrings](./cpp/strings/count-similar-substrings.cpp)
