@@ -1,5 +1,5 @@
-def selectionsort(arr,N):
-    
+def selectionsort(arr):
+    N = len(arr)
     for i in range(N):
         minimum = i
         for j in range(1,N):
@@ -10,4 +10,4 @@ def selectionsort(arr,N):
 
 if __name__ == "__main__":
     arr = [0,4,5,6,7,8,2,1,5,3,9]
-    print(selectionsort(arr,len(arr)))
+    print(selectionsort(arr))
