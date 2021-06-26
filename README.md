@@ -50,6 +50,7 @@
 		- [Randomized-Quick-sort](./cpp/Sorting/Randomized-Quick-sort.cpp)
 		- [Shell-sort](./cpp/Sorting/Shell-sort.cpp)
 		- [stable-sort](./cpp/Sorting/stable-sort.cpp)
+		- [wiggle-sort](./cpp/Sorting/wiggle-sort.cpp)
 	- Stacks
 		- [balanced-paranthesis](./cpp/Stacks/balanced-paranthesis.cpp)
 		- [reverse-words-in-sentence](./cpp/Stacks/reverse-words-in-sentence.cpp)
@@ -59,6 +60,8 @@
 		- [bst-linked-list](./cpp/Trees/bst-linked-list.cpp)
 	- computataional-geometry
 		- [graham-scan-convex-hull](./cpp/computataional-geometry/graham-scan-convex-hull.cpp)
+	- partition
+		- [three-way-parition-problem-quicksort-dutch-national-flag](./cpp/partition/three-way-parition-problem-quicksort-dutch-national-flag.cpp)
 	- range-queries
 		- dynamic-programming
 			- 2-D
@@ -168,6 +171,7 @@
 		- [unpredictable-array](./python/problems/unpredictable-array.py)
 	- sorting
 		- [Insertion-Sort](./python/sorting/Insertion-Sort.py)
+		- [american-flag-sort](./python/sorting/american-flag-sort.py)
 		- [bubble-sort](./python/sorting/bubble-sort.py)
 		- [bucket-sort](./python/sorting/bucket-sort.py)
 		- [heap-sort](./python/sorting/heap-sort.py)
