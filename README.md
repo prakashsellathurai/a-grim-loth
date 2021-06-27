@@ -55,10 +55,12 @@
 		- [balanced-paranthesis](./cpp/Stacks/balanced-paranthesis.cpp)
 		- [reverse-words-in-sentence](./cpp/Stacks/reverse-words-in-sentence.cpp)
 	- Trees
+		- [Interval-trees](./cpp/Trees/Interval-trees.cpp)
 		- [binary-search-tree](./cpp/Trees/binary-search-tree.cpp)
 		- [binary-tree-equality](./cpp/Trees/binary-tree-equality.cpp)
 		- [bst-linked-list](./cpp/Trees/bst-linked-list.cpp)
 	- computataional-geometry
+		- [bullet-through-largest-number-of-walls](./cpp/computataional-geometry/bullet-through-largest-number-of-walls.cpp)
 		- [graham-scan-convex-hull](./cpp/computataional-geometry/graham-scan-convex-hull.cpp)
 	- partition
 		- [three-way-parition-problem-quicksort-dutch-national-flag](./cpp/partition/three-way-parition-problem-quicksort-dutch-national-flag.cpp)
