@@ -49,6 +49,7 @@
 		- [Radix-sort](./cpp/Sorting/Radix-sort.cpp)
 		- [Randomized-Quick-sort](./cpp/Sorting/Randomized-Quick-sort.cpp)
 		- [Shell-sort](./cpp/Sorting/Shell-sort.cpp)
+		- [external-sorting](./cpp/Sorting/external-sorting.cpp)
 		- [stable-sort](./cpp/Sorting/stable-sort.cpp)
 		- [wiggle-sort](./cpp/Sorting/wiggle-sort.cpp)
 	- Stacks
@@ -81,6 +82,7 @@
 	- selection
 		- [Quick-select](./cpp/selection/Quick-select.cpp)
 		- [find-median-in-linear-time](./cpp/selection/find-median-in-linear-time.cpp)
+		- [find-the-first-missing-number](./cpp/selection/find-the-first-missing-number.cpp)
 		- [majority-voting-algorithm](./cpp/selection/majority-voting-algorithm.cpp)
 	- strings
 		- [Rabin-karp-string-search](./cpp/strings/Rabin-karp-string-search.cpp)
@@ -174,7 +176,7 @@
 	- sorting
 		- [Insertion-Sort](./python/sorting/Insertion-Sort.py)
 		- [american-flag-sort](./python/sorting/american-flag-sort.py)
-		- [bubble-sort](./python/sorting/bubble-sort.py)
+		- [bubblesort](./python/sorting/bubblesort.py)
 		- [bucket-sort](./python/sorting/bucket-sort.py)
 		- [heap-sort](./python/sorting/heap-sort.py)
 		- [in-place-merge-sort](./python/sorting/in-place-merge-sort.py)
@@ -183,6 +185,7 @@
 		- [quick-sort](./python/sorting/quick-sort.py)
 		- [radix-sort](./python/sorting/radix-sort.py)
 		- [selection-sort](./python/sorting/selection-sort.py)
+		- [sorting-algorithms-benchmark](./python/sorting/sorting-algorithms-benchmark.py)
 	- strings
 		- [find-max-frequent-words-with-trie](./python/strings/find-max-frequent-words-with-trie.py)
 		- [group-identical-strings](./python/strings/group-identical-strings.py)
