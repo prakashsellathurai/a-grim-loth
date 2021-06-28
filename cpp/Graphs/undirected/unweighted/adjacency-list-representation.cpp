@@ -9,8 +9,7 @@ struct Edge {
 class Graph {
 public:
   vector<vector<int>> adjList;
-  int nvertices = 0;
-  int nedges = 0;
+  int nvertices = 0, nedges = 0;
   Graph(vector<Edge> const &edges, int N) {
     nvertices = N;
     adjList.resize(N);
@@ -18,6 +17,7 @@ public:
     for (auto &edge : edges) {
       nedges++;
       adjList[edge.src].push_back(edge.dest);
+      adjList[edge.dest].push_back(edge.src);
     }
   }
   Graph(Graph &&) = default;
@@ -27,6 +27,7 @@ public:
   ~Graph() { adjList.resize(0); };
   void insert_edge(int x, int y) {
     nedges++;
+    adjList[x].push_back(y);
     adjList[x].push_back(y);
   }
   void printGraph(Graph const &graph, int N) {
