@@ -28,9 +28,11 @@ struct Edge_Node {
 class Graph {
 public:
   vector<vector<int>> adjList;
-  int V;
+  int V, nedges;
+  vector<int> parent;
   Graph(int V, vector<Edge_Node> edges) {
     this->V = V;
+    parent.resize(V + 1);
     adjList.resize(V);
     for (auto edge : edges) {
       adjList[edge.src].push_back(edge.desc);
@@ -42,7 +44,6 @@ public:
   void BFS(int source) {
     bool proceesed[V + 1];
     bool discovered[V + 1];
-    int parent[V + 1];
 
     for (int i = 0; i < V; i++) {
       proceesed[i] = discovered[i] = false;
@@ -60,12 +61,13 @@ public:
     while (!q.empty()) {
       u = q.front();
       q.pop();
-      std::cout << u << " ";
+      process_vertex_early(u);
       proceesed[u] = true;
       for (auto v : adjList[u]) {
 
         if (!proceesed[v]) {
           // process v
+          process_edge(u, v);
         }
         if (!discovered[v]) {
           q.push(v);
@@ -73,9 +75,38 @@ public:
           parent[v] = u;
         }
       }
+      process_vertex_late(u);
     }
 
     std::cout << std::endl;
+  }
+
+  /*
+  run it only after bfs so that parent get filled
+  */
+  void find_paths(int u, int v) {
+    std::cout << "Path from " << u << " to " << v << " : " << std::endl;
+    find_pathUtil(u, v);
+  }
+  void find_pathUtil(int u, int v) {
+    if (u == v || v == -1) {
+      std::cout << u << std::endl;
+    } else {
+      find_pathUtil(u, parent[v]);
+      std::cout << v << std::endl;
+    }
+  }
+  void process_vertex_early(int vertex) {
+    std::cout << "Early Vertex Process : " << vertex << std::endl;
+  }
+
+  void process_edge(int u, int v) {
+    nedges++;
+    std::cout << "Process  Edge : " << u << " " << v << std::endl;
+  }
+
+  void process_vertex_late(int vertex) {
+    // std::cout << "late Vertex Process : "<<  vertex << std::endl;
   }
 };
 
@@ -85,5 +116,7 @@ int main(int argc, const char **argv) {
   int V = 6;
   Graph graph = Graph(V, edges);
   graph.BFS(0);
+  graph.find_paths(0, 4);
+  graph.find_paths(5, 1);
   return 0;
 }
