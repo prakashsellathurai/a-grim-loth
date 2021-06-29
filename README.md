@@ -26,6 +26,19 @@
 		- subset-sum
 			- [coin-change](./cpp/Dynamic-Programming/subset-sum/coin-change.cpp)
 			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
+	- Graphs
+		- directed
+			- unweighted
+				- [adjacency-list-representation](./cpp/Graphs/directed/unweighted/adjacency-list-representation.cpp)
+			- weighted
+				- [adjacency-list-representation](./cpp/Graphs/directed/weighted/adjacency-list-representation.cpp)
+		- traversal
+			- [Breath-first-search](./cpp/Graphs/traversal/Breath-first-search.cpp)
+		- undirected
+			- unweighted
+				- [adjacency-list-representation](./cpp/Graphs/undirected/unweighted/adjacency-list-representation.cpp)
+			- weighted
+				- [adjacency-list-representation](./cpp/Graphs/undirected/weighted/adjacency-list-representation.cpp)
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Heaps
