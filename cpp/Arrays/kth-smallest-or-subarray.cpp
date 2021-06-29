@@ -5,7 +5,7 @@
 using namespace std;
 
 int CalculateRank(vector<int> prefix, int n, int x) {
-  int cnt;
+  
 
   // Initially rank is 0.
   int rank = 0;
@@ -14,7 +14,7 @@ int CalculateRank(vector<int> prefix, int n, int x) {
 
     // Calculating the count the subarray with
     // starting at ith index
-    cnt = upper_bound(prefix.begin(), prefix.end(), sumBeforeIthindex + x) -
+    int cnt = upper_bound(prefix.begin(), prefix.end(), sumBeforeIthindex + x) -
           prefix.begin();
 
     // Subtracting the subarrays before ith index.
