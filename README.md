@@ -1,6 +1,7 @@
 ## Table of Contents:
 [//]: # (TOCSTART)
 
+- [Makefile](./Makefile)
 - cpp
 	- Arrays
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
