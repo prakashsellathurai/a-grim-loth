@@ -48,6 +48,7 @@ public:
     std::fill(std::begin(parent), std::end(parent), -1);
     for (auto edge : edges) {
       adjList[edge.src].push_back(edge.desc);
+       adjList[edge.desc].push_back(edge.src);
     }
   }
 
@@ -102,7 +103,7 @@ public:
   }
 
   void process_edge(int u, int v) {
-    if (parent[u] == v) {
+    if ((discovered[v]) && (parent[u] != v)) {
       std::cout << "Cycle detected" << std::endl;
       find_paths(v, u);
       std::cout << std::endl;
@@ -140,7 +141,7 @@ int main(int argc, const char **argv) {
   std::cout << "is cycle dtected " << (graph.isCycledetceted ? "yes" : "no")
             << std::endl;
 
-  vector<Edge_Node> edges1 = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {1, 0}};
+  vector<Edge_Node> edges1 = {{0, 1}, {1, 2},{5, 0}, {2, 3}, {3, 4}, {4, 5},{2,3}};
   int V1 = 6;
   Graph graph1 = Graph(V1, edges1);
   graph1.DFS(0, 0);
