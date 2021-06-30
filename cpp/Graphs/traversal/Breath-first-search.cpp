@@ -36,6 +36,7 @@ public:
     adjList.resize(V);
     for (auto edge : edges) {
       adjList[edge.src].push_back(edge.desc);
+      adjList[edge.desc].push_back(edge.src);
     }
   }
 

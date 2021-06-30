@@ -139,9 +139,9 @@ int main(int argc, const char **argv) {
   graph.DFS(0, 0);
   graph.printGraph();
   std::cout << "is cycle dtected " << (graph.isCycledetceted ? "yes" : "no")
-            << std::endl;
+            << std::endl << std::endl << std::endl << std::endl << std::endl;
 
-  vector<Edge_Node> edges1 = {{0, 1}, {1, 2},{5, 0}, {2, 3}, {3, 4}, {4, 5},{2,3}};
+  vector<Edge_Node> edges1 = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5},{5, 0}};
   int V1 = 6;
   Graph graph1 = Graph(V1, edges1);
   graph1.DFS(0, 0);
