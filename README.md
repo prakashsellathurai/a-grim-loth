@@ -28,13 +28,21 @@
 			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
 	- Graphs
 		- directed
+			- [topological-sort](./cpp/Graphs/directed/topological-sort.cpp)
+			- traversal
+				- [depth-first-search](./cpp/Graphs/directed/traversal/depth-first-search.cpp)
 			- unweighted
 				- [adjacency-list-representation](./cpp/Graphs/directed/unweighted/adjacency-list-representation.cpp)
 			- weighted
 				- [adjacency-list-representation](./cpp/Graphs/directed/weighted/adjacency-list-representation.cpp)
-		- traversal
-			- [Breath-first-search](./cpp/Graphs/traversal/Breath-first-search.cpp)
 		- undirected
+			- [articulation-points](./cpp/Graphs/undirected/articulation-points.cpp)
+			- [connected-components](./cpp/Graphs/undirected/connected-components.cpp)
+			- [cycle-detection](./cpp/Graphs/undirected/cycle-detection.cpp)
+			- traversal
+				- [Breath-first-search](./cpp/Graphs/undirected/traversal/Breath-first-search.cpp)
+				- [Depth-first-traversal](./cpp/Graphs/undirected/traversal/Depth-first-traversal.cpp)
+			- [two-coloring](./cpp/Graphs/undirected/two-coloring.cpp)
 			- unweighted
 				- [adjacency-list-representation](./cpp/Graphs/undirected/unweighted/adjacency-list-representation.cpp)
 			- weighted
