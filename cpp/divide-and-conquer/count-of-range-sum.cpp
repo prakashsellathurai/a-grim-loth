@@ -1,72 +1,50 @@
-
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
-// Function to find number of subarrays having
-// sum less than or equal to x.
-int countSub(int arr[], int n, int x)
-{
+int mergeSort(vector<int64_t> &sum, int i, int j, int u, int l) {
+  if (i == j)
+    return l <= sum[i] && sum[i] <= u;
+    
+  int mid = i + (j - i) / 2,
+      count = mergeSort(sum, i, mid, u, l) + mergeSort(sum, mid + 1, j, u, l);
 
-	// Starting index of sliding window.
-	int st = 0;
+  for (int l_ = i, r_ = i, k = mid + 1; k <= j; ++k) { // Find all i, j pairs
+    while (r_ <= mid && sum[r_] + l <= sum[k])
+      ++r_;
+    while (l_ <= mid && sum[k] > sum[l_] + u)
+      ++l_;
+    count += r_ - l_;
+  }
 
-	// Ending index of sliding window.
-	int end = 0;
-
-	// Sum of elements currently present
-	// in sliding window.
-	int sum = 0;
-
-	// To store required number of subarrays.
-	int cnt = 0;
-
-	// Increment ending index of sliding
-	// window one step at a time.
-	while (end < n) {
-
-		// Update sum of sliding window on
-		// adding a new element.
-		sum += arr[end];
-
-		// Increment starting index of sliding
-		// window until sum is greater than x.
-		while (st <= end && sum > x) {
-			sum -= arr[st];
-			st++;
-		}
-
-		// Update count of number of subarrays.
-		cnt += (end - st + 1);
-		end++;
-	}
-
-	return cnt;
+  vector<int64_t> tmp(j - i + 1, 0);
+  for (int k = i, l = mid + 1, m = 0; m <= j - i; ++m) { // merge
+    if (k > mid)
+      tmp[m] = sum[l++];
+    else if (l > j)
+      tmp[m] = sum[k++];
+    else
+      tmp[m] = sum[l] < sum[k] ? sum[l++] : sum[k++];
+  }
+  copy(tmp.begin(), tmp.end(), sum.begin() + i);
+  return count;
 }
 
-// Function to find number of subarrays having
-// sum in the range L to R.
-int findSubSumLtoR(int arr[], int n, int L, int R)
-{
-
-	// Number of subarrays having sum less
-	// than or equal to R.
-	int Rcnt = countSub(arr, n, R);
-
-	// Number of subarrays having sum less
-	// than or equal to L-1.
-	int Lcnt = countSub(arr, n, L - 1);
-
-	return Rcnt - Lcnt;
+int countRangeSum(vector<int> &nums, int lower, int upper) {
+  const int size = nums.size();
+  if (!size)
+    return 0;
+  vector<int64_t> sum(size, nums[0]);
+  for (int i = 1; i < size; ++i)
+    sum[i] = sum[i - 1] + nums[i];
+  return mergeSort(sum, 0, size - 1, upper, lower);
 }
 
-int main()
-{
-	int arr[] = { 1, 4, 6 };
-	int n = sizeof(arr) / sizeof(arr[0]);
+int main(int argc, const char **argv) {
 
-	int L = 3;
-	int R = 8;
-
-	cout << findSubSumLtoR(arr, n, L, R);
-	return 0;
+  vector<int> Arr = {-3, -5, 1, 4, 5};
+  int l = -1, u = 1;
+  std::cout << countRangeSum(Arr, l, u) << std::endl;
+  return 0;
 }
