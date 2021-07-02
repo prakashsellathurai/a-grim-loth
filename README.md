@@ -5,6 +5,7 @@
 	- Arrays
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
 		- [kth-smallest-sum-subarray](./cpp/Arrays/kth-smallest-sum-subarray.cpp)
+		- [largest-subarray-sum](./cpp/Arrays/largest-subarray-sum.cpp)
 		- [move-all-0s-to-left-while-maintaining-order](./cpp/Arrays/move-all-0s-to-left-while-maintaining-order.cpp)
 		- [reverse-array](./cpp/Arrays/reverse-array.cpp)
 	- Conjectures
@@ -84,6 +85,12 @@
 	- computataional-geometry
 		- [bullet-through-largest-number-of-walls](./cpp/computataional-geometry/bullet-through-largest-number-of-walls.cpp)
 		- [graham-scan-convex-hull](./cpp/computataional-geometry/graham-scan-convex-hull.cpp)
+	- divide-and-conquer
+		- [count-of-range-sum](./cpp/divide-and-conquer/count-of-range-sum.cpp)
+		- [maximum-length-possible-by-cutting-n-given-woods-into-at-least-k-pieces](./cpp/divide-and-conquer/maximum-length-possible-by-cutting-n-given-woods-into-at-least-k-pieces.cpp)
+		- [median-of-two-sorted-arrays](./cpp/divide-and-conquer/median-of-two-sorted-arrays.cpp)
+		- [merge-k-sorted-linkedlists](./cpp/divide-and-conquer/merge-k-sorted-linkedlists.cpp)
+		- [merge-two-linked-lists](./cpp/divide-and-conquer/merge-two-linked-lists.cpp)
 	- partition
 		- [three-way-parition-problem-quicksort-dutch-national-flag](./cpp/partition/three-way-parition-problem-quicksort-dutch-national-flag.cpp)
 	- range-queries
