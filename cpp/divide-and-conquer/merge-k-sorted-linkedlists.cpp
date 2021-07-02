@@ -42,19 +42,24 @@ Node *sortedMerge(Node *a, Node *b) {
 
   return result;
 }
-Node *merge_K_sortedList(Node *list[], int k) {
 
-  int last = k - 1;
-  while (last != 0) {
-    int i = 0, j = last;
+/**
+ * @brief Merge K sorted List O(n*log(k))
+ *
+ * @param list
+ * @param k
+ * @return Node*
+ */
+Node *merge_K_sortedList(Node* list[], int k) {
 
-    while (i < j) {
-      list[i] = sortedMerge(list[i], list[j]);
-      i++, j--;
-      if (i >= j) {
-        last = j;
-      }
+  int amount = k;
+  int interval = 1;
+
+  while (interval < amount) {
+    for (int i = 0; i < amount - interval; i += (interval * 2)) {
+      list[i] = sortedMerge(list[i], list[i + interval]);
     }
+    interval *= 2;
   }
   return list[0];
 }
