@@ -50,6 +50,9 @@
 				- [adjacency-list-representation](./cpp/Graphs/undirected/weighted/adjacency-list-representation.cpp)
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
+	- Hashing-and-Randomization
+		- [Bloom-filter](./cpp/Hashing-and-Randomization/Bloom-filter.cpp)
+		- [minimal-perfect-hashing](./cpp/Hashing-and-Randomization/minimal-perfect-hashing.cpp)
 	- Heaps
 		- [Fast-Heap](./cpp/Heaps/Fast-Heap.cpp)
 		- [K-th-element-compare-with-x](./cpp/Heaps/K-th-element-compare-with-x.cpp)
