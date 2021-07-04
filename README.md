@@ -52,6 +52,7 @@
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Hashing-and-Randomization
 		- [Bloom-filter](./cpp/Hashing-and-Randomization/Bloom-filter.cpp)
+		- [min-hash](./cpp/Hashing-and-Randomization/min-hash.cpp)
 		- [minimal-perfect-hashing](./cpp/Hashing-and-Randomization/minimal-perfect-hashing.cpp)
 	- Heaps
 		- [Fast-Heap](./cpp/Heaps/Fast-Heap.cpp)
