@@ -146,7 +146,6 @@
 		- range-queries
 			- [merge-sort-tree](./python/advanced/range-queries/merge-sort-tree.py)
 			- [number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries](./python/advanced/range-queries/number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries.py)
-		- [treap](./python/advanced/treap.py)
 	- dynamic-programming
 		- 2-D
 			- [place-of-sign](./python/dynamic-programming/2-D/place-of-sign.py)
