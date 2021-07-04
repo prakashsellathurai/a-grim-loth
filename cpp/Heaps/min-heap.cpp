@@ -6,6 +6,12 @@
 #include <stdlib.h>
 #define MAXSIZE 100
 using namespace std;
+
+
+/**
+ * @brief Min heap implemntation 
+ * 
+ */
 class MinHeap {
 public:
   int n;
@@ -76,6 +82,9 @@ public:
     }
     this->n = this->n - 1;
     return min;
+  }
+  int get_min(){
+    return this->q[1];
   }
 
   void print() {

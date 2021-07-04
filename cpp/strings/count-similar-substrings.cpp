@@ -1,6 +1,7 @@
-#include <bits/stdc++.h>
 #include <iostream>
+#include <set>
 #include <stdlib.h>
+#include <vector>
 using namespace std;
 
 int count_unique_substrings(string const& s) {
@@ -32,7 +33,7 @@ int count_unique_substrings(string const& s) {
 
 
 int main(int argc, const char** argv) {
-    string s = "HenloHenloloololo";
+    string s = "HenloHenlo";
     std::cout << count_unique_substrings(s);
     return 0;
 }
