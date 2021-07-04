@@ -189,6 +189,8 @@
 	- heap
 		- [max-heap](./python/heap/max-heap.py)
 		- [treap](./python/heap/treap.py)
+	- probability
+		- [month-hall-paradox](./python/probability/month-hall-paradox.py)
 	- problems
 		- [Divide-arrays](./python/problems/Divide-arrays.py)
 		- [Minimum-operations](./python/problems/Minimum-operations.py)
