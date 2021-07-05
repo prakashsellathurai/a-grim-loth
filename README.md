@@ -55,7 +55,7 @@
 		- [min-hash](./cpp/Hashing-and-Randomization/min-hash.cpp)
 		- [minimal-perfect-hashing](./cpp/Hashing-and-Randomization/minimal-perfect-hashing.cpp)
 		- primality-test
-			- [fermat-primality-testing](./cpp/Hashing-and-Randomization/primality-test/fermat-primality-testing.cpp)
+			- [fermat-primality-test](./cpp/Hashing-and-Randomization/primality-test/fermat-primality-test.cpp)
 	- Heaps
 		- [Fast-Heap](./cpp/Heaps/Fast-Heap.cpp)
 		- [K-th-element-compare-with-x](./cpp/Heaps/K-th-element-compare-with-x.cpp)
