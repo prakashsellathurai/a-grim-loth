@@ -52,10 +52,13 @@
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Hashing-and-Randomization
 		- [Bloom-filter](./cpp/Hashing-and-Randomization/Bloom-filter.cpp)
+		- [LRU-cache](./cpp/Hashing-and-Randomization/LRU-cache.cpp)
 		- [min-hash](./cpp/Hashing-and-Randomization/min-hash.cpp)
 		- [minimal-perfect-hashing](./cpp/Hashing-and-Randomization/minimal-perfect-hashing.cpp)
 		- primality-test
 			- [fermat-primality-test](./cpp/Hashing-and-Randomization/primality-test/fermat-primality-test.cpp)
+		- simulation
+			- [expected-round-until-heads](./cpp/Hashing-and-Randomization/simulation/expected-round-until-heads.cpp)
 	- Heaps
 		- [Fast-Heap](./cpp/Heaps/Fast-Heap.cpp)
 		- [K-th-element-compare-with-x](./cpp/Heaps/K-th-element-compare-with-x.cpp)
