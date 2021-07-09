@@ -127,6 +127,7 @@
 		- [fast_hash](./cpp/strings/fast_hash.cpp)
 		- [hash-func](./cpp/strings/hash-func.cpp)
 		- [knuth-Morris-Pratt-algorithm](./cpp/strings/knuth-Morris-Pratt-algorithm.cpp)
+		- [rotodrome](./cpp/strings/rotodrome.cpp)
 		- suffix-array
 			- [n-log-n](./cpp/strings/suffix-array/n-log-n.cpp)
 			- [n-squared-log-n-build](./cpp/strings/suffix-array/n-squared-log-n-build.cpp)
