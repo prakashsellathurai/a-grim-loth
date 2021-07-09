@@ -59,6 +59,7 @@
 			- [fermat-primality-test](./cpp/Hashing-and-Randomization/primality-test/fermat-primality-test.cpp)
 		- simulation
 			- [expected-round-until-heads](./cpp/Hashing-and-Randomization/simulation/expected-round-until-heads.cpp)
+		- [weighted-random-distribution](./cpp/Hashing-and-Randomization/weighted-random-distribution.cpp)
 	- Heaps
 		- [Fast-Heap](./cpp/Heaps/Fast-Heap.cpp)
 		- [K-th-element-compare-with-x](./cpp/Heaps/K-th-element-compare-with-x.cpp)
