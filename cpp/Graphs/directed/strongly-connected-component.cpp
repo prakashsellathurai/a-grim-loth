@@ -115,12 +115,12 @@ public:
     exit_time.clear();
     processed.clear();
   }
-  Graph transpose(Graph graph) {
-    Graph gt(graph.V + 1);
-    for (int i = 0; i < graph.V; i++) {
+  Graph transpose() {
+    Graph gt(V + 1);
+    for (int i = 0; i < V; i++) {
 
-      if (!graph.adjList[i].empty()) {
-        for (int x : graph.adjList[i]) {
+      if (!adjList[i].empty()) {
+        for (int x : adjList[i]) {
 
           gt.addEdge(x, i);
         }
@@ -128,19 +128,19 @@ public:
     }
     return gt;
   }
-  void strong_components(Graph g) {
-    for (int i = 0; i < g.V; i++) {
-      if (!g.discovered[i]) {
-        g.DFS(i, 0);
+  void strong_components() {
+    for (int i = 0; i < V; i++) {
+      if (!discovered[i]) {
+        DFS(i, 0);
       }
     }
     std::cout << "\nStrongly Connected Components" << std::endl;
-    Graph gt = transpose(g);
+    Graph gt = transpose();
     int components_found = 0;
 
-    while (!g.sorted.empty()) {
-      int v = g.sorted.top();
-      g.sorted.pop();
+    while (!sorted.empty()) {
+      int v = sorted.top();
+      sorted.pop();
       if (!gt.discovered[v]) {
         components_found++;
         std::cout << "Component " << components_found << " : ";
@@ -159,6 +159,6 @@ int main(int argc, const char **argv) {
     g.addEdge(2, 1);
     g.addEdge(0, 3);
     g.addEdge(3, 4);
-  g.strong_components(g);
+  g.strong_components();
   return 0;
 }
