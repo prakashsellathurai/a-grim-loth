@@ -34,6 +34,10 @@ public:
     adjList[v].push_back(w); // Add w to v’s list.
   }
 
+  void addEdge(char v, char w) {
+    adjList[(int)(v - 'a')].push_back((int)(w - 'a')); // Add w to v’s list.
+  }
+
   // DFS traversal of the vertices
   // reachable from v
   void DFS(int u, int time) {
@@ -98,7 +102,7 @@ public:
   }
   void printStack(stack<int> S) {
     while (S.empty() == false) {
-      cout << S.top() << " ";
+      cout << char(S.top() + 'a') << " ";
       S.pop();
     }
   }
@@ -114,14 +118,31 @@ public:
 
 int main() {
 
-  Graph g(7);
+  Graph g(10);
 
-  g.addEdge(0, 1);
-  g.addEdge(6, 0);
-  g.addEdge(1, 2);
-  g.addEdge(2, 4);
-  g.addEdge(3, 5);
-  g.addEdge(2, 3);
+  g.addEdge('a', 'b');
+  g.addEdge('a', 'd');
+
+  g.addEdge('b', 'c');
+  g.addEdge('b', 'd');
+  g.addEdge('b', 'e');
+
+  g.addEdge('d', 'e');
+  g.addEdge('d', 'g');
+
+  g.addEdge('c', 'f');
+
+  g.addEdge('e', 'g');
+  g.addEdge('e', 'f');
+
+  g.addEdge('g', 'f');
+  g.addEdge('g', 'i');
+
+  g.addEdge('i', 'j');
+
+  g.addEdge('h', 'g');
+  g.addEdge('h', 'j');
+  g.addEdge('h', 'f');
   g.top_sort();
 
   return 0;
