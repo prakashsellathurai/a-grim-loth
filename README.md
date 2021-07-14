@@ -1,6 +1,8 @@
-## Table of Contents:
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/21be0b605cd341e2a5647b1f47a1e3ea)](https://app.codacy.com/gh/prakashsellathurai/a-grim-loth?utm_source=github.com&utm_medium=referral&utm_content=prakashsellathurai/a-grim-loth&utm_campaign=Badge_Grade_Settings)
+
+## Table of Contents:
+
 
 [//]: # (TOCSTART)
 
