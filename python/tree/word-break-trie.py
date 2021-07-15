@@ -1,4 +1,15 @@
 class Solution:
+	"""
+	returns "Yes" if s can be segmented into words in wordDict else "No"
+	
+	>>> Solution().wordBreak("thequickbrownfox", ["the", "quick", "fox", "brown"])
+	'Yes'
+	>>> Solution().wordBreak("bedbathandbeyond", ["bed", "bath", "bedbath", "and", "beyond"])
+	'Yes'
+	>>> Solution().wordBreak("bedbathandbeyond", ["bed", "bath", "bedbath", "and", "away"])
+	'No'
+	"""
+
 	def wordBreak(self, s, wordDict):
 
 		class TrieNode:
@@ -55,7 +66,6 @@ class Solution:
 		    return "Yes"
 		return "No"
 
-print(Solution().wordBreak("thequickbrownfox", ["the", "quick", "fox", "brown"]))
-print(Solution().wordBreak("bedbathandbeyond", ["bed", "bath", "bedbath", "and", "beyond"]))
-print(Solution().wordBreak("bedbathandbeyond", ["teddy", "bath", "bedbath", "and", "beyond"]))
-print(Solution().wordBreak("bedbathandbeyond", ["bed", "bath", "bedbath", "and", "away"]))
+if __name__ == "__main__":
+	import doctest
+	doctest.testmod()

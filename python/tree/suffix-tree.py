@@ -4,6 +4,10 @@ class Node:
         self.ch = children or []
  
 class SuffixTree:
+    """
+    Class for suffixtree
+    
+    """
     def __init__(self, str):
         self.nodes = [Node()]
         for i in range(len(str)):
@@ -44,8 +48,34 @@ class SuffixTree:
                 j = j + 1
             i = i + j   # advance past part in common
             n = n2      # continue down the tree
- 
+    
     def visualize(self):
+        """
+        pretty prints the suffixtree
+        
+        >>> SuffixTree("banana$").visualize()
+        +- 
+         +-
+        -- banana$
+         +-
+        +- a
+         |  +-
+        +- na
+         |  |  +-
+        -- na$
+         |  |  +-
+        -- $
+         |  +-
+        -- $
+         +-
+        +- na
+         |  +-
+        -- na$
+         |  +-
+        -- $
+         +-
+        -- $
+        """
         if len(self.nodes) == 0:
             print ("<empty>")
             return
@@ -64,4 +94,7 @@ class SuffixTree:
  
         f(0, "")
  
-SuffixTree("banana$").visualize()
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
