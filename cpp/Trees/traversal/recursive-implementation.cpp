@@ -1,5 +1,5 @@
 
-/* pre order travesal in binary tree */
+/* pre order recursive travesal in binary tree */
 #include <iostream>
 #include <queue>
 using namespace std;
