@@ -25,6 +25,11 @@ public:
   EdgePair() {}
   EdgePair(int x, int y, int weight) : x(x), y(y), weight(weight) {}
 };
+
+/**
+ * @brief Weighted Graph
+ * 
+ */
 class Graph {
 private:
   int V;                                // No. of vertices
