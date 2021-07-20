@@ -90,21 +90,16 @@ int main(int argc, const char **argv) {
   uf.merge(5, 6);
   uf.merge(7, 8);
   uf.merge(9, 10);
-  uf.merge(1, 3);
-  uf.merge(1, 5);
-  uf.merge(1, 7);
-  uf.merge(1, 9);
-  uf.merge(2, 4);
-  uf.merge(2, 6);
 
   assert(uf.connected(1, 2));
-  assert(uf.connected(1, 3));
-  assert(uf.connected(1, 5));
-  assert(uf.connected(1, 7));
-  assert(uf.connected(1, 9));
-  assert(uf.connected(2, 4));
-  assert(uf.connected(2, 6));
+  assert(!uf.connected(1, 3));
+  assert(!uf.connected(1, 5));
+  assert(!uf.connected(1, 7));
+  assert(!uf.connected(1, 9));
+  assert(!uf.connected(2, 4));
+  assert(!uf.connected(2, 6));
   assert(uf.connected(3, 4));
-
+  uf.merge(1, 7);
+  assert(uf.connected(1, 7));
   return 0;
 }
