@@ -39,7 +39,7 @@ void union_find_init(UnionFind *s, int n) {
   s->size.resize(n + 1);
   for (int i = 0; i < n; i++) {
     s->parent[i] = i;
-    s->size[i] = i;
+    s->size[i] = 1;
   }
   s->n = n;
 }
@@ -86,7 +86,7 @@ int main(int argc, const char **argv) {
   union_sets(&uf, 8, 6);
   union_sets(&uf, 7, 6);
   union_sets(&uf, 5, 7);
-  assert(find(&uf, 2) == 3);
+  assert(find(&uf, 2) == 2);
   assert(same_component(&uf, 5, 8));
   assert(!same_component(&uf, 5, 2));
 
