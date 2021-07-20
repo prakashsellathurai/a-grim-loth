@@ -73,22 +73,38 @@ bool same_component(UnionFind *s, int s1, int s2) {
   return (find(s, s1) == find(s, s2));
 }
 
+class UnionFindDataStructure {
+public:
+  int n;
+  UnionFind uf;
+  UnionFindDataStructure(int n_) : n(n_) { union_find_init(&uf, n); }
+  void merge(int s1, int s2) { union_sets(&uf, s1, s2); }
+  bool connected(int s1, int s2) { return same_component(&uf, s1, s2); }
+};
 
 int main(int argc, const char **argv) {
-  UnionFind uf;
-  int n = 10;
-  union_find_init(&uf, n);
-  for (size_t i = 0; i < n; i++) {
-    assert(find(&uf, 1) == 1);
-  }
-  union_sets(&uf, 2, 3);
-  union_sets(&uf, 3, 4);
-  union_sets(&uf, 8, 6);
-  union_sets(&uf, 7, 6);
-  union_sets(&uf, 5, 7);
-  assert(find(&uf, 2) == 2);
-  assert(same_component(&uf, 5, 8));
-  assert(!same_component(&uf, 5, 2));
+  UnionFindDataStructure uf(10);
+
+  uf.merge(1, 2);
+  uf.merge(3, 4);
+  uf.merge(5, 6);
+  uf.merge(7, 8);
+  uf.merge(9, 10);
+  uf.merge(1, 3);
+  uf.merge(1, 5);
+  uf.merge(1, 7);
+  uf.merge(1, 9);
+  uf.merge(2, 4);
+  uf.merge(2, 6);
+
+  assert(uf.connected(1, 2));
+  assert(uf.connected(1, 3));
+  assert(uf.connected(1, 5));
+  assert(uf.connected(1, 7));
+  assert(uf.connected(1, 9));
+  assert(uf.connected(2, 4));
+  assert(uf.connected(2, 6));
+  assert(uf.connected(3, 4));
 
   return 0;
 }
