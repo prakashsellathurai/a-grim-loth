@@ -17,6 +17,7 @@ DFS(G,u)
 #include <algorithm>
 #include <iostream>
 #include <queue>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -32,6 +33,9 @@ public:
   vector<bool> discovered;
   vector<bool> processed;
   vector<int> entry_time, exit_time;
+  vector<int> reachable_ancestor;
+  vector<int> tree_out_degree;
+
   bool isfinished = false;
   bool isCycledetceted = false;
 
@@ -43,21 +47,24 @@ public:
     entry_time.resize(V);
     exit_time.resize(V);
     processed.resize(V);
+    reachable_ancestor.resize(V + 1);
+    tree_out_degree.resize(V + 1);
 
     fill(discovered.begin(), discovered.end(), false);
     std::fill(std::begin(parent), std::end(parent), -1);
     for (auto edge : edges) {
-      adjList[edge.src].push_back(edge.desc);
-       adjList[edge.desc].push_back(edge.src);
+      insert_edge(edge.src, edge.desc);
     }
   }
 
-  void insert_edge(int x, int y) { adjList[x].push_back(y); }
+  void insert_edge(int x, int y) {
+    adjList[x].push_back(y);
+    adjList[y].push_back(x);
+  }
 
   void DFS(int u, int time) {
 
     if (isfinished)
-
       return;
 
     discovered[u] = true;
@@ -97,23 +104,68 @@ public:
       std::cout << v << std::endl;
     }
   }
+
   void process_vertex_early(int vertex) {
+    reachable_ancestor[vertex] = vertex;
+
     // std::cout << "Early Vertex Process : " << vertex
     //           << " time : " << entry_time[vertex] << std::endl;
   }
-
-  void process_edge(int u, int v) {
-    if ((discovered[v]) && (parent[u] != v)) {
-      std::cout << "Cycle detected" << std::endl;
-      find_paths(v, u);
-      std::cout << std::endl;
-      isCycledetceted = true;
-      isfinished = true;
+  std::string edge_classification(int u, int v) {
+    if (parent[u] != v) {
+      return "BACK";
+    } else {
+      return "TREE";
     }
+  }
+  void process_edge(int u, int v) {
+    std::string edge_class = edge_classification(u, v);
+    if (edge_class == "TREE")
+      tree_out_degree[u] = tree_out_degree[u] + 1;
+
+      
+
+    if (edge_class == "BACK" && (parent[u] != v))
+      if (entry_time[v] < entry_time[reachable_ancestor[u]])
+        reachable_ancestor[u] = v;
     // std::cout << "Process  Edge : " << u << " " << v << std::endl;
   }
 
-  void process_vertex_late(int vertex) {
+  void process_vertex_late(int v) {
+    bool root;       /* is the vertex the root of the DFS tree? */
+    int time_v;      /* earliest reachable time for v */
+    int time_parent; /* earliest reachable time for parent[v] */
+
+    if (parent[v] < 1) { /* test if v is the root */
+      if (tree_out_degree[v] > 1) {
+        std::cout << "root articulation vertex " << v << " " << std::endl;
+      }
+      return;
+    }
+
+    root = (parent[parent[v]] < 1); /* is parent[v] the root? */
+
+    if (reachable_ancestor[v] == parent[v] && (!root)) {
+      std::cout << "parent articulation vertex " << parent[v] << " "
+                << std::endl;
+    }
+
+    if (reachable_ancestor[v] == v) {
+      std::cout << "bridge articulation vertex " << parent[v] << " "
+                << std::endl;
+
+      if (tree_out_degree[v] > 0) { /* test if v is not a leaf */
+        std::cout << "bridge articulation vertex " << v << std::endl;
+      }
+    }
+
+    time_v = entry_time[reachable_ancestor[v]];
+    time_parent = entry_time[reachable_ancestor[parent[v]]];
+
+    if (time_v < time_parent) {
+      reachable_ancestor[parent[v]] = reachable_ancestor[v];
+    }
+
     // std::cout << "late Vertex Process : " << vertex
     //           << " time : " << exit_time[vertex] << std::endl;
   }
@@ -133,20 +185,11 @@ public:
 };
 
 int main(int argc, const char **argv) {
-  vector<Edge_Node> edges = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}};
+  vector<Edge_Node> edges = {{0, 1}, {1, 4}, {1, 2}, {2, 3},
+                             {3, 4}, {4, 5}, {5, 3}};
   int V = 6;
   Graph graph = Graph(V, edges);
   graph.DFS(0, 0);
-  graph.printGraph();
-  std::cout << "is cycle dtected " << (graph.isCycledetceted ? "yes" : "no")
-            << std::endl << std::endl << std::endl << std::endl << std::endl;
 
-  vector<Edge_Node> edges1 = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5},{5, 0}};
-  int V1 = 6;
-  Graph graph1 = Graph(V1, edges1);
-  graph1.DFS(0, 0);
-  graph1.printGraph();
-    std::cout << "is cycle dtected " << (graph1.isCycledetceted ? "yes" : "no")
-            << std::endl;
   return 0;
 }
