@@ -1,7 +1,7 @@
 /**
  * @file edmond-karp-algorithm.cpp
  * @author prakash (prakashsellathurai@gmail.com)
- * @brief edmond-karp algorithm implementation
+ * @brief edmond-karp algorithm implementation runs in O(E*V) time
  * @version 0.1
  * @date 2021-07-23
  *
