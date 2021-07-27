@@ -6,7 +6,6 @@ def convex_hull(points):
       starting from the vertex with the lexicographically smallest coordinates.
     Implements Andrew's monotone chain algorithm. O(n log n) complexity.
     """
-
     # Sort the points lexicographically (tuples are compared lexicographically).
     # Remove duplicates to detect the case we have just one unique point.
     points = sorted(set(points))

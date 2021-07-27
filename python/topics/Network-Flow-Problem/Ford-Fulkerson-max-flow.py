@@ -11,7 +11,6 @@ class Graph:
     def bfs(self, s, t, parent):
         """Returns true if there is a path from source 's' to sink 't' in
         residual graph. Also fills parent[] to store the path."""
-
         # Mark all the vertices as not visited
         visited = [False] * self.row
 
