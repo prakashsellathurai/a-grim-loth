@@ -44,9 +44,7 @@ if __name__ == "__main__":
         )
 
         for i in range(subgraph_size - 1):  # Hamiltonian path check
-            if not graph[hamiltonian_path[i]][
-                hamiltonian_path[i + 1]
-            ]:
+            if not graph[hamiltonian_path[i]][hamiltonian_path[i + 1]]:
                 raise AssertionError
 
     print("")  # New line between cases
