@@ -13,7 +13,8 @@ class SuffixNode:
 
 def build_suffix_trie(s):
     """Construct a suffix trie."""
-    assert len(s) > 0
+    if len(s) <= 0:
+        raise AssertionError
     # explicitly build the two-node suffix tree
     Root = SuffixNode()  # the root node
     Longest = SuffixNode(suffix_link=Root)

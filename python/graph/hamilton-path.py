@@ -24,9 +24,11 @@ if __name__ == "__main__":
     for i in range(size):  # Tournament correctness check
         for j in range(size):
             if i != j:
-                assert graph[i][j] != graph[j][i]
+                if graph[i][j] == graph[j][i]:
+                    raise AssertionError
             else:
-                assert graph[i][j] == 0
+                if graph[i][j] != 0:
+                    raise AssertionError
 
     for z in range(2, cap + 1):  # Finding Hamiltonian paths for subgraphs
         subgraph_size = 2 ** z
@@ -42,8 +44,9 @@ if __name__ == "__main__":
         )
 
         for i in range(subgraph_size - 1):  # Hamiltonian path check
-            assert graph[hamiltonian_path[i]][
+            if not graph[hamiltonian_path[i]][
                 hamiltonian_path[i + 1]
-            ]  # Next vertex in path must be reachable
+            ]:
+                raise AssertionError
 
     print("")  # New line between cases

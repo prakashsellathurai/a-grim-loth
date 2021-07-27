@@ -48,7 +48,8 @@ def american_flag_sort_helper(a_list, start: int, end: int, digit, radix) -> Non
 
 def american_flag_sort(a_list, radix) -> None:
     for x in a_list:
-        assert type(x) == int
+        if type(x) != int:
+            raise AssertionError
     max_val = max(a_list)
     max_digit = int(floor(log(max_val, radix)))
     american_flag_sort_helper(a_list, 0, len(a_list), max_digit, radix)

@@ -90,7 +90,8 @@ class UndirectedGraph(object):
 
 
 def w(g, A, y):
-    assert y not in A
+    if y in A:
+        raise AssertionError
     return sum(w for v, w in g.adjacents(y) if v in A)
 
 

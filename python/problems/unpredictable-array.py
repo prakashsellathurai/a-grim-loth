@@ -185,15 +185,20 @@ class Treap:
         while nodes:
             node, min_bound, max_bound = nodes.pop()
             if node:
-                assert min_bound < node.key < max_bound
+                if not min_bound < node.key < max_bound:
+                    raise AssertionError
                 if node.left:
-                    assert node.key > node.left.key
+                    if node.key <= node.left.key:
+                        raise AssertionError
                 if node.right:
-                    assert node.key < node.right.key
+                    if node.key >= node.right.key:
+                        raise AssertionError
                 if node.parent:
                     parent = node.parent
-                    assert node.heap_id < parent.heap_id
-                    assert parent.left == node or parent.right == node
+                    if node.heap_id >= parent.heap_id:
+                        raise AssertionError
+                    if not (parent.left == node or parent.right == node):
+                        raise AssertionError
                 nodes.append((node.left, min_bound, node.key))
                 nodes.append((node.right, node.key, max_bound))
 
