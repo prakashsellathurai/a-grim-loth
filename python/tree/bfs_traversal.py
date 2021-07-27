@@ -23,7 +23,6 @@ def printLevelOrder(root):
     >>> printLevelOrder(root)
     [1, 2, 3, 4, 5, 6, 7]
     """
-
     # Base Case
     if root is None:
         return
