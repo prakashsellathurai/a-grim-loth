@@ -11,7 +11,6 @@ def binary_search(A, target):
         if mid_ele == target:
             index = mid
             break
-            return mid
         if mid_ele < target:
             lo = mid + 1
         else:
