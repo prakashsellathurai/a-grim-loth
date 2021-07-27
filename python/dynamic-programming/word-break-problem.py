@@ -5,7 +5,7 @@
 # Unordered_map used for storing
 # the sentences the key string
 # can be broken into
-mp = dict()
+mp = {}
 
 # Unordered_set used
 # to store the dictionary.
