@@ -63,23 +63,22 @@ class Graph:
         # Check if all non-zero degree vertices are connected
         if self.isConnected() is False:
             return 0
-        else:
-            # Count vertices with odd degree
-            odd = 0
-            for i in range(self.V):
-                if len(self.graph[i]) % 2 != 0:
-                    odd += 1
+        # Count vertices with odd degree
+        odd = 0
+        for i in range(self.V):
+            if len(self.graph[i]) % 2 != 0:
+                odd += 1
 
-            """If odd count is 2, then semi-eulerian.
-			If odd count is 0, then eulerian
-			If count is more than 2, then graph is not Eulerian
-			Note that odd count can never be 1 for undirected graph"""
-            if odd == 0:
-                return 2
-            elif odd == 2:
-                return 1
-            elif odd > 2:
-                return 0
+        """If odd count is 2, then semi-eulerian.
+        			If odd count is 0, then eulerian
+        			If count is more than 2, then graph is not Eulerian
+        			Note that odd count can never be 1 for undirected graph"""
+        if odd == 0:
+            return 2
+        if odd == 2:
+            return 1
+        if odd > 2:
+            return 0
 
     # Function to run test cases
 

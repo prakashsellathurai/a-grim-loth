@@ -35,14 +35,13 @@ def orientation(p, q, r):
 
         # Clockwise orientation
         return 1
-    elif val < 0:
+    if val < 0:
 
         # Counterclockwise orientation
         return 2
-    else:
 
-        # Colinear orientation
-        return 0
+    # Colinear orientation
+    return 0
 
 
 # The main function that returns true if

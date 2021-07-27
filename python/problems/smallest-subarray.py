@@ -26,11 +26,10 @@ def BuildMergeSortTree(Tree, A, index, start, end):
     if start == end:
         Tree[index].append(A[start])
         return
-    else:
-        mid = (start + end) // 2
-        BuildMergeSortTree(Tree, A, 2 * index, start, mid)
-        BuildMergeSortTree(Tree, A, 2 * index + 1, mid + 1, end)
-        Tree[index] = Merge(Tree[2 * index], Tree[2 * index + 1])
+    mid = (start + end) // 2
+    BuildMergeSortTree(Tree, A, 2 * index, start, mid)
+    BuildMergeSortTree(Tree, A, 2 * index + 1, mid + 1, end)
+    Tree[index] = Merge(Tree[2 * index], Tree[2 * index + 1])
 
 
 def query(Tree, index, start, end, left, right, k):
