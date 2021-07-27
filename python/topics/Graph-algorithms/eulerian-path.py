@@ -23,7 +23,7 @@ class Graph:
 
         # Recur for all the vertices adjacent to this vertex
         for i in self.graph[v]:
-            if visited[i] == False:
+            if visited[i] is False:
                 self.DFSUtil(i, visited)
 
     """Method to check if all non-zero degree vertices are
@@ -49,7 +49,7 @@ class Graph:
 
         # Check if all non-zero degree vertices are visited
         for i in range(self.V):
-            if visited[i] == False and len(self.graph[i]) > 0:
+            if visited[i] is False and len(self.graph[i]) > 0:
                 return False
 
         return True
@@ -61,7 +61,7 @@ class Graph:
 
     def isEulerian(self):
         # Check if all non-zero degree vertices are connected
-        if self.isConnected() == False:
+        if self.isConnected() is False:
             return 0
         else:
             # Count vertices with odd degree

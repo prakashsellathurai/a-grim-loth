@@ -30,12 +30,12 @@ class FlowNetwork(object):
             edge = (source, vertex, residual)
             if residual > 0 and not edge in path:
                 result = self.find_path(vertex, sink, path + [edge])
-                if result != None:
+                if result is not None:
                     return result
 
     def max_flow(self, source, sink):
         path = self.find_path(source, sink, [])
-        while path != None:
+        while path is not None:
             flow = min(r for u, v, r in path)
             for u, v, _ in path:
                 self.flow[(u, v)] += flow

@@ -23,7 +23,7 @@ class Graph:
         # Search not nearest vertex not in the
         # shortest path tree
         for v in range(self.V):
-            if dist[v] < min and sptSet[v] == False:
+            if dist[v] < min and sptSet[v] is False:
                 min = dist[v]
                 min_index = v
 
