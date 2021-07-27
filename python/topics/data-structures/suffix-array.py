@@ -88,9 +88,9 @@ class Suffix:
 
             for i in range(self.L):
                 self.P[level][self.M[i][1]] = (
-                    (i > 0 and self.M[i][0] == self.M[i - 1][0])
-                    and self.P[level][self.M[i - 1][1]]
-                    or i
+                    self.P[level][self.M[i - 1][1]]
+                    if (i > 0 and self.M[i][0] == self.M[i - 1][0])
+                    else i
                 )
             skip *= 2
 

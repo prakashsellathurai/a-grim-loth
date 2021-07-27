@@ -5,7 +5,7 @@ class HashTable:
 
     def add(self, key, value):
         self.dict[key] = value
-        self.size = (self.size is None) and 1 or self.size + 1
+        self.size = 1 if (self.size is None) else self.size + 1
 
     def exists(self, key):
         try:
