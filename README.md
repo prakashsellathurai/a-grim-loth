@@ -14,6 +14,8 @@
 		- [largest-subarray-sum](./cpp/Arrays/largest-subarray-sum.cpp)
 		- [move-all-0s-to-left-while-maintaining-order](./cpp/Arrays/move-all-0s-to-left-while-maintaining-order.cpp)
 		- [reverse-array](./cpp/Arrays/reverse-array.cpp)
+	- Combinatorial-search
+		- [basics](./cpp/Combinatorial-search/basics.cpp)
 	- Conjectures
 		- [Taxicab-Number](./cpp/Conjectures/Taxicab-Number.cpp)
 	- Dictionaries
@@ -179,6 +181,8 @@
 		- [segment-tree](./python/Basic/segment-tree.py)
 		- [stack](./python/Basic/stack.py)
 		- [trie](./python/Basic/trie.py)
+	- Combinatorial-search
+		- [permutation-vs-subset](./python/Combinatorial-search/permutation-vs-subset.ipynb)
 	- advanced
 		- range-queries
 			- [merge-sort-tree](./python/advanced/range-queries/merge-sort-tree.py)
