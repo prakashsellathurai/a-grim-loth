@@ -42,7 +42,9 @@ def file_line(file_name, full_path, level):
 
 
 # Walks a given directory to create a TOC out of it.
-def walk_directory(path=".", exclude=[".github", ".git", ".idea", ".exe"], level=0):
+def walk_directory(path=".", exclude=None, level=0):
+    if exclude is None:
+        exclude = [".github", ".git", ".idea", ".exe"]
     result, files = [], os.listdir(path)
 
     exclude_files = [
