@@ -3,8 +3,10 @@
  * @author prakash (prakashsellathurai@gmail.com)
  * @brief
     One million permutations means all arrangements of roughly 10 objects, but
- not more. One million subsets means all combinations of roughly 20 items, but
- not more.
+    not more. One million subsets means all combinations of roughly 20 items,
+ but not more.
+
+
  * @version 0.1
  * @date 2021-07-27
  *
@@ -36,9 +38,9 @@ ll subsets(ll n) { return pow(2, n); }
 
 int main(int argc, const char **argv) {
 
-  assert(permutation(10) >= pow(10,6));
+  assert(permutation(10) >= pow(10, 6));
   assert(subsets(20) >= pow(10, 6));
-  
-  std::cout << "Assertion succeeded" << std::endl;
+
+  std::cout << "Assertion succeeded "<< std::endl;
   return 0;
 }
