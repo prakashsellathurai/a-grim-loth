@@ -1,4 +1,4 @@
-from math import floor,log
+from math import floor, log
 from copy import copy
 
 
@@ -42,7 +42,8 @@ def american_flag_sort_helper(a_list, start: int, end: int, digit, radix) -> Non
     if digit == 0:
         return
     for i in range(len(offsets) - 1):
-        american_flag_sort_helper(a_list, offsets[i], offsets[i + 1], digit - 1, radix)
+        american_flag_sort_helper(
+            a_list, offsets[i], offsets[i + 1], digit - 1, radix)
 
 
 def american_flag_sort(a_list, radix) -> None:
@@ -51,8 +52,9 @@ def american_flag_sort(a_list, radix) -> None:
     max_val = max(a_list)
     max_digit = int(floor(log(max_val, radix)))
     american_flag_sort_helper(a_list, 0, len(a_list), max_digit, radix)
-    
+
+
 if __name__ == "__main__":
-    arr = [1,3,0,8,5,2,5,5,9]
-    american_flag_sort(arr,2)
+    arr = [1, 3, 0, 8, 5, 2, 5, 5, 9]
+    american_flag_sort(arr, 2)
     print([i for i in arr])

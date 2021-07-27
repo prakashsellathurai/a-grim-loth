@@ -28,138 +28,144 @@ INF = maxsize // 2 - 1
 
 # Function to check if it is possible to
 # have a flow from the src to sink
+
+
 def search(src: int, sink: int) -> bool:
 
-	# Initialise found[] to false
-	found = [False for _ in range(N)]
+    # Initialise found[] to false
+    found = [False for _ in range(N)]
 
-	# Initialise the dist[] to INF
-	dist = [INF for _ in range(N + 1)]
+    # Initialise the dist[] to INF
+    dist = [INF for _ in range(N + 1)]
 
-	# Distance from the source node
-	dist[src] = 0
+    # Distance from the source node
+    dist[src] = 0
 
-	# Iterate untill src reaches N
-	while (src != N):
-		best = N
-		found[src] = True
+    # Iterate untill src reaches N
+    while src != N:
+        best = N
+        found[src] = True
 
-		for k in range(N):
+        for k in range(N):
 
-			# If already found
-			if (found[k]):
-				continue
+            # If already found
+            if found[k]:
+                continue
 
-			# Evaluate while flow
-			# is still in supply
-			if (flow[k][src] != 0):
+            # Evaluate while flow
+            # is still in supply
+            if flow[k][src] != 0:
 
-				# Obtain the total value
-				val = (dist[src] + pi[src] -
-						pi[k] - cost[k][src])
+                # Obtain the total value
+                val = dist[src] + pi[src] - pi[k] - cost[k][src]
 
-				# If dist[k] is > minimum value
-				if (dist[k] > val):
+                # If dist[k] is > minimum value
+                if dist[k] > val:
 
-					# Update
-					dist[k] = val
-					dad[k] = src
+                    # Update
+                    dist[k] = val
+                    dad[k] = src
 
-			if (flow[src][k] < cap[src][k]):
-				val = (dist[src] + pi[src] -
-						pi[k] + cost[src][k])
+            if flow[src][k] < cap[src][k]:
+                val = dist[src] + pi[src] - pi[k] + cost[src][k]
 
-				# If dist[k] is > minimum value
-				if (dist[k] > val):
+                # If dist[k] is > minimum value
+                if dist[k] > val:
 
-					# Update
-					dist[k] = val
-					dad[k] = src
+                    # Update
+                    dist[k] = val
+                    dad[k] = src
 
-			if (dist[k] < dist[best]):
-				best = k
+            if dist[k] < dist[best]:
+                best = k
 
-		# Update src to best for
-		# next iteration
-		src = best
+        # Update src to best for
+        # next iteration
+        src = best
 
-	for k in range(N):
-		pi[k] = min(pi[k] + dist[k], INF)
+    for k in range(N):
+        pi[k] = min(pi[k] + dist[k], INF)
 
-	# Return the value obtained at sink
-	return found[sink]
+    # Return the value obtained at sink
+    return found[sink]
+
 
 # Function to obtain the maximum Flow
-def getMaxFlow(capi: List[List[int]],
-			costi: List[List[int]],
-			src: int, sink: int) -> List[int]:
+def getMaxFlow(
+    capi: List[List[int]], costi: List[List[int]], src: int, sink: int
+) -> List[int]:
 
-	global cap, cost, found, dist, pi, N, flow, dad
-	cap = capi
-	cost = costi
+    global cap, cost, found, dist, pi, N, flow, dad
+    cap = capi
+    cost = costi
 
-	N = len(capi)
-	found = [False for _ in range(N)]
-	flow = [[0 for _ in range(N)]
-			for _ in range(N)]
-	dist = [INF for _ in range(N + 1)]
-	dad = [0 for _ in range(N)]
-	pi = [0 for _ in range(N)]
+    N = len(capi)
+    found = [False for _ in range(N)]
+    flow = [[0 for _ in range(N)] for _ in range(N)]
+    dist = [INF for _ in range(N + 1)]
+    dad = [0 for _ in range(N)]
+    pi = [0 for _ in range(N)]
 
-	totflow = 0
-	totcost = 0
+    totflow = 0
+    totcost = 0
 
-	# If a path exist from src to sink
-	while (search(src, sink)):
+    # If a path exist from src to sink
+    while search(src, sink):
 
-		# Set the default amount
-		amt = INF
-		x = sink
-		
-		while x != src:
-			amt = min(
-				amt, flow[x][dad[x]] if
-				(flow[x][dad[x]] != 0) else
-				cap[dad[x]][x] - flow[dad[x]][x])
-			x = dad[x]
+        # Set the default amount
+        amt = INF
+        x = sink
 
-		x = sink
-		
-		while x != src:
-			if (flow[x][dad[x]] != 0):
-				flow[x][dad[x]] -= amt
-				totcost -= amt * cost[x][dad[x]]
+        while x != src:
+            amt = min(
+                amt,
+                flow[x][dad[x]]
+                if (flow[x][dad[x]] != 0)
+                else cap[dad[x]][x] - flow[dad[x]][x],
+            )
+            x = dad[x]
 
-			else:
-				flow[dad[x]][x] += amt
-				totcost += amt * cost[dad[x]][x]
-				
-			x = dad[x]
+        x = sink
 
-		totflow += amt
+        while x != src:
+            if flow[x][dad[x]] != 0:
+                flow[x][dad[x]] -= amt
+                totcost -= amt * cost[x][dad[x]]
 
-	# Return pair total cost and sink
-	return [totflow, totcost]
+            else:
+                flow[dad[x]][x] += amt
+                totcost += amt * cost[dad[x]][x]
+
+            x = dad[x]
+
+        totflow += amt
+
+    # Return pair total cost and sink
+    return [totflow, totcost]
+
 
 # Driver Code
 if __name__ == "__main__":
 
-	s = 0
-	t = 4
+    s = 0
+    t = 4
 
-	cap = [ [ 0, 3, 1, 0, 3 ],
-			[ 0, 0, 2, 0, 0 ],
-			[ 0, 0, 0, 1, 6 ],
-			[ 0, 0, 0, 0, 2 ],
-			[ 0, 0, 0, 0, 0 ] ]
+    cap = [
+        [0, 3, 1, 0, 3],
+        [0, 0, 2, 0, 0],
+        [0, 0, 0, 1, 6],
+        [0, 0, 0, 0, 2],
+        [0, 0, 0, 0, 0],
+    ]
 
-	cost = [ [ 0, 1, 0, 0, 2 ],
-			[ 0, 0, 0, 3, 0 ],
-			[ 0, 0, 0, 0, 0 ],
-			[ 0, 0, 0, 0, 1 ],
-			[ 0, 0, 0, 0, 0 ] ]
+    cost = [
+        [0, 1, 0, 0, 2],
+        [0, 0, 0, 3, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0],
+    ]
 
-	ret = getMaxFlow(cap, cost, s, t)
- 
+    ret = getMaxFlow(cap, cost, s, t)
 
-	print("{} {}".format(ret[0], ret[1]))
+    print("{} {}".format(ret[0], ret[1]))

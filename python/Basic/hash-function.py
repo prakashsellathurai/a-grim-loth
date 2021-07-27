@@ -12,22 +12,22 @@ M = 10 ^9 + 9 is a good choice.
 """
 
 
-
 def hash(text):
     # P and M
     p = 31
     m = 1e9 + 9
     power_of_p = 1
     hash_val = 0
- 
+
     # Loop to calculate the hash value
     # by iterating over the elements of string
     for i in range(len(text)):
-        hash_val = ((hash_val + (ord(text[i]) - ord('a') + 1) * power_of_p) % m)
- 
+        hash_val = (hash_val + (ord(text[i]) - ord("a") + 1) * power_of_p) % m
+
         power_of_p = (power_of_p * p) % m
- 
+
     return int(hash_val)
+
 
 if __name__ == "__main__":
     text = "djdbgjgjgfsngbd"

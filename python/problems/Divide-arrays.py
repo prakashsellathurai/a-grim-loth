@@ -2,7 +2,9 @@ from collections import Counter
 
 
 MAX_N = int(1e5 + 14)
-def solution(a,n):
+
+
+def solution(a, n):
     mark = [False] * MAX_N
     mex = 0
     pre = []
@@ -20,7 +22,9 @@ def solution(a,n):
             mex += 1
         if mex == pre[i - 1]:
             ans = i
-    return(ans)
+    return ans
 
     # return -1
-print(solution([0 ,2 ,2 ,3 ,0],5))
+
+
+print(solution([0, 2, 2, 3, 0], 5))

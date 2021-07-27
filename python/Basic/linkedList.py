@@ -1,6 +1,6 @@
 class Node:
     # Each node has its data and a pointer that points to next node in the Linked List
-    def __init__(self, data, next = None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
@@ -20,6 +20,7 @@ class Node:
     def getNext(self):
         return self.next
 
+
 class LinkedList:
     # Defining the head of the linked list
     def __init__(self):
@@ -28,8 +29,8 @@ class LinkedList:
     # printing the data in the linked list
     def printLinkedList(self):
         temp = self.head
-        while(temp):
-            print(temp.data, end=' ')
+        while temp:
+            print(temp.data, end=" ")
             temp = temp.next
 
     # inserting the node at the beginning
@@ -44,8 +45,8 @@ class LinkedList:
 
     # inserting the node in between the linked list (after a specific node)
     def insertBetween(self, previousNode, data):
-        if (previousNode.next is None):
-            print('Previous node should have next node!')
+        if previousNode.next is None:
+            print("Previous node should have next node!")
         else:
             newNode = Node(data)
             newNode.next = previousNode.next
@@ -55,7 +56,7 @@ class LinkedList:
     def insertAtEnd(self, data):
         newNode = Node(data)
         temp = self.head
-        while(temp.next != None):         # get last node
+        while temp.next != None:  # get last node
             temp = temp.next
         temp.next = newNode
 
@@ -63,16 +64,16 @@ class LinkedList:
     def delete(self, data):
         temp = self.head
         # if data/key is found in head node itself
-        if (temp.next is not None):
-            if(temp.data == data):
+        if temp.next is not None:
+            if temp.data == data:
                 self.head = temp.next
                 temp = None
                 return
             #  else search all the nodes
-            while(temp.next != None):
-                if(temp.data == data):
+            while temp.next != None:
+                if temp.data == data:
                     break
-                prev = temp          #save current node as previous so that we can go on to next node
+                prev = temp  # save current node as previous so that we can go on to next node
                 temp = temp.next
 
             # node not found
@@ -91,13 +92,13 @@ class LinkedList:
         return self.search(node.getNext(), data)
 
 
-
 class Node:
     # Each node has its data and a pointer that points to next node in the Linked List
-    def __init__(self, data, next = None, previous = None):
-        self.data = data;
-        self.next = next;
+    def __init__(self, data, next=None, previous=None):
+        self.data = data
+        self.next = next
         self.previous = previous
+
 
 class DoublyLinkedList:
     def __init__(self):
@@ -118,7 +119,7 @@ class DoublyLinkedList:
     def insertAtEnd(self, data):
         newNode = Node(data)
         temp = self.head
-        while(temp.next != None):
+        while temp.next != None:
             temp = temp.next
         temp.next = newNode
         newNode.previous = temp
@@ -126,18 +127,18 @@ class DoublyLinkedList:
     # deleting a node from linked list
     def delete(self, data):
         temp = self.head
-        if(temp.next != None):
+        if temp.next != None:
             # if head node is to be deleted
-            if(temp.data == data):
+            if temp.data == data:
                 temp.next.previous = None
                 self.head = temp.next
                 temp.next = None
                 return
-            while(temp.next != None):
-                if(temp.data == data):
+            while temp.next != None:
+                if temp.data == data:
                     break
                 temp = temp.next
-            if(temp.next):
+            if temp.next:
                 # if element to be deleted is in between
                 temp.previous.next = temp.next
                 temp.next.previous = temp.previous
@@ -149,24 +150,26 @@ class DoublyLinkedList:
                 temp.previous = None
             return
 
-        if (temp == None):
+        if temp == None:
             return
 
     # for printing the contents of linked lists
     def printdll(self):
         temp = self.head
-        while(temp != None):
-            print(temp.data, end=' ')
+        while temp != None:
+            print(temp.data, end=" ")
             temp = temp.next
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     List = LinkedList()
-    List.head = Node(1)                # create the head node
+    List.head = Node(1)  # create the head node
     node2 = Node(2)
-    List.head.setNext(node2)           # head node's next --> node2
+    List.head.setNext(node2)  # head node's next --> node2
     node3 = Node(3)
-    node2.setNext(node3)               # node2's next --> node3
-    List.insertAtStart(4)              # node4's next --> head-node --> node2 --> node3
-    List.insertBetween(node2, 5)       # node2's next --> node5
+    node2.setNext(node3)  # node2's next --> node3
+    List.insertAtStart(4)  # node4's next --> head-node --> node2 --> node3
+    List.insertBetween(node2, 5)  # node2's next --> node5
     List.insertAtEnd(6)
     List.printLinkedList()
     print()
