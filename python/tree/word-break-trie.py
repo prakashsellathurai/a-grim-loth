@@ -10,13 +10,15 @@ class Solution:
     'No'
     """
 
-    def wordBreak(self, s, wordDict):
+    @staticmethod
+    def wordBreak(s, wordDict):
         class TrieNode:
             def __init__(self):
                 self.children = []  # will be of size = 26
                 self.isLeaf = False
 
-            def getNode(self):
+            @staticmethod
+            def getNode():
                 p = TrieNode()  # new trie node
                 p.children = []
                 for i in range(26):
@@ -35,7 +37,8 @@ class Solution:
                     pCrawl = pCrawl.children[index]
                 pCrawl.isLeaf = True  # marking end of word
 
-            def search(self, root, key):
+            @staticmethod
+            def search(root, key):
                 # print("Searching %s" %key) #DEBUG
                 pCrawl = root
                 for i in key:

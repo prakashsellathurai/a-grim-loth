@@ -18,12 +18,14 @@ class Trie:
     def __init__(self):
         self.root = self.getNode()
 
-    def getNode(self):
+    @staticmethod
+    def getNode():
 
         # Returns new trie node (initialized to NULLs)
         return TrieNode()
 
-    def _charToIndex(self, ch):
+    @staticmethod
+    def _charToIndex(ch):
 
         # private helper function
         # Converts key current character into index
