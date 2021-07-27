@@ -16,10 +16,10 @@ D0 = D1 = D2 = 1
 D3 = 2
 """
 n = 5
-D = [0]*(n+1)
-D[0] = D[1] =D[2] = 1
+D = [0] * (n + 1)
+D[0] = D[1] = D[2] = 1
 D[3] = 2
 
-for i in range(4,n+1):
-    D[i] = D[i-1] + D[i-3] + D[i-4]
+for i in range(4, n + 1):
+    D[i] = D[i - 1] + D[i - 3] + D[i - 4]
 print(D[n])

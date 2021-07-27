@@ -30,6 +30,6 @@ W = [0 for i in range(n)]
 B[3] = 2
 for i in range(n):
     for j in range(n):
-        B[i] = 1 + W[i-1]
-        W[i] = 1 + max(B[i-1],W[i-1])
-print(B,W)
+        B[i] = 1 + W[i - 1]
+        W[i] = 1 + max(B[i - 1], W[i - 1])
+print(B, W)

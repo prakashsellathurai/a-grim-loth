@@ -1,25 +1,28 @@
 class SuffixNode:
-    def __init__(self, suffix_link = None):
+    def __init__(self, suffix_link=None):
         self.children = {}
         if suffix_link is not None:
             self.suffix_link = suffix_link
         else:
             self.suffix_link = self
+
     def add_link(self, c, v):
         """link this node to node v via string c"""
         self.children[c] = v
-        
+
+
 def build_suffix_trie(s):
     """Construct a suffix trie."""
     assert len(s) > 0
     # explicitly build the two-node suffix tree
-    Root = SuffixNode() # the root node
-    Longest = SuffixNode(suffix_link = Root)
+    Root = SuffixNode()  # the root node
+    Longest = SuffixNode(suffix_link=Root)
     Root.add_link(s[0], Longest)
 
     # for every character left in the string
     for c in s[1:]:
-        Current = Longest; Previous = None
+        Current = Longest
+        Previous = None
         while c not in Current.children:
             # create new node r1 with transition Current -c->r1
             r1 = SuffixNode()
@@ -39,9 +42,9 @@ def build_suffix_trie(s):
         # move to the newly added child of the longest path
         # (which is the new longest path)
         Longest = Longest.children[c]
-    return Root    
+    return Root
+
+
 if __name__ == "__main__":
     s = "ab"
     suffixTrie = build_suffix_trie(s)
-
-    

@@ -1,17 +1,13 @@
 class Node:
-
     def __init__(self, value, children):
         self.value = value
         self.children = children
 
     @classmethod
     def preorder(cls, lists):
-        return cls(
-                lists[0],
-                [cls.preorder(l) for l in lists[1:]]
-            )
+        return cls(lists[0], [cls.preorder(l) for l in lists[1:]])
 
- 
+
 def dd(root):
     """
     returns depth, diameter for tree with given root node
@@ -39,4 +35,5 @@ def dd(root):
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

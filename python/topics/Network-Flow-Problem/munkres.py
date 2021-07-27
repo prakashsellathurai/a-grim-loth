@@ -1,4 +1,4 @@
-__docformat__ = 'markdown'
+__docformat__ = "markdown"
 
 # ---------------------------------------------------------------------------
 # Imports
@@ -7,22 +7,27 @@ __docformat__ = 'markdown'
 import sys
 import copy
 from typing import Union, NewType, Sequence, Tuple, Optional, Callable
+
 # ---------------------------------------------------------------------------
 # Exports
 # ---------------------------------------------------------------------------
 
-__all__     = ['Munkres', 'make_cost_matrix', 'DISALLOWED']
+__all__ = ["Munkres", "make_cost_matrix", "DISALLOWED"]
 
 # ---------------------------------------------------------------------------
 # Globals
 # ---------------------------------------------------------------------------
 
-AnyNum = NewType('AnyNum', Union[int, float])
-Matrix = NewType('Matrix', Sequence[Sequence[AnyNum]])
+AnyNum = NewType("AnyNum", Union[int, float])
+Matrix = NewType("Matrix", Sequence[Sequence[AnyNum]])
 
 # Constants
+
+
 class DISALLOWED_OBJ(object):
     pass
+
+
 DISALLOWED = DISALLOWED_OBJ()
 DISALLOWED_PRINTVAL = "D"
 
@@ -30,15 +35,19 @@ DISALLOWED_PRINTVAL = "D"
 # Exceptions
 # ---------------------------------------------------------------------------
 
+
 class UnsolvableMatrix(Exception):
     """
     Exception raised for unsolvable matrices
     """
+
     pass
+
 
 # ---------------------------------------------------------------------------
 # Classes
 # ---------------------------------------------------------------------------
+
 
 class Munkres:
     """
@@ -57,7 +66,7 @@ class Munkres:
         self.marked = None
         self.path = None
 
-    def pad_matrix(self, matrix: Matrix, pad_value: int=0) -> Matrix:
+    def pad_matrix(self, matrix: Matrix, pad_value: int = 0) -> Matrix:
         """
         Pad a possibly non-square matrix to make it square.
         **Parameters**
@@ -118,12 +127,14 @@ class Munkres:
         done = False
         step = 1
 
-        steps = { 1 : self.__step1,
-                  2 : self.__step2,
-                  3 : self.__step3,
-                  4 : self.__step4,
-                  5 : self.__step5,
-                  6 : self.__step6 }
+        steps = {
+            1: self.__step1,
+            2: self.__step2,
+            3: self.__step3,
+            4: self.__step4,
+            5: self.__step5,
+            6: self.__step6,
+        }
 
         while not done:
             try:
@@ -165,8 +176,7 @@ class Munkres:
                 # All values in this row are DISALLOWED. This matrix is
                 # unsolvable.
                 raise UnsolvableMatrix(
-                    "Row {0} is entirely DISALLOWED.".format(i)
-                )
+                    "Row {0} is entirely DISALLOWED.".format(i))
             minval = min(vals)
             # Find the minimum value for this row and subtract that minimum
             # from every element in the row.
@@ -184,9 +194,11 @@ class Munkres:
         n = self.n
         for i in range(n):
             for j in range(n):
-                if (self.C[i][j] == 0) and \
-                        (not self.col_covered[j]) and \
-                        (not self.row_covered[i]):
+                if (
+                    (self.C[i][j] == 0)
+                    and (not self.col_covered[j])
+                    and (not self.row_covered[i])
+                ):
                     self.marked[i][j] = 1
                     self.col_covered[j] = True
                     self.row_covered[i] = True
@@ -210,7 +222,7 @@ class Munkres:
                     count += 1
 
         if count >= n:
-            step = 7 # done
+            step = 7  # done
         else:
             step = 4
 
@@ -270,14 +282,14 @@ class Munkres:
             if row >= 0:
                 count += 1
                 path[count][0] = row
-                path[count][1] = path[count-1][1]
+                path[count][1] = path[count - 1][1]
             else:
                 done = True
 
             if not done:
                 col = self.__find_prime_in_row(path[count][0])
                 count += 1
-                path[count][0] = path[count-1][0]
+                path[count][0] = path[count - 1][0]
                 path[count][1] = col
 
         self.__convert_path(path, count)
@@ -293,7 +305,7 @@ class Munkres:
         lines.
         """
         minval = self.__find_smallest()
-        events = 0 # track actual changes to matrix
+        events = 0  # track actual changes to matrix
         for i in range(self.n):
             for j in range(self.n):
                 if self.C[i][j] is DISALLOWED:
@@ -305,8 +317,8 @@ class Munkres:
                     self.C[i][j] -= minval
                     events += 1
                 if self.row_covered[i] and not self.col_covered[j]:
-                    events -= 2 # change reversed, no real difference
-        if (events == 0):
+                    events -= 2  # change reversed, no real difference
+        if events == 0:
             raise UnsolvableMatrix("Matrix cannot be solved!")
         return 4
 
@@ -320,7 +332,6 @@ class Munkres:
                         minval = self.C[i][j]
         return minval
 
-
     def __find_a_zero(self, i0: int = 0, j0: int = 0) -> Tuple[int, int]:
         """Find the first uncovered element with value 0"""
         row = -1
@@ -332,9 +343,11 @@ class Munkres:
         while not done:
             j = j0
             while True:
-                if (self.C[i][j] == 0) and \
-                        (not self.row_covered[i]) and \
-                        (not self.col_covered[j]):
+                if (
+                    (self.C[i][j] == 0)
+                    and (not self.row_covered[i])
+                    and (not self.col_covered[j])
+                ):
                     row = i
                     col = j
                     done = True
@@ -386,10 +399,8 @@ class Munkres:
 
         return col
 
-    def __convert_path(self,
-                       path: Sequence[Sequence[int]],
-                       count: int) -> None:
-        for i in range(count+1):
+    def __convert_path(self, path: Sequence[Sequence[int]], count: int) -> None:
+        for i in range(count + 1):
             if self.marked[path[i][0]][path[i][1]] == 1:
                 self.marked[path[i][0]][path[i][1]] = 0
             else:
@@ -408,14 +419,16 @@ class Munkres:
                 if self.marked[i][j] == 2:
                     self.marked[i][j] = 0
 
+
 # ---------------------------------------------------------------------------
 # Functions
 # ---------------------------------------------------------------------------
 
+
 def make_cost_matrix(
-        profit_matrix: Matrix,
-        inversion_function: Optional[Callable[[AnyNum], AnyNum]] = None
-    ) -> Matrix:
+    profit_matrix: Matrix,
+    inversion_function: Optional[Callable[[AnyNum], AnyNum]] = None,
+) -> Matrix:
     """
     Create a cost matrix from a profit matrix by calling `inversion_function()`
     to invert each value. The inversion function must take one numeric argument
@@ -438,13 +451,16 @@ def make_cost_matrix(
     A new matrix representing the inversion of `profix_matrix`.
     """
     if not inversion_function:
-      maximum = max(max(row) for row in profit_matrix)
-      inversion_function = lambda x: maximum - x
+        maximum = max(max(row) for row in profit_matrix)
+
+        def inversion_function(x):
+            return maximum - x
 
     cost_matrix = []
     for row in profit_matrix:
         cost_matrix.append([inversion_function(value) for value in row])
     return cost_matrix
+
 
 def print_matrix(matrix: Matrix, msg: Optional[str] = None) -> None:
     """
@@ -467,28 +483,27 @@ def print_matrix(matrix: Matrix, msg: Optional[str] = None) -> None:
             width = max(width, len(str(val)))
 
     # Make the format string
-    format = ('%%%d' % width)
+    format = "%%%d" % width
 
     # Print the matrix
     for row in matrix:
-        sep = '['
+        sep = "["
         for val in row:
             if val is DISALLOWED:
                 val = DISALLOWED_PRINTVAL
-            formatted = ((format + 's') % val)
+            formatted = (format + "s") % val
             sys.stdout.write(sep + formatted)
-            sep = ', '
-        sys.stdout.write(']\n')
+            sep = ", "
+        sys.stdout.write("]\n")
 
 
-if __name__ == '__main__':
-    A = [[4 ,15, 20],[7, 10 ,19],[7 ,20 ,4]]
+if __name__ == "__main__":
+    A = [[4, 15, 20], [7, 10, 19], [7, 20, 4]]
     m = Munkres()
     indexes = m.compute(A)
     total_cost = 0
     for r, c in indexes:
         x = A[r][c]
         total_cost += x
-        print(('(%d, %d) -> %s' % (r, c, x)))
-    print(('lowest cost=%s' % total_cost))
-    
+        print(("(%d, %d) -> %s" % (r, c, x)))
+    print(("lowest cost=%s" % total_cost))
