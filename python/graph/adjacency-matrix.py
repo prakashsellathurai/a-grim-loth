@@ -38,7 +38,8 @@ class Graph:
     def get_matrix(self):
         return self.adjMatrix
 
-    def display(self):
+    @staticmethod
+    def display():
         mat = G.get_matrix()
         print("\n[\n", end=" ")
         for i in range(len(mat)):

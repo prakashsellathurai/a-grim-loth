@@ -44,7 +44,8 @@ class LinkedList:
             self.head = newNode
 
     # inserting the node in between the linked list (after a specific node)
-    def insertBetween(self, previousNode, data):
+    @staticmethod
+    def insertBetween(previousNode, data):
         if previousNode.next is None:
             print("Previous node should have next node!")
         else:

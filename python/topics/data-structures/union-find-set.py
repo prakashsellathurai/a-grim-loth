@@ -24,7 +24,8 @@ class Graph:
             return self.find_parent(parent, parent[i])
 
     # A utility function to do union of two subsets
-    def union(self, parent, x, y):
+    @staticmethod
+    def union(parent, x, y):
         parent[x] = y
 
     # The main function to check whether a given graph

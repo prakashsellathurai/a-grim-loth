@@ -58,7 +58,8 @@ class Treap:
         else:
             node.value = value
 
-    def _find_node(self, key, node, parent=None):
+    @staticmethod
+    def _find_node(key, node, parent=None):
         while True:
             if node is None or key == node.key:
                 return node, parent
@@ -174,7 +175,8 @@ class Treap:
         """Clear all the (key, value) pairs from the tree."""
         self.root = None
 
-    def _traverse(self, node, attr, parent=None):
+    @staticmethod
+    def _traverse(node, attr, parent=None):
         while getattr(node, attr):
             node, parent = getattr(node, attr), node
         return node, parent

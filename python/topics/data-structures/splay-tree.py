@@ -190,13 +190,15 @@ class SplayTree:
             self.__splay(x)
 
     # find the node with the minimum key
-    def minimum(self, node):
+    @staticmethod
+    def minimum(node):
         while node.left is not None:
             node = node.left
         return node
 
     # find the node with the maximum key
-    def maximum(self, node):
+    @staticmethod
+    def maximum(node):
         while node.right is not None:
             node = node.right
         return node

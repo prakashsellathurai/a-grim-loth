@@ -12,7 +12,8 @@ class Heap:
         self.size = 0
         self.pos = []
 
-    def newMinHeapNode(self, v, dist):
+    @staticmethod
+    def newMinHeapNode(v, dist):
         minHeapNode = [v, dist]
         return minHeapNode
 

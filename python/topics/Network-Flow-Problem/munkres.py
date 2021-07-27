@@ -66,7 +66,8 @@ class Munkres:
         self.marked = None
         self.path = None
 
-    def pad_matrix(self, matrix: Matrix, pad_value: int = 0) -> Matrix:
+    @staticmethod
+    def pad_matrix(matrix: Matrix, pad_value: int = 0) -> Matrix:
         """
         Pad a possibly non-square matrix to make it square.
         **Parameters**
@@ -152,11 +153,13 @@ class Munkres:
 
         return results
 
-    def __copy_matrix(self, matrix: Matrix) -> Matrix:
+    @staticmethod
+    def __copy_matrix(matrix: Matrix) -> Matrix:
         """Return an exact copy of the supplied matrix"""
         return copy.deepcopy(matrix)
 
-    def __make_matrix(self, n: int, val: AnyNum) -> Matrix:
+    @staticmethod
+    def __make_matrix(n: int, val: AnyNum) -> Matrix:
         """Create an *n*x*n* matrix, populating it with the specific value."""
         matrix = []
         for i in range(n):
