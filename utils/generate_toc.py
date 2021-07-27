@@ -45,9 +45,19 @@ def file_line(file_name, full_path, level):
 def walk_directory(path=".", exclude=[".github", ".git", ".idea", ".exe"], level=0):
     result, files = [], os.listdir(path)
 
-
-    exclude_files = ['Makefile', 'CONTRIBUTING.md', 'README.md', 'generate_toc.py','.deepsource.toml',
-                     'generate-markdown.yaml', '.github', '.gitignore', 'LICENSE','.gitmodules','.vscode']
+    exclude_files = [
+        "Makefile",
+        "CONTRIBUTING.md",
+        "README.md",
+        "generate_toc.py",
+        ".deepsource.toml",
+        "generate-markdown.yaml",
+        ".github",
+        ".gitignore",
+        "LICENSE",
+        ".gitmodules",
+        ".vscode",
+    ]
 
     # Sort by directory/name
     files.sort()
