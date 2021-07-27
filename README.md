@@ -7,7 +7,6 @@
 
 [//]: # (TOCSTART)
 
-- [.deepsource](./.deepsource.toml)
 - cpp
 	- Arrays
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
