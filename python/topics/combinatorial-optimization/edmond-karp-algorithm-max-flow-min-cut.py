@@ -16,7 +16,7 @@ class Graph:
         while queue:
             u = queue.pop(0)
             for ind,val in enumerate(self.graph[u]):
-                if visited[ind] == False and val > 0:
+                if visited[ind] is False and val > 0:
                     if ind == t:
                         visited[t] = True
                         return True
@@ -49,7 +49,7 @@ class Graph:
     def maxflow(self,s,t):
         F = [[0]*self.N]*self.N
 
-        while (path := self.maxflowBFS(F,s,t)) != None:
+        while (path := self.maxflowBFS(F,s,t)) is not None:
             flow = min(self.graph[u][v]-F[u][v] for u,v in path)
             for u,v in path:
                 F[u][v] += flow

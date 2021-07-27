@@ -5,11 +5,11 @@ class HashTable:
     
     def add(self,key,value):
         self.dict[key] = value
-        self.size =(self.size == None) and 1 or  self.size + 1 
+        self.size =(self.size is None) and 1 or  self.size + 1 
     
     def exists(self,key):
         try:
-            return self.dict[key] != None
+            return self.dict[key] is not None
         except:
             return False
     

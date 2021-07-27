@@ -31,7 +31,7 @@ class Solution:
 				pCrawl = root
 				for i in key:
 					index = ord(i)-97
-					if(pCrawl.children[index] == None):
+					if(pCrawl.children[index] is None):
 						# node has to be initialised
 						pCrawl.children[index] = self.getNode()
 					pCrawl = pCrawl.children[index]
@@ -42,7 +42,7 @@ class Solution:
 				pCrawl = root
 				for i in key:
 					index = ord(i)-97
-					if(pCrawl.children[index] == None):
+					if(pCrawl.children[index] is None):
 						return False
 					pCrawl = pCrawl.children[index]
 				if(pCrawl and pCrawl.isLeaf):

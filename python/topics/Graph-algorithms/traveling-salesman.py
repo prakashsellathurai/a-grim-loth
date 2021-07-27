@@ -22,7 +22,7 @@ def tsp(graph, v, currPos, n, count, cost):
 	# of currPos node and increasing the count
 	# by 1 and cost by graph[currPos][i] value
 	for i in range(n):
-		if (v[i] == False and graph[currPos][i]):
+		if (v[i] is False and graph[currPos][i]):
 			
 			# Mark as visited
 			v[i] = True

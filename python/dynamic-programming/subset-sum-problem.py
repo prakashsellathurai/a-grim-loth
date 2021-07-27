@@ -43,7 +43,7 @@ if __name__ == '__main__':
     set = [3, 34, 4, 12, 5, 2]
     sum = 9
     n = len(set)
-    if (isSubsetSum(set, n, sum) == True):
+    if (isSubsetSum(set, n, sum) is True):
         print("Found a subset with given sum")
     else:
         print("No subset with given sum")

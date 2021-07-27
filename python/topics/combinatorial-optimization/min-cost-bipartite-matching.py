@@ -19,7 +19,7 @@ class GFG:
 
 			# If applicant u is interested
 			# in job v and v is not seen
-			if self.graph[u][v] and seen[v] == False:
+			if self.graph[u][v] and seen[v] is False:
 				
 				# Mark v as visited
 				seen[v] = True

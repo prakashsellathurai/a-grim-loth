@@ -28,7 +28,7 @@ class Graph():
 		# Search not nearest vertex not in the
 		# shortest path tree
 		for v in range(self.V):
-			if dist[v] < min and sptSet[v] == False:
+			if dist[v] < min and sptSet[v] is False:
 				min = dist[v]
 				min_index = v
 
@@ -59,7 +59,7 @@ class Graph():
 			# distance is greater than new distance and
 			# the vertex in not in the shotest path tree
 			for v in range(self.V):
-				if self.graph[u][v] > 0 and sptSet[v] == False and dist[v] > dist[u] + self.graph[u][v]:
+				if self.graph[u][v] > 0 and sptSet[v] is False and dist[v] > dist[u] + self.graph[u][v]:
 					dist[v] = dist[u] + self.graph[u][v]
 
 		self.printSolution(dist)

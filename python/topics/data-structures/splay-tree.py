@@ -16,7 +16,7 @@ class SplayTree:
 
     def __print_helper(self, currPtr, indent, last):
         # print the tree structure on the screen
-        if currPtr != None:
+        if currPtr is not None:
             sys.stdout.write(indent)
             if last:
                 sys.stdout.write("R----")
@@ -31,7 +31,7 @@ class SplayTree:
             self.__print_helper(currPtr.right, indent, True)
 
     def __search_tree_helper(self, node, key):
-        if node == None or key == node.data:
+        if node is None or key == node.data:
             return node
 
         if key < node.data:
@@ -42,7 +42,7 @@ class SplayTree:
         x = None
         t = None
         s = None
-        while node != None:
+        while node is not None:
             if node.data == key:
                 x = node
 
@@ -51,13 +51,13 @@ class SplayTree:
             else:
                 node = node.left
 
-        if x == None:
+        if x is None:
             print("Couldn't find key in the tree")
             return
 
         # split operation
         self.__splay(x)
-        if x.right != None:
+        if x.right is not None:
             t = x.right
             t.parent = None
         else:
@@ -68,7 +68,7 @@ class SplayTree:
         x = None
 
         # join operation
-        if s.left != None:
+        if s.left is not None:
             s.left.parent = None
 
         self.root = self.__join(s.left, t)
@@ -78,11 +78,11 @@ class SplayTree:
     def __left_rotate(self, x):
         y = x.right
         x.right = y.left
-        if y.left != None:
+        if y.left is not None:
             y.left.parent = x
 
         y.parent = x.parent
-        if x.parent == None:
+        if x.parent is None:
             self.root = y
         elif x == x.parent.left:
             x.parent.left = y
@@ -95,11 +95,11 @@ class SplayTree:
     def __right_rotate(self, x):
         y = x.left
         x.left = y.right
-        if y.right != None:
+        if y.right is not None:
             y.right.parent = x
 
         y.parent = x.parent
-        if x.parent == None:
+        if x.parent is None:
             self.root = y
         elif x == x.parent.right:
             x.parent.right = y
@@ -111,8 +111,8 @@ class SplayTree:
 
     # Splaying operation. It moves x to the root of the tree
     def __splay(self, x):
-        while x.parent != None:
-            if x.parent.parent == None:
+        while x.parent is not None:
+            if x.parent.parent is None:
                 if x == x.parent.left:
                     # zig rotation
                     self.__right_rotate(x.parent)
@@ -138,10 +138,10 @@ class SplayTree:
 
     # joins two trees s and t
     def __join(self, s, t):
-        if s == None:
+        if s is None:
             return t
 
-        if t == None:
+        if t is None:
             return s
 
         x = self.maximum(s)
@@ -151,19 +151,19 @@ class SplayTree:
         return x
 
     def __pre_order_helper(self, node):
-        if node != None:
+        if node is not None:
             sys.stdout.write(node.data + " ")
             self.__pre_order_helper(node.left)
             self.__pre_order_helper(node.right)
 
     def __in_order_helper(self, node):
-        if node != None:
+        if node is not None:
             self.__in_order_helper(node.left)
             sys.stdout.write(node.data + " ")
             self.__in_order_helper(node.right)
 
     def __post_order_helper(self, node):
-        if node != None:
+        if node is not None:
             self.__post_order_helper(node.left)
             self.__post_order_helper(node.right)
             std.out.write(node.data + " ")
@@ -187,18 +187,18 @@ class SplayTree:
     # and return the corresponding node
     def search_tree(self, k):
         x = self.__search_tree_helper(self.root, k)
-        if x != None:
+        if x is not None:
             self.__splay(x)
 
     # find the node with the minimum key
     def minimum(self, node):
-        while node.left != None:
+        while node.left is not None:
             node = node.left
         return node
 
     # find the node with the maximum key
     def maximum(self, node):
-        while node.right != None:
+        while node.right is not None:
             node = node.right
         return node
 
@@ -207,13 +207,13 @@ class SplayTree:
         # if the right subtree is not null,
         # the successor is the leftmost node in the
         # right subtree
-        if x.right != None:
+        if x.right is not None:
             return self.minimum(x.right)
 
         # else it is the lowest ancestor of x whose
         # left child is also an ancestor of x.
         y = x.parent
-        while y != None and x == y.right:
+        while y is not None and x == y.right:
             x = y
             y = y.parent
         return y
@@ -223,11 +223,11 @@ class SplayTree:
         # if the left subtree is not null,
         # the predecessor is the rightmost node in the
         # left subtree
-        if x.left != None:
+        if x.left is not None:
             return self.maximum(x.left)
 
         y = x.parent
-        while y != None and x == y.left:
+        while y is not None and x == y.left:
             x = y
             y = y.parent
         return y
@@ -238,7 +238,7 @@ class SplayTree:
         y = None
         x = self.root
 
-        while x != None:
+        while x is not None:
             y = x
             if node.data < x.data:
                 x = x.left
@@ -247,7 +247,7 @@ class SplayTree:
 
         # y is parent of x
         node.parent = y
-        if y == None:
+        if y is None:
             self.root = node
         elif node.data < y.data:
             y.left = node

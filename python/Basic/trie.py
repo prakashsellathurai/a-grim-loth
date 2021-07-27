@@ -58,7 +58,7 @@ class Trie:
                 return False
             pCrawl = pCrawl.children[index] 
   
-        return pCrawl != None and pCrawl.isEndOfWord 
+        return pCrawl is not None and pCrawl.isEndOfWord 
   
 # driver function 
 if __name__ == "__main__": 

@@ -35,7 +35,7 @@ class LPSTree:
 		else:
 			self.reducef = reducef
 
-		if value != None:
+		if value is not None:
 			array = [value] * n
 		else:
 			array = [0] * n
@@ -119,7 +119,7 @@ class LPSTree:
 			return self.reducef([x for x in
 								(_get(sleft, sright, 2*v+1, vleft, vmid),
 								_get(sleft, sright, 2*v+2, vmid, vright))
-								if x != None])
+								if x is not None])
 		return _get(start, stop, 0, 0, n)
 
 	def set(self, start, stop, value):

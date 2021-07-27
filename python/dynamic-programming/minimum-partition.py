@@ -46,7 +46,7 @@ def findMin(a, n):
 	# Find the largest j such that dp[n][j]
 	# is true where j loops from sum/2 t0 0
 	for j in range(su // 2, -1, -1):
-		if dp[n][j] == True:
+		if dp[n][j] is True:
 			diff = su - (2 * j)
 			break
 			

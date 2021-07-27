@@ -45,7 +45,7 @@ class Graph:
 			# has not been visited, then mark it
 			# visited and enqueue it
 			for i in self.graph[s]:
-				if visited[i] == False:
+				if visited[i] is False:
 					
 					queue.append(i)
 					visited[i] = True

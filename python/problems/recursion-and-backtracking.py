@@ -43,7 +43,7 @@ def solveNQUtil(board, col,N):
             board[i][col] = 1
   
             # recur to place rest of the queens 
-            if solveNQUtil(board, col + 1,N) == True: 
+            if solveNQUtil(board, col + 1,N) is True: 
                 return True
   
             # If placing queen in board[i][col 

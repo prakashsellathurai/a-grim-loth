@@ -9,8 +9,8 @@ import argparse
 def sort_files(a, b):
     if a == b:
         return 0
-    if a == None or b == None:
-        return -1 if a == None else 1
+    if a is None or b is None:
+        return -1 if a is None else 1
     left, right = os.path.isdir(a), os.path.isdir(b)
     if left == right:
         return -1 if a < b else 1
@@ -74,7 +74,7 @@ args = parser.parse_args()
 
 result = "\n".join(walk_directory(args.target, args.exclude))
 
-if args.readme == None:
+if args.readme is None:
     sys.stdout.write(result)
 else:
     result = replace_toc(args.readme, result, args.toc_start, args.toc_end)

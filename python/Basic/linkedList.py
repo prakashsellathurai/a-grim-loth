@@ -34,7 +34,7 @@ class LinkedList:
 
     # inserting the node at the beginning
     def insertAtStart(self, data):
-        if self.head == None:
+        if self.head is None:
             newNode = Node(data)
             self.head = newNode
         else:
@@ -55,7 +55,7 @@ class LinkedList:
     def insertAtEnd(self, data):
         newNode = Node(data)
         temp = self.head
-        while(temp.next != None):         # get last node
+        while(temp.next is not None):         # get last node
             temp = temp.next
         temp.next = newNode
 
@@ -69,14 +69,14 @@ class LinkedList:
                 temp = None
                 return
             #  else search all the nodes
-            while(temp.next != None):
+            while(temp.next is not None):
                 if(temp.data == data):
                     break
                 prev = temp          #save current node as previous so that we can go on to next node
                 temp = temp.next
 
             # node not found
-            if temp == None:
+            if temp is None:
                 return
 
             prev.next = temp.next
@@ -84,7 +84,7 @@ class LinkedList:
 
     # iterative search
     def search(self, node, data):
-        if node == None:
+        if node is None:
             return False
         if node.data == data:
             return True
@@ -105,7 +105,7 @@ class DoublyLinkedList:
 
     # for inserting at beginning of linked list
     def insertAtStart(self, data):
-        if self.head == None:
+        if self.head is None:
             newNode = Node(data)
             self.head = newNode
         else:
@@ -118,7 +118,7 @@ class DoublyLinkedList:
     def insertAtEnd(self, data):
         newNode = Node(data)
         temp = self.head
-        while(temp.next != None):
+        while(temp.next is not None):
             temp = temp.next
         temp.next = newNode
         newNode.previous = temp
@@ -126,14 +126,14 @@ class DoublyLinkedList:
     # deleting a node from linked list
     def delete(self, data):
         temp = self.head
-        if(temp.next != None):
+        if(temp.next is not None):
             # if head node is to be deleted
             if(temp.data == data):
                 temp.next.previous = None
                 self.head = temp.next
                 temp.next = None
                 return
-            while(temp.next != None):
+            while(temp.next is not None):
                 if(temp.data == data):
                     break
                 temp = temp.next
@@ -149,13 +149,13 @@ class DoublyLinkedList:
                 temp.previous = None
             return
 
-        if (temp == None):
+        if (temp is None):
             return
 
     # for printing the contents of linked lists
     def printdll(self):
         temp = self.head
-        while(temp != None):
+        while(temp is not None):
             print(temp.data, end=' ')
             temp = temp.next
 if __name__ == '__main__':

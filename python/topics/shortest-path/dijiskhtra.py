@@ -56,7 +56,7 @@ class Heap():
 	def extractMin(self):
 
 		# Return NULL wif heap is empty
-		if self.isEmpty() == True:
+		if self.isEmpty() is True:
 			return
 
 		# Store the root node
@@ -169,7 +169,7 @@ class Graph():
 		# In the following loop,
 		# min heap contains all nodes
 		# whose shortest distance is not yet finalized.
-		while minHeap.isEmpty() == False:
+		while minHeap.isEmpty() is False:
 
 			# Extract the vertex
 			# with minimum distance value

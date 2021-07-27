@@ -36,7 +36,7 @@ def search(root,key):
     return search(root.left,key)
  
 def is_in_tree(root,key):
-    return search(root,key) != None
+    return search(root,key) is not None
     
  
 def inorder(root):
@@ -85,7 +85,7 @@ def deleteNode(root, key):
  
     succ = root.right
  
-    while succ.left != None:
+    while succ.left is not None:
         succParent = succ
         succ = succ.left
  
