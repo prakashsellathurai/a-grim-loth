@@ -35,10 +35,9 @@ def orientation(p, q, r):
 
     if val == 0:
         return 0
-    elif val > 0:
+    if val > 0:
         return 1
-    else:
-        return 2
+    return 2
 
 
 def convexHull(points, n):

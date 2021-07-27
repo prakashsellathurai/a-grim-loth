@@ -62,7 +62,7 @@ class Treap:
         while True:
             if node is None or key == node.key:
                 return node, parent
-            elif key < node.key:
+            if key < node.key:
                 node, parent = node.left, node
             else:
                 node, parent = node.right, node
