@@ -1,160 +1,168 @@
-
 class FlowNetwork(object):
-    ''' This class is copied from wiki for benchmark.
-    '''
+    """This class is copied from wiki for benchmark."""
+
     def __init__(self):
-        self.adj, self.flow, = {},{}
+        self.adj, self.flow, = (
+            {},
+            {},
+        )
         self.src, self.sink = None, None
- 
+
     def add_vertex(self, vertex):
         self.adj[vertex] = []
 
     def add_vertices(self, vertices):
         map(self.add_vertex, vertices)
- 
+
     def get_edges(self, v):
         return self.adj[v]
- 
-    def add_edge(self, u,v,w=0):
-        self.adj[u].append((v,w))
-        self.adj[v].append((u,0))
-        self.flow[(u,v)] = self.flow[(v,u)] = 0
- 
+
+    def add_edge(self, u, v, w=0):
+        self.adj[u].append((v, w))
+        self.adj[v].append((u, 0))
+        self.flow[(u, v)] = self.flow[(v, u)] = 0
+
     def find_path(self, source, sink, path):
         if source == sink:
             return path
         for vertex, capacity in self.get_edges(source):
-            residual = capacity - self.flow[(source,vertex)]
-            edge = (source,vertex,residual)
+            residual = capacity - self.flow[(source, vertex)]
+            edge = (source, vertex, residual)
             if residual > 0 and not edge in path:
-                result = self.find_path(vertex, sink, path + [edge]) 
+                result = self.find_path(vertex, sink, path + [edge])
                 if result is not None:
                     return result
- 
+
     def max_flow(self, source, sink):
         path = self.find_path(source, sink, [])
         while path is not None:
-            flow = min(r for u,v,r in path)
-            for u,v,_ in path:
-                self.flow[(u,v)] += flow
-                self.flow[(v,u)] -= flow
+            flow = min(r for u, v, r in path)
+            for u, v, _ in path:
+                self.flow[(u, v)] += flow
+                self.flow[(v, u)] -= flow
             path = self.find_path(source, sink, [])
-        return sum(self.flow[(source, vertex)] for vertex, capacity in self.get_edges(source))
-      
+        return sum(
+            self.flow[(source, vertex)] for vertex, capacity in self.get_edges(source)
+        )
+
+
 class UndirectedGraph(object):
-  def __init__(self):
-    self.vertices = []
-    self.edges = {}
+    def __init__(self):
+        self.vertices = []
+        self.edges = {}
 
-  def add_vertex(self, v):
-    self.vertices.append(v)
-    self.edges[(v,v)] = 0
+    def add_vertex(self, v):
+        self.vertices.append(v)
+        self.edges[(v, v)] = 0
 
-  def add_vertices(self, v_s):
-    self.vertices.extend(v_s)
-    for v in v_s:
-      self.edges[(v,v)] = 0
+    def add_vertices(self, v_s):
+        self.vertices.extend(v_s)
+        for v in v_s:
+            self.edges[(v, v)] = 0
 
-  def add_edge(self, u, v, w=0):
-    self.edges[(u,v)] = w
-    self.edges[(v,u)] = w
+    def add_edge(self, u, v, w=0):
+        self.edges[(u, v)] = w
+        self.edges[(v, u)] = w
 
-  def adjacents(self, u):
-    li = []
-    for v in self.vertices:
-      w = self.edges.get((u,v),0)
-      if w:
-        li.append((v,w))
-    return li
+    def adjacents(self, u):
+        li = []
+        for v in self.vertices:
+            w = self.edges.get((u, v), 0)
+            if w:
+                li.append((v, w))
+        return li
 
-  def merge(self, u, v):
-    ''' merge u to v, where v is in the graph
-    '''
-    u_adjs = self.adjacents(u)
-    for z,w in u_adjs:
-      self.edges.pop((u,z))
-      self.edges.pop((z,u))
-    self.vertices.remove(u)
-    v_adjs = dict(self.adjacents(v))
-    for n, w in u_adjs:
-      if n == v:
-        continue
-      v_adjs[n] = v_adjs.get(n,0) + w
-    for n, w in v_adjs.iteritems():
-      self.edges[(v,n)] = w
-      self.edges[(n,v)] = w    
+    def merge(self, u, v):
+        """merge u to v, where v is in the graph"""
+        u_adjs = self.adjacents(u)
+        for z, w in u_adjs:
+            self.edges.pop((u, z))
+            self.edges.pop((z, u))
+        self.vertices.remove(u)
+        v_adjs = dict(self.adjacents(v))
+        for n, w in u_adjs:
+            if n == v:
+                continue
+            v_adjs[n] = v_adjs.get(n, 0) + w
+        for n, w in v_adjs.iteritems():
+            self.edges[(v, n)] = w
+            self.edges[(n, v)] = w
+
 
 def w(g, A, y):
-  assert y not in A
-  return sum(w for v, w in g.adjacents(y) if v in A)
+    assert y not in A
+    return sum(w for v, w in g.adjacents(y) if v in A)
+
 
 def min_cut_phase(g, a):
-  A = set([a])
-  V = set(g.vertices)
-  order = [a]
-  while A != V:
-    w_candidates = [(w(g, A, v), v) for v in V-A]  #: candidates for most tightly connected
-    _, x = max(w_candidates)
-    A.add(x)
-    order.append(x)
-  t, s = order[-1], order[-2]
+    A = set([a])
+    V = set(g.vertices)
+    order = [a]
+    while A != V:
+        w_candidates = [
+            (w(g, A, v), v) for v in V - A
+        ]  #: candidates for most tightly connected
+        _, x = max(w_candidates)
+        A.add(x)
+        order.append(x)
+    t, s = order[-1], order[-2]
 
-  min_cut = sum(w for v, w in g.adjacents(t))
-  g.merge(t, s)
-  return min_cut
+    min_cut = sum(w for v, w in g.adjacents(t))
+    g.merge(t, s)
+    return min_cut
+
 
 def minimum_cut(g, a):
-  min_cut = sum(w for v, w in g.adjacents(a))
-  while len(g.vertices) > 1:
-    min_cut_candidate = min_cut_phase(g, a)
-    if min_cut_candidate < min_cut:
-      min_cut = min_cut_candidate
-  return min_cut
+    min_cut = sum(w for v, w in g.adjacents(a))
+    while len(g.vertices) > 1:
+        min_cut_candidate = min_cut_phase(g, a)
+        if min_cut_candidate < min_cut:
+            min_cut = min_cut_candidate
+    return min_cut
 
 
 class Reader(object):
-  ''' A file reader: read the formated input data provided by Q2914: Minimum Cut
-  '''
-  def __init__(self, fd):
-    ''' @param fd: an opened file-like object, and its contents are the input data.
-    '''
-    self.fd = fd
+    """A file reader: read the formated input data provided by Q2914: Minimum Cut"""
 
-  def gen_graph(self):
-    ''' a generator that yield graphs in order
-    '''
-    while True:
-      try:
-        line = self.fd.__next__
-        nVertices, nEdges = map(int, line.split())
-        if g_TryFlowNetwork:
-          g = FlowNetwork()
-          g.add_vertices(range(nVertices))
-          for i in range(nEdges):
-            u,v,w = map(int, self.fd.next().split())
-            if u < v:
-              g.add_edge(u, v, w)
-            else:
-              g.add_edge(v, u, w)
-          g.src, g.sink = 0, nVertices-1
-        else:
-          g = UndirectedGraph()
-          g.add_vertices(range(nVertices))
-          for i in range(nEdges):
-            u,v,w = map(int, self.fd.next().split())
-            g.add_edge(u, v, w)          
-        yield g
-      except StopIteration:
-        break
-    
-  def __del__(self):
-    self.fd.close()
+    def __init__(self, fd):
+        """@param fd: an opened file-like object, and its contents are the input data."""
+        self.fd = fd
 
-if __name__=='__main__':
-  import time
-  from io import StringIO
-  
-  test_input = '''3 3
+    def gen_graph(self):
+        """a generator that yield graphs in order"""
+        while True:
+            try:
+                line = self.fd.__next__
+                nVertices, nEdges = map(int, line.split())
+                if g_TryFlowNetwork:
+                    g = FlowNetwork()
+                    g.add_vertices(range(nVertices))
+                    for i in range(nEdges):
+                        u, v, w = map(int, self.fd.next().split())
+                        if u < v:
+                            g.add_edge(u, v, w)
+                        else:
+                            g.add_edge(v, u, w)
+                    g.src, g.sink = 0, nVertices - 1
+                else:
+                    g = UndirectedGraph()
+                    g.add_vertices(range(nVertices))
+                    for i in range(nEdges):
+                        u, v, w = map(int, self.fd.next().split())
+                        g.add_edge(u, v, w)
+                yield g
+            except StopIteration:
+                break
+
+    def __del__(self):
+        self.fd.close()
+
+
+if __name__ == "__main__":
+    import time
+    from io import StringIO
+
+    test_input = """3 3
 0 1 1
 1 2 1
 2 0 1
@@ -1618,17 +1626,20 @@ if __name__=='__main__':
 47 48 1
 47 49 1
 48 49 1
-'''
-  global g_TryFlowNetwork
-  g_TryFlowNetwork = False #: when this variable is True, use FlowNetwork to find the min cut.
-  fd = StringIO()
-  fd.write(test_input)
-  fd.seek(0)
-  r = Reader(fd)
-  for g in r.gen_graph():
-    start_time = time.time()
-    if g_TryFlowNetwork:
-      print(g.max_flow(g.src, g.sink))
-    else:
-      print(minimum_cut(g, 1))
-    print(time.time() - start_time)
+"""
+    global g_TryFlowNetwork
+    g_TryFlowNetwork = (
+        #: when this variable is True, use FlowNetwork to find the min cut.
+        False
+    )
+    fd = StringIO()
+    fd.write(test_input)
+    fd.seek(0)
+    r = Reader(fd)
+    for g in r.gen_graph():
+        start_time = time.time()
+        if g_TryFlowNetwork:
+            print(g.max_flow(g.src, g.sink))
+        else:
+            print(minimum_cut(g, 1))
+        print(time.time() - start_time)

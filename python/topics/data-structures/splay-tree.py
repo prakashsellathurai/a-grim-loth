@@ -1,4 +1,3 @@
-
 import sys
 
 
@@ -265,7 +264,7 @@ class SplayTree:
         self.__print_helper(self.root, "", True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tree = SplayTree()
     tree.insert(33)
     tree.insert(44)
