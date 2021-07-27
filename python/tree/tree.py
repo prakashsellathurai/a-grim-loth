@@ -9,13 +9,13 @@ class Tree:
 
 
 def total(tree):
-    if tree == None:
+    if tree is None:
         return 0
     return total(tree.left) + total(tree.right) + tree.cargo
 
 
 def print_tree(tree):
-    if tree == None:
+    if tree is None:
         return
     print(tree.cargo)
     print_tree(tree.left)

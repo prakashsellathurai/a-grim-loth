@@ -16,7 +16,7 @@ def binary_search(A, target):
             lo = mid + 1
         else:
             hi = mid - 1
-    if index != None:
+    if index is not None:
         return index
     return "Not Found!"
 

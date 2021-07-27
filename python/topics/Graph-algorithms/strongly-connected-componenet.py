@@ -23,7 +23,7 @@ class Graph:
 
         # Recur for all the vertices adjacent to this vertex
         for i in self.graph[v]:
-            if visited[i] == False:
+            if visited[i] is False:
                 self.DFSUtil(i, visited)
 
     # Function that returns reverse (or transpose) of this graph
@@ -48,7 +48,7 @@ class Graph:
         self.DFSUtil(0, visited)
 
         # If DFS traversal doesnt visit all vertices, then return false
-        if any(i == False for i in visited):
+        if any(i is False for i in visited):
             return False
 
         # Step 3: Create a reversed graph
@@ -63,7 +63,7 @@ class Graph:
 
         # If all vertices are not visited in second DFS, then
         # return false
-        if any(i == False for i in visited):
+        if any(i is False for i in visited):
             return False
 
         return True

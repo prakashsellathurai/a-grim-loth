@@ -17,7 +17,7 @@ def SieveOfEratosthenes(n):
         # If prime[p] is not
         # changed, then it is a prime
 
-        if prime[p] == True:
+        if prime[p] is True:
 
             # Update all multiples of p
             for i in range(p * p, n + 1, p):
