@@ -10,7 +10,9 @@ if __name__ == "__main__":
     cap = 12
     size = 2 ** cap
 
-    graph = [[1 for i in range(size)] for k in range(size)]  # Adjacency matrix representation
+    graph = [
+        [1 for i in range(size)] for k in range(size)
+    ]  # Adjacency matrix representation
 
     for i in range(size):  # Building 1 big tournament
         for j in range(i, size):
@@ -22,18 +24,27 @@ if __name__ == "__main__":
     for i in range(size):  # Tournament correctness check
         for j in range(size):
             if i != j:
-                assert graph[i][j] != graph[j][i]
+                if graph[i][j] == graph[j][i]:
+                    raise AssertionError
             else:
-                assert graph[i][j] == 0
+                if graph[i][j] != 0:
+                    raise AssertionError
 
     for z in range(2, cap + 1):  # Finding Hamiltonian paths for subgraphs
         subgraph_size = 2 ** z
         start_time = perf_counter()
-        hamiltonian_path = sorted(range(subgraph_size), key=cmp_to_key(lambda a, b: graph[b][a] - graph[a][b]))
+        hamiltonian_path = sorted(
+            range(subgraph_size), key=cmp_to_key(lambda a, b: graph[b][a] - graph[a][b])
+        )
         # print(hamiltonian_path, end='\n\n')  # Output path
-        print('Time: {:f}s | Size: {:d}'.format(perf_counter() - start_time, subgraph_size))
+        print(
+            "Time: {:f}s | Size: {:d}".format(
+                perf_counter() - start_time, subgraph_size
+            )
+        )
 
         for i in range(subgraph_size - 1):  # Hamiltonian path check
-            assert graph[hamiltonian_path[i]][hamiltonian_path[i + 1]]  # Next vertex in path must be reachable
+            if not graph[hamiltonian_path[i]][hamiltonian_path[i + 1]]:
+                raise AssertionError
 
-    print('')  # New line between cases
+    print("")  # New line between cases

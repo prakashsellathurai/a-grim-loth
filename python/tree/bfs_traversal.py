@@ -1,13 +1,13 @@
 # A node structure
 class Node:
- 
+
     # A utility function to create a new node
     def __init__(self, key):
-        self.data = key 
+        self.data = key
         self.left = None
         self.right = None
- 
- 
+
+
 # height of a binary tree
 def printLevelOrder(root):
     """
@@ -23,26 +23,25 @@ def printLevelOrder(root):
     >>> printLevelOrder(root)
     [1, 2, 3, 4, 5, 6, 7]
     """
-
     # Base Case
     if root is None:
         return
-        
-    # Create an empty queue 
+
+    # Create an empty queue
     # for level order traversal
     queue = []
 
     # Enqueue Root and initialize height
     queue.append(root)
     res = []
-    while(len(queue) > 0):
-        
-        # Print front of queue and 
+    while len(queue) > 0:
+
+        # Print front of queue and
         # remove it from queue
-        res.append (queue[0].data)
+        res.append(queue[0].data)
         node = queue.pop(0)
 
-        #Enqueue left child
+        # Enqueue left child
         if node.left is not None:
             queue.append(node.left)
 
@@ -51,6 +50,8 @@ def printLevelOrder(root):
             queue.append(node.right)
     print(res)
 
+
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

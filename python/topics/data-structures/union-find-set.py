@@ -7,7 +7,6 @@ from collections import defaultdict
 
 
 class Graph:
-
     def __init__(self, vertices):
         self.V = vertices  # No. of vertices
         self.graph = defaultdict(list)  # default dictionary to store graph
@@ -16,7 +15,6 @@ class Graph:
     # function to add an edge to graph
     def addEdge(self, u, v):
         self.graph[u].append(v)
-            
 
     # A utility function to find the subset of an element i
     def find_parent(self, parent, i):
@@ -26,7 +24,8 @@ class Graph:
             return self.find_parent(parent, parent[i])
 
     # A utility function to do union of two subsets
-    def union(self, parent, x, y):
+    @staticmethod
+    def union(parent, x, y):
         parent[x] = y
 
     # The main function to check whether a given graph
@@ -36,7 +35,7 @@ class Graph:
 
         # Allocate memory for creating V subsets and
         # Initialize all subsets as single element sets
-        parent = [-1]*(self.V)
+        parent = [-1] * (self.V)
 
         # Iterate through all edges of graph, find subset of both
         # vertices of every edge, if both subsets are same, then

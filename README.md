@@ -1,6 +1,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/21be0b605cd341e2a5647b1f47a1e3ea)](https://app.codacy.com/gh/prakashsellathurai/a-grim-loth?utm_source=github.com&utm_medium=referral&utm_content=prakashsellathurai/a-grim-loth&utm_campaign=Badge_Grade_Settings)
 [![generate-markdown](https://github.com/prakashsellathurai/a-grim-loth/actions/workflows/generate-markdown.yaml/badge.svg)](https://github.com/prakashsellathurai/a-grim-loth/actions/workflows/generate-markdown.yaml)
+[![DeepSource](https://deepsource.io/gh/prakashsellathurai/a-grim-loth.svg/?label=active+issues&show_trend=true&token=2GQZZg8j7n1V4XpuruMWsk1O)](https://deepsource.io/gh/prakashsellathurai/a-grim-loth/?ref=repository-badge)
 
 ## Table of Contents:
 

@@ -5,9 +5,9 @@ n = int(input())
 s = input()
 dp = [1] * n
 for c in s:
-    if c == '>':
+    if c == ">":
         dp = list(reversed(list(accumulate([0] + list(reversed(dp))[:-1]))))
-    elif c == '<':
+    elif c == "<":
         dp = list(accumulate([0] + dp[:-1]))
     for i in range(n):
         dp[i] %= MOD

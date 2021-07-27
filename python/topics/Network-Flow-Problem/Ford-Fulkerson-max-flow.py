@@ -1,5 +1,6 @@
 import collections
 
+
 class Graph:
     """This class represents a directed graph using adjacency matrix representation."""
 
@@ -10,7 +11,6 @@ class Graph:
     def bfs(self, s, t, parent):
         """Returns true if there is a path from source 's' to sink 't' in
         residual graph. Also fills parent[] to store the path."""
-
         # Mark all the vertices as not visited
         visited = [False] * self.row
 
@@ -69,18 +69,22 @@ class Graph:
                 v = parent[v]
 
         return max_flow
-  
+
+
 # Create a graph given in the above diagram
- 
-graph = [[0, 16, 13, 0, 0, 0],
-        [0, 0, 10, 12, 0, 0],
-        [0, 4, 0, 0, 14, 0],
-        [0, 0, 9, 0, 0, 20],
-        [0, 0, 0, 7, 0, 4],
-        [0, 0, 0, 0, 0, 0]]
- 
+
+graph = [
+    [0, 16, 13, 0, 0, 0],
+    [0, 0, 10, 12, 0, 0],
+    [0, 4, 0, 0, 14, 0],
+    [0, 0, 9, 0, 0, 20],
+    [0, 0, 0, 7, 0, 4],
+    [0, 0, 0, 0, 0, 0],
+]
+
 g = Graph(graph)
- 
-source = 0; sink = 5
-  
-print ("The maximum possible flow is %d " % g.edmonds_karp(source, sink))
+
+source = 0
+sink = 5
+
+print("The maximum possible flow is %d " % g.edmonds_karp(source, sink))

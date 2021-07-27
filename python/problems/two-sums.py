@@ -1,4 +1,4 @@
-def twoSum( nums, target) :
+def twoSum(nums, target):
 
     h = {}
     for i, num in enumerate(nums):
@@ -8,4 +8,5 @@ def twoSum( nums, target) :
         else:
             return [h[n], i]
 
-print(twoSum([3,2,4],6))
+
+print(twoSum([3, 2, 4], 6))

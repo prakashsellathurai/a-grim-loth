@@ -16,54 +16,58 @@ xi+1...j−1
 """ Returns length of LCS for X[0..m-1],
 Y[0..n-1]. See http://goo.gl/bHQVP for
 details of this function """
-def lcs(X, Y, m, n) :
 
-	L = [[0 for i in range(n + 1)] for j in range(m + 1)]
 
-	""" Following steps build L[m + 1, n + 1] in
+def lcs(X, Y, m, n):
+
+    L = [[0 for i in range(n + 1)] for j in range(m + 1)]
+
+    """ Following steps build L[m + 1, n + 1] in
 	bottom up fashion. Note that L[i, j]
 	contains length of LCS of X[0..i - 1]
 	and Y[0..j - 1] """
-	for i in range(m + 1) :	
-		for j in range(n + 1) :	
-			if (i == 0 or j == 0) :
-				L[i][j] = 0
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0 or j == 0:
+                L[i][j] = 0
 
-			elif (X[i - 1] == Y[j - 1]) :
-				L[i][j] = L[i - 1][j - 1] + 1
-			else :
-				L[i][j] = max(L[i - 1][j], L[i][j - 1])
+            elif X[i - 1] == Y[j - 1]:
+                L[i][j] = L[i - 1][j - 1] + 1
+            else:
+                L[i][j] = max(L[i - 1][j], L[i][j - 1])
 
-	""" L[m,n] contains length of LCS for
+    """ L[m,n] contains length of LCS for
 	X[0..n-1] and Y[0..m-1] """
-	return L[m][n]
-	
+    return L[m][n]
+
+
 # LCS based function to find minimum number
 # of insersions
-def findMinInsertionsLCS(Str, n) :
+def findMinInsertionsLCS(Str, n):
 
-	# Using charArray to reverse a String
-	charArray = list(Str)
-	charArray.reverse()
-	revString = "".join(charArray)
-	
-	# The output is length of string minus
-	# length of lcs of str and it reverse
-	return (n - lcs(Str, revString , n, n))
+    # Using charArray to reverse a String
+    charArray = list(Str)
+    charArray.reverse()
+    revString = "".join(charArray)
+
+    # The output is length of string minus
+    # length of lcs of str and it reverse
+    return n - lcs(Str, revString, n, n)
+
 
 # Driver code
 Str = "geeks"
 n = len(Str)
-print(findMinInsertionsLCS(Str,len(Str)))
+print(findMinInsertionsLCS(Str, len(Str)))
 
-dp = [[0 for i in range(n )] for j in range(n)]
+dp = [[0 for i in range(n)] for j in range(n)]
 
-for t in range(2,n):
+for t in range(2, n):
     i = 0
-    for j in range(t,n):
+    for j in range(t, n):
         if Str[i] == Str[j]:
-            dp[i][j] = dp[i+1][j-1]
+            dp[i][j] = dp[i + 1][j - 1]
         else:
-            dp[i][j] = 1 + min(dp[i+1][j],dp[i][j-1])
-        i+=1
-print(dp[0][n-1])
+            dp[i][j] = 1 + min(dp[i + 1][j], dp[i][j - 1])
+        i += 1
+print(dp[0][n - 1])

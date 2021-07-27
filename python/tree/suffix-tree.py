@@ -2,17 +2,19 @@ class Node:
     def __init__(self, sub="", children=None):
         self.sub = sub
         self.ch = children or []
- 
+
+
 class SuffixTree:
     """
     Class for suffixtree
-    
+
     """
+
     def __init__(self, str):
         self.nodes = [Node()]
         for i in range(len(str)):
             self.addSuffix(str[i:])
- 
+
     def addSuffix(self, suf):
         n = 0
         i = 0
@@ -31,7 +33,7 @@ class SuffixTree:
                 if self.nodes[n2].sub[0] == b:
                     break
                 x2 = x2 + 1
- 
+
             # find prefix of remaining suffix in common with child
             sub2 = self.nodes[n2].sub
             j = 0
@@ -42,19 +44,20 @@ class SuffixTree:
                     # new node for the part in common
                     n2 = len(self.nodes)
                     self.nodes.append(Node(sub2[:j], [n3]))
-                    self.nodes[n3].sub = sub2[j:] # old node loses the part in common
+                    # old node loses the part in common
+                    self.nodes[n3].sub = sub2[j:]
                     self.nodes[n].ch[x2] = n2
-                    break # continue down the tree
+                    break  # continue down the tree
                 j = j + 1
-            i = i + j   # advance past part in common
-            n = n2      # continue down the tree
-    
+            i = i + j  # advance past part in common
+            n = n2  # continue down the tree
+
     def visualize(self):
         """
         pretty prints the suffixtree
-        
+
         >>> SuffixTree("banana$").visualize()
-        +- 
+        +-
          +-
         -- banana$
          +-
@@ -77,24 +80,28 @@ class SuffixTree:
         -- $
         """
         if len(self.nodes) == 0:
-            print ("<empty>")
+            print("<empty>")
             return
- 
+
         def f(n, pre):
             children = self.nodes[n].ch
             if len(children) == 0:
-                print ("--", self.nodes[n].sub)
+                print("--", self.nodes[n].sub)
                 return
-            print ("+-", self.nodes[n].sub)
+            print("+-", self.nodes[n].sub)
             for c in children[:-1]:
-                print (pre, "+-")
+                print(pre, "+-")
                 f(c, pre + " | ")
-            print (pre, "+-",)
+            print(
+                pre,
+                "+-",
+            )
             f(children[-1], pre + "  ")
- 
+
         f(0, "")
- 
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
