@@ -33,27 +33,43 @@
 		- subset-sum
 			- [coin-change](./cpp/Dynamic-Programming/subset-sum/coin-change.cpp)
 			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
+		- vertex-cover
+			- [tree](./cpp/Dynamic-Programming/vertex-cover/tree.cpp)
 	- Graphs
-		- directed
-			- [topological-sort](./cpp/Graphs/directed/topological-sort.cpp)
-			- traversal
-				- [depth-first-search](./cpp/Graphs/directed/traversal/depth-first-search.cpp)
-			- unweighted
-				- [adjacency-list-representation](./cpp/Graphs/directed/unweighted/adjacency-list-representation.cpp)
-			- weighted
-				- [adjacency-list-representation](./cpp/Graphs/directed/weighted/adjacency-list-representation.cpp)
-		- undirected
-			- [articulation-points](./cpp/Graphs/undirected/articulation-points.cpp)
-			- [connected-components](./cpp/Graphs/undirected/connected-components.cpp)
-			- [cycle-detection](./cpp/Graphs/undirected/cycle-detection.cpp)
-			- traversal
-				- [Breath-first-search](./cpp/Graphs/undirected/traversal/Breath-first-search.cpp)
-				- [Depth-first-traversal](./cpp/Graphs/undirected/traversal/Depth-first-traversal.cpp)
-			- [two-coloring](./cpp/Graphs/undirected/two-coloring.cpp)
-			- unweighted
-				- [adjacency-list-representation](./cpp/Graphs/undirected/unweighted/adjacency-list-representation.cpp)
-			- weighted
-				- [adjacency-list-representation](./cpp/Graphs/undirected/weighted/adjacency-list-representation.cpp)
+		- minimum-spanning-tree
+			- [kruskal](./cpp/Graphs/minimum-spanning-tree/kruskal.cpp)
+			- [prims](./cpp/Graphs/minimum-spanning-tree/prims.cpp)
+		- network-flows-and-Bipartite-matching
+			- [edmond-karp-algorithm](./cpp/Graphs/network-flows-and-Bipartite-matching/edmond-karp-algorithm.cpp)
+			- [residual-flow-graphs](./cpp/Graphs/network-flows-and-Bipartite-matching/residual-flow-graphs.cpp)
+		- shortest-path
+			- [bellman-ford](./cpp/Graphs/shortest-path/bellman-ford.cpp)
+			- [dijikstra](./cpp/Graphs/shortest-path/dijikstra.cpp)
+			- [floyd-all-pair-shortest-path](./cpp/Graphs/shortest-path/floyd-all-pair-shortest-path.cpp)
+		- types
+			- directed
+				- [strongly-connected-component](./cpp/Graphs/types/directed/strongly-connected-component.cpp)
+				- [topological-sort](./cpp/Graphs/types/directed/topological-sort.cpp)
+				- traversal
+					- [depth-first-search](./cpp/Graphs/types/directed/traversal/depth-first-search.cpp)
+				- unweighted
+					- [adjacency-list-representation](./cpp/Graphs/types/directed/unweighted/adjacency-list-representation.cpp)
+				- weighted
+					- [adjacency-list-representation](./cpp/Graphs/types/directed/weighted/adjacency-list-representation.cpp)
+			- undirected
+				- [adjacency-matrix-to-incidence-matrix](./cpp/Graphs/types/undirected/adjacency-matrix-to-incidence-matrix.cpp)
+				- [articulation-points](./cpp/Graphs/types/undirected/articulation-points.cpp)
+				- [connected-components](./cpp/Graphs/types/undirected/connected-components.cpp)
+				- [count-componenets](./cpp/Graphs/types/undirected/count-componenets.cpp)
+				- [cycle-detection](./cpp/Graphs/types/undirected/cycle-detection.cpp)
+				- traversal
+					- [Breath-first-search](./cpp/Graphs/types/undirected/traversal/Breath-first-search.cpp)
+					- [Depth-first-traversal](./cpp/Graphs/types/undirected/traversal/Depth-first-traversal.cpp)
+				- [two-coloring](./cpp/Graphs/types/undirected/two-coloring.cpp)
+				- unweighted
+					- [adjacency-list-representation](./cpp/Graphs/types/undirected/unweighted/adjacency-list-representation.cpp)
+				- weighted
+					- [adjacency-list-representation](./cpp/Graphs/types/undirected/weighted/adjacency-list-representation.cpp)
 	- Greedy-algorithms
 		- [index](./cpp/Greedy-algorithms/index.md)
 	- Hashing-and-Randomization
@@ -98,6 +114,13 @@
 		- [binary-search-tree](./cpp/Trees/binary-search-tree.cpp)
 		- [binary-tree-equality](./cpp/Trees/binary-tree-equality.cpp)
 		- [bst-linked-list](./cpp/Trees/bst-linked-list.cpp)
+		- [construct-tree-from-given-inorder-and-preorder-traversal](./cpp/Trees/construct-tree-from-given-inorder-and-preorder-traversal.cpp)
+		- [maximum-matching](./cpp/Trees/maximum-matching.cpp)
+		- traversal
+			- [iterative-implementation](./cpp/Trees/traversal/iterative-implementation.cpp)
+			- [recursive-implementation](./cpp/Trees/traversal/recursive-implementation.cpp)
+	- Union-find
+		- [structure-implementation](./cpp/Union-find/structure-implementation.cpp)
 	- computataional-geometry
 		- [bullet-through-largest-number-of-walls](./cpp/computataional-geometry/bullet-through-largest-number-of-walls.cpp)
 		- [graham-scan-convex-hull](./cpp/computataional-geometry/graham-scan-convex-hull.cpp)
@@ -199,6 +222,7 @@
 		- [count_nodes](./python/graph/count_nodes.py)
 		- [dfs_traversal](./python/graph/dfs_traversal.py)
 		- [dijishktra](./python/graph/dijishktra.py)
+		- [hamilton-path](./python/graph/hamilton-path.py)
 		- [top-sort](./python/graph/top-sort.py)
 	- heap
 		- [max-heap](./python/heap/max-heap.py)
@@ -291,6 +315,7 @@
 		- [bfs_traversal](./python/tree/bfs_traversal.py)
 		- [binary-search-tree](./python/tree/binary-search-tree.py)
 		- [dfs_traversal](./python/tree/dfs_traversal.py)
+		- [diameter-of-a-tree](./python/tree/diameter-of-a-tree.py)
 		- [fenwick-binary-indexed-trees](./python/tree/fenwick-binary-indexed-trees.py)
 		- [quadtree](./python/tree/quadtree.ipynb)
 		- [suffix-tree](./python/tree/suffix-tree.py)
