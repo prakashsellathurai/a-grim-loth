@@ -121,8 +121,7 @@ class Treap:
         node = self._find_node(key, self.root)[0]
         if node is None:
             raise KeyError(key)
-        else:
-            return node.value
+        return node.value
 
     def __delitem__(self, key):
         """Delete a key, value pair identified by key from the tree."""
@@ -130,7 +129,7 @@ class Treap:
 
         if node is None:
             raise KeyError(key)
-        elif parent is None and not (node.left and node.right):
+        if parent is None and not (node.left and node.right):
             self.root = node.left or node.right
             if self.root:
                 self.root.parent = None
