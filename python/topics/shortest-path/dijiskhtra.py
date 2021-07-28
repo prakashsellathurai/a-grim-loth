@@ -78,7 +78,7 @@ class Heap:
         return root
 
     def isEmpty(self):
-        return True if self.size == 0 else False
+        return self.size == 0
 
     def decreaseKey(self, v, dist):
 
