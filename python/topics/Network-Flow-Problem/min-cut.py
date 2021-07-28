@@ -53,7 +53,7 @@ class Graph:
         # If we reached sink in BFS starting
         # from source, then return
         # true, else false
-        return True if visited[t] else False
+        return bool(visited[t])
 
     # Function for Depth first search
     # Traversal of the graph
