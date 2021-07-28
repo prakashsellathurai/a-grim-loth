@@ -1628,7 +1628,6 @@ if __name__ == "__main__":
 47 49 1
 48 49 1
 """
-    global g_TryFlowNetwork
     g_TryFlowNetwork = (
         #: when this variable is True, use FlowNetwork to find the min cut.
         False
