@@ -10,15 +10,17 @@
  */
 
 #include <iostream>
+#include <time.h>
 #include <vector>
+
 
 using namespace std;
 class EightQueensPuzzle {
 public:
   int n;
-  std::vector<vector<int>> board;
-  vector<vector<int>> slashDiagnol, backSlashDiagnol;
-  vector<bool> rowLookup, slashDiagnolLook, backslashDiagnolLook;
+  std::vector<std::vector<int>> board;
+  std::vector<std::vector<int>> slashDiagnol, backSlashDiagnol;
+  std::vector<bool> rowLookup, slashDiagnolLook, backslashDiagnolLook;
 
   EightQueensPuzzle(int n_) : n(n_) {
     board.resize(n);
@@ -152,21 +154,28 @@ public:
   void printSolution() {
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
-        cout << board[i][j] << " ";
+        std::cout << board[i][j] << " ";
       }
-      cout << endl;
+      std::cout << std::endl;
     }
   }
 };
 
 int main(int argc, const char **argv) {
   EightQueensPuzzle p(8);
-  std::cout << "Backtracking" << std::endl;
-  p.solve_with_backtrack();
 
+  std::cout << "Backtracking" << std::endl;
+  time_t start = time(&start);
+  p.solve_with_backtrack();
+  time_t end = time(&end);
+
+  std::cout << " took " << end - start << " seconds" << std::endl;
   p.reset();
   std::cout << "Branch and Bound" << std::endl;
+  start = time(&start);
   p.solve_with_branch_and_bound();
+  end = time(&end);
 
+  std::cout << " took " << end - start << " seconds" << std::endl;
   return 0;
 }
