@@ -90,7 +90,7 @@ void generate_combination(int *arr, int n) {
  * @return false 
  */
 bool next_permutation(int *arr, int n) {
-  int i;
+  int i,j;
   for (i = n - 2; i >= 0; i--) {
     if (arr[i] < arr[i + 1]) {
       break;
@@ -100,12 +100,12 @@ bool next_permutation(int *arr, int n) {
     reverse(arr, arr + n);
     return false;
   } else {
-    for (int j = n - 1; j > i; j--) {
+    for (j = n - 1; j > i; j--) {
       if (arr[j] > arr[i]) {
-        swap(arr[i], arr[j]);
         break;
       }
     }
+            swap(arr[i], arr[j]);
     reverse(arr + i + 1, arr + n);
     return true;
   }
