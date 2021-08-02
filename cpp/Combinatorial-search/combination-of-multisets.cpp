@@ -78,9 +78,60 @@ void generate_combination(int *arr, int n) {
   combination_of_multisets(arr, c, 0, counter, n);
 }
 
+/////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * @brief cleverly finds next permutation
+ * 
+ * @param arr 
+ * @param n 
+ * @return true 
+ * @return false 
+ */
+bool next_permutation(int *arr, int n) {
+  int i;
+  for (i = n - 2; i >= 0; i--) {
+    if (arr[i] < arr[i + 1]) {
+      break;
+    }
+  }
+  if (i < 0) {
+    reverse(arr, arr + n);
+    return false;
+  } else {
+    for (int j = n - 1; j > i; j--) {
+      if (arr[j] > arr[i]) {
+        swap(arr[i], arr[j]);
+        break;
+      }
+    }
+    reverse(arr + i + 1, arr + n);
+    return true;
+  }
+}
+/**
+ * @brief
+
+ Besides backtracking, you may also solve it using Next Permutation: computing
+ the next permutation and add it to the result until it becomes the original
+ array
+ * https://stackoverflow.com/a/11425168/8336491
+ * @param arr
+ * @param n
+ */
+void alternate_approach(int *arr, int n) {
+  sort(arr, arr + n);
+  do {
+    print_perm(arr, n);
+  } while (next_permutation(arr, n));
+}
+
 int main(int argc, char const *argv[]) {
   int arr[] = {1, 1, 2, 2};
   int n = sizeof(arr) / sizeof(arr[0]);
   generate_combination(arr, n);
+  cout << "alternate approach" << endl;
+  alternate_approach(arr, n);
   return 0;
 }
