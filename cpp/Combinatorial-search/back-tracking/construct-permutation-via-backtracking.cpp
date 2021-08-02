@@ -36,7 +36,7 @@ void construct_candidates(int a[], int k, int n, int c[], int *nc) {
   *nc = 0;
 
   for (i = 1; i <= n; i++) {
-    if (!in_perm[i]) {
+    if (!in_perm[i]) {      // if not in perm
       c[*nc] = i;
       *nc = *nc + 1;
     }
