@@ -39,11 +39,21 @@ void backtracing(vector<char> &arr, int k, int n, int depth) {
     return;
   }
 
-  for (int i = 0; i <= k - 1; i++) {
-    for (int j = n - 1; j > k; j--) {
-      swap(arr[i], arr[j]);
-      backtracing(arr, k, n, depth + 1);
-      swap(arr[i], arr[j]);
+  if (k > 2) {
+    for (int i = 0; i <= k - 1; i++) {
+      for (int j = k; j < n; j++) {
+        swap(arr[i], arr[j]);
+        backtracing(arr, k, n, depth + 1);
+        swap(arr[i], arr[j]);
+      }
+    }
+  } else {
+    for (int i = 1; i <= k - 1; i++) {
+      for (int j = k; j < n; j++) {
+        swap(arr[i], arr[j]);
+        backtracing(arr, k, n, depth + 1);
+        swap(arr[i], arr[j]);
+      }
     }
   }
 }
@@ -55,7 +65,7 @@ int main(int argc, const char **argv) {
 
   cout << endl;
 
-  v = {'A', 'B', 'C', 'D','E','F'};
+  v = {'A', 'B', 'C', 'D', 'E', 'F'};
   n = v.size();
   k = n / 2;
   backtracing(v, k, n, 0);
