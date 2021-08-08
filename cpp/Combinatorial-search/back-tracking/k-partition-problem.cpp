@@ -156,6 +156,8 @@ bool put(int n, int target, vector<int> ns, vector<int> bucket
     bucket[i] += ns[n]; // put it in!
     if (n == ns.size() - 1)
       return true; // all items in bucket, no overflow
+
+      
     if (put(n + 1, target, ns, bucket))
       return true;        // move on to next item
     else {                // no solution = wrong bucket
