@@ -27,8 +27,6 @@ void backtracking(string &s, int n, int k) {
     return;
 
   for (int i = k; i < n; i++) {
-    if (s[i] == '0')
-      continue;
     swap(s[i], s[k]);
     backtracking(s, n, k + 1);
     swap(s[i], s[k]);
