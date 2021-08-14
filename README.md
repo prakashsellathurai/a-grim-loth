@@ -16,7 +16,36 @@
 		- [move-all-0s-to-left-while-maintaining-order](./cpp/Arrays/move-all-0s-to-left-while-maintaining-order.cpp)
 		- [reverse-array](./cpp/Arrays/reverse-array.cpp)
 	- Combinatorial-search
-		- [basics](./cpp/Combinatorial-search/basics.cpp)
+		- [N-queens-puzzle](./cpp/Combinatorial-search/N-queens-puzzle.cpp)
+		- [TSP-branch-and-bound](./cpp/Combinatorial-search/TSP-branch-and-bound.cpp)
+		- [allow-n-people-in-2-power-n-way](./cpp/Combinatorial-search/allow-n-people-in-2-power-n-way.cpp)
+		- [anagram-of-the-given-string](./cpp/Combinatorial-search/anagram-of-the-given-string.cpp)
+		- backtracking
+			- [backtracking-template](./cpp/Combinatorial-search/backtracking/backtracking-template.cpp)
+			- [construct-distinct-BST-1-to-n](./cpp/Combinatorial-search/backtracking/construct-distinct-BST-1-to-n.cpp)
+			- [construct-permutation-via-backtracking](./cpp/Combinatorial-search/backtracking/construct-permutation-via-backtracking.cpp)
+			- [construct-subsets-via-backtracking](./cpp/Combinatorial-search/backtracking/construct-subsets-via-backtracking.cpp)
+			- [constructing-all-paths-in-a-graph](./cpp/Combinatorial-search/backtracking/constructing-all-paths-in-a-graph.cpp)
+			- [forbidden-strings-and-length-n](./cpp/Combinatorial-search/backtracking/forbidden-strings-and-length-n.cpp)
+			- [k-partition-problem](./cpp/Combinatorial-search/backtracking/k-partition-problem.cpp)
+			- [mean-weight-cycle-of-a-graph](./cpp/Combinatorial-search/backtracking/mean-weight-cycle-of-a-graph.cpp)
+			- [partition-2k-elements-into-two-kgroups](./cpp/Combinatorial-search/backtracking/partition-2k-elements-into-two-kgroups.cpp)
+			- [print-all-valid-n-pair-parentheses](./cpp/Combinatorial-search/backtracking/print-all-valid-n-pair-parentheses.cpp)
+			- [remove-invalid-parenthesis](./cpp/Combinatorial-search/backtracking/remove-invalid-parenthesis.cpp)
+		- combinations
+			- [combination-of-multisets](./cpp/Combinatorial-search/combinations/combination-of-multisets.cpp)
+			- [combinations-every-element-appears-twice-distance-appearances-equal-value](./cpp/Combinatorial-search/combinations/combinations-every-element-appears-twice-distance-appearances-equal-value.cpp)
+		- [expected-number-of-calls-to-rng-04-per-call-of-rng-07](./cpp/Combinatorial-search/expected-number-of-calls-to-rng-04-per-call-of-rng-07.cpp)
+		- [list-k-element-subsets-of-n-items](./cpp/Combinatorial-search/list-k-element-subsets-of-n-items.cpp)
+		- permutations
+			- [1-million-permutations-and-subsets](./cpp/Combinatorial-search/permutations/1-million-permutations-and-subsets.cpp)
+			- [derangement](./cpp/Combinatorial-search/permutations/derangement.cpp)
+			- [kth-permutation-sequence](./cpp/Combinatorial-search/permutations/kth-permutation-sequence.cpp)
+			- [permutation](./cpp/Combinatorial-search/permutations/permutation.cpp)
+		- [permute-a-string](./cpp/Combinatorial-search/permute-a-string.cpp)
+		- [print-all-subset-of-given-string](./cpp/Combinatorial-search/print-all-subset-of-given-string.cpp)
+		- [sudoku-solver](./cpp/Combinatorial-search/sudoku-solver.cpp)
+		- [telephone-numbers-to-possible-words](./cpp/Combinatorial-search/telephone-numbers-to-possible-words.cpp)
 	- Conjectures
 		- [Taxicab-Number](./cpp/Conjectures/Taxicab-Number.cpp)
 	- Dictionaries
@@ -183,6 +212,10 @@
 		- [stack](./python/Basic/stack.py)
 		- [trie](./python/Basic/trie.py)
 	- Combinatorial-search
+		- backtracking
+			- [all-topological-ordering-of-given-dag](./python/Combinatorial-search/backtracking/all-topological-ordering-of-given-dag.py)
+			- [construct-valid-n-pair-parenteses](./python/Combinatorial-search/backtracking/construct-valid-n-pair-parenteses.py)
+			- [multiset-add-upto-t](./python/Combinatorial-search/backtracking/multiset-add-upto-t.py)
 		- [permutation-vs-subset](./python/Combinatorial-search/permutation-vs-subset.ipynb)
 	- advanced
 		- range-queries
