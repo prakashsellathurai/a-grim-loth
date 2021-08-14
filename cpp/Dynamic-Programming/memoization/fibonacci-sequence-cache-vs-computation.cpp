@@ -15,14 +15,14 @@
  using namespace std;
  int fib[500];
 
-int fibonacci_recursive(int n) {
+int fib_recursive(int n) {
     if (n <= 1) {
         return n;
     }
-    return fibonacci_recursive(n-1) + fibonacci_recursive(n-2);
+    return fib_recursive(n-1) + fib_recursive(n-2);
 }
 
- int fibonacci_memoized(int n) {
+ int fib_dp(int n) {
      if (n == 0) {
          return 0;
      }
@@ -32,13 +32,13 @@ int fibonacci_recursive(int n) {
      if (fib[n] != 0) {
          return fib[n];
      }
-     fib[n] = fibonacci_memoized(n-1) + fibonacci_memoized(n-2);
+     fib[n] = fib_dp(n-1) + fib_dp(n-2);
      return fib[n];
  }
 
 
 
- int fibonacci_lessspace(int n) {
+ int fib_ultimate(int n) {
      int i;
      int back2 = 0,back1 = 1;
      int next;
@@ -60,7 +60,7 @@ int fibonacci_recursive(int n) {
      
     using milli = std::chrono::milliseconds;
     auto start = std::chrono::high_resolution_clock::now();
-    fibonacci_recursive(n);
+    fib_recursive(n);
     auto finish = std::chrono::high_resolution_clock::now();
     std::cout << "recursion took "
               << std::chrono::duration_cast<milli>(finish - start).count()
@@ -69,7 +69,7 @@ int fibonacci_recursive(int n) {
 
     using milli = std::chrono::milliseconds;
     start = std::chrono::high_resolution_clock::now();
-    fibonacci_memoized(n);
+    fib_dp(n);
     finish = std::chrono::high_resolution_clock::now();
     std::cout << "dp took "
               << std::chrono::duration_cast<milli>(finish - start).count()
@@ -78,11 +78,11 @@ int fibonacci_recursive(int n) {
 
        using milli = std::chrono::milliseconds;
     start = std::chrono::high_resolution_clock::now();
-    fibonacci_lessspace(n);
+    fib_ultimate(n);
     finish = std::chrono::high_resolution_clock::now();
     std::cout << "dp with lessa space took "
               << std::chrono::duration_cast<milli>(finish - start).count()
               << " milliseconds\n";
-
+    
      return 0;
  }
