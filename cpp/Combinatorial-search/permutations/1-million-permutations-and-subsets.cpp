@@ -4,8 +4,25 @@
  * @brief
     One million permutations means all arrangements of roughly 10 objects, but
     not more. One million subsets means all combinations of roughly 20 items,
- but not more.
+    but not more.
 
+  example:
+
+    - permutation of { 1,2,3} 
+        - {1,2,3}
+        - {2,3,1}
+        - {3,1,2}
+        - {2,1,3}
+        - {3,2,1}
+        - {1,3,2}
+    - subsets of { 1,2,3} 
+        - {}
+        - {1}
+        - {2}
+        - {3}
+        - {1,2}
+        - {2,3}
+        - {1,2,3}
 
  * @version 0.1
  * @date 2021-07-27
