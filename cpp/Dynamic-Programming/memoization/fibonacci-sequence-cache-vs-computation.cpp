@@ -35,6 +35,25 @@ int fibonacci_recursive(int n) {
      fib[n] = fibonacci_memoized(n-1) + fibonacci_memoized(n-2);
      return fib[n];
  }
+
+
+
+ int fibonacci_lessspace(int n) {
+     int i;
+     int back2 = 0,back1 = 1;
+     int next;
+
+     if(n==0) return 0;
+
+     for(i=2;i<n;i++) {
+         next = back2 + back1;
+         back2 = back1;
+         back1 = next;
+     }
+     return next;
+ }
+
+
  int main(int argc, const char** argv) {
      int n;
      n = 30;
@@ -56,6 +75,14 @@ int fibonacci_recursive(int n) {
               << std::chrono::duration_cast<milli>(finish - start).count()
               << " milliseconds\n";
 
+
+       using milli = std::chrono::milliseconds;
+    start = std::chrono::high_resolution_clock::now();
+    fibonacci_lessspace(n);
+    finish = std::chrono::high_resolution_clock::now();
+    std::cout << "dp with lessa space took "
+              << std::chrono::duration_cast<milli>(finish - start).count()
+              << " milliseconds\n";
 
      return 0;
  }
