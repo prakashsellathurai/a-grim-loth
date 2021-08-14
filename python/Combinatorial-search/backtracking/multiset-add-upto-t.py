@@ -6,14 +6,14 @@ def backtrack(temp: list, s: list, count: Counter, i: int, t: int):
         print(temp)
         return
 
-    if(t <= 0):
+    if t <= 0:
         return
 
     for j in range(i, len(s)):
-        if t-s[j] >= 0 and count[s[j]] > 0:
+        if t - s[j] >= 0 and count[s[j]] > 0:
             temp.append(s[j])
             count[s[j]] -= 1
-            backtrack(temp, s, count, j, t-s[j])
+            backtrack(temp, s, count, j, t - s[j])
             temp.remove(s[j])
             count[s[j]] += 1
 
