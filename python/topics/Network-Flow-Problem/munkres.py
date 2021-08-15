@@ -41,8 +41,6 @@ class UnsolvableMatrix(Exception):
     Exception raised for unsolvable matrices
     """
 
-    pass
-
 
 # ---------------------------------------------------------------------------
 # Classes
