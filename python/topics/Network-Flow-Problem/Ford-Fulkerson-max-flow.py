@@ -29,7 +29,7 @@ class Graph:
             # If an adjacent has not been visited, then mark it
             # visited and enqueue it
             for ind, val in enumerate(self.graph[u]):
-                if (visited[ind] == False) and (val > 0):
+                if (visited[ind] is False) and (val > 0):
                     queue.append(ind)
                     visited[ind] = True
                     parent[ind] = u
