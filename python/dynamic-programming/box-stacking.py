@@ -65,9 +65,12 @@ def maxStackHeight(arr, n):
     # in bottom up manner
     for i in range(1, n):
         for j in range(0, i):
-            if rot[i].w < rot[j].w and rot[i].d < rot[j].d:
-                if msh[i] < msh[j] + rot[i].h:
-                    msh[i] = msh[j] + rot[i].h
+            if (
+                rot[i].w < rot[j].w
+                and rot[i].d < rot[j].d
+                and msh[i] < msh[j] + rot[i].h
+            ):
+                msh[i] = msh[j] + rot[i].h
 
     maxm = -1
     for i in range(n):
