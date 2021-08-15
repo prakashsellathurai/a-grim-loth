@@ -68,11 +68,11 @@ def walk_directory(path=".", exclude=None, level=0):
         # Skip the file if its in the exclude list.
         if file_name in exclude:
             continue
-        elif file_name in exclude_files:
+        if file_name in exclude_files:
             continue
-        elif "utils" in full_path:
+        if "utils" in full_path:
             continue
-        elif os.path.isdir(full_path):
+        if os.path.isdir(full_path):
             result.append(directory_line(file_name, full_path, level))
             result.extend(walk_directory(full_path, exclude, level + 1))
         elif file_name != "README.md":
