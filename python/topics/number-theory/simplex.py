@@ -80,11 +80,10 @@ while reached == 0:
                 present = 1
                 break
             j += 1
-        if present == 0:
-            if rel_prof[i] == 0:
-                alternate = 1
-                print("Case of Alternate found")
-                # print(i, end =" ")
+        if present == 0 and rel_prof[i] == 0:
+            alternate = 1
+            print("Case of Alternate found")
+            # print(i, end =" ")
         i += 1
     print()
     flag = 0

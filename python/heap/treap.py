@@ -188,12 +188,10 @@ class Treap:
             if node:
                 if not min_bound < node.key < max_bound:
                     raise AssertionError
-                if node.left:
-                    if node.key <= node.left.key:
-                        raise AssertionError
-                if node.right:
-                    if node.key >= node.right.key:
-                        raise AssertionError
+                if node.left and node.key <= node.left.key:
+                    raise AssertionError
+                if node.right and node.key >= node.right.key:
+                    raise AssertionError
                 if node.parent:
                     parent = node.parent
                     if node.heap_id >= parent.heap_id:

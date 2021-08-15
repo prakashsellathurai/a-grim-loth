@@ -132,10 +132,9 @@ class Delaunay2D:
             if tri_op:
                 # search the neighbour of tri_op that use edge (e1, e0)
                 for i, neigh in enumerate(self.triangles[tri_op]):
-                    if neigh:
-                        if e1 in neigh and e0 in neigh:
-                            # change link to use our new triangle
-                            self.triangles[tri_op][i] = T
+                    if neigh and e1 in neigh and e0 in neigh:
+                        # change link to use our new triangle
+                        self.triangles[tri_op][i] = T
 
             # Add triangle to a temporal list
             new_triangles.append(T)
