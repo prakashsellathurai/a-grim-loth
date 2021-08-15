@@ -17,10 +17,7 @@ def Left_index(points):
     for i in range(1, len(points)):
         if points[i].x < points[minn].x:
             minn = i
-        elif (
-            points[i].x == points[minn].x
-            and points[i].y > points[minn].y
-        ):
+        elif points[i].x == points[minn].x and points[i].y > points[minn].y:
             minn = i
     return minn
 
