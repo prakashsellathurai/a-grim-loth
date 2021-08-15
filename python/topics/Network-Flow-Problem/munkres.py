@@ -152,11 +152,6 @@ class Munkres:
         return results
 
     @staticmethod
-    def __copy_matrix(matrix: Matrix) -> Matrix:
-        """Return an exact copy of the supplied matrix"""
-        return copy.deepcopy(matrix)
-
-    @staticmethod
     def __make_matrix(n: int, val: AnyNum) -> Matrix:
         """Create an *n*x*n* matrix, populating it with the specific value."""
         matrix = []
