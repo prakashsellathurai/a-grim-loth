@@ -84,7 +84,8 @@ def replace_toc(file_path, toc, toc_start, toc_end):
     toc_file = open(file_path, "r").read()
     start, end = toc_file.find(toc_start), toc_file.find(toc_end)
     return (
-        (toc_file[: start + len(toc_start)]) + ("\n\n%s\n\n" % toc) + (toc_file[end:])
+        (toc_file[: start + len(toc_start)]) +
+        ("\n\n%s\n\n" % toc) + (toc_file[end:])
     )
 
 
@@ -94,7 +95,8 @@ parser.add_argument(
     help="Searches and replaces the lines between toc-start and toc-end in the given file and prints the output. If not given, the script just prints the TOC generated.",
     default="./README.md",
 )
-parser.add_argument("--target", help="Target folder to create TOC for.", default=".")
+parser.add_argument(
+    "--target", help="Target folder to create TOC for.", default=".")
 parser.add_argument(
     "--exclude",
     help="List of folder and file names to exclude.",
@@ -105,7 +107,8 @@ parser.add_argument(
 parser.add_argument(
     "--toc-start", help="Start of the TOC.", default="[//]: # (TOCSTART)"
 )
-parser.add_argument("--toc-end", help="End of the TOC.", default="[//]: # (TOCEND)")
+parser.add_argument("--toc-end", help="End of the TOC.",
+                    default="[//]: # (TOCEND)")
 args = parser.parse_args()
 
 result = "\n".join(walk_directory(args.target, args.exclude))
