@@ -40,10 +40,11 @@ def convex_hull(points):
 
 
 # Example: convex hull of a 10-by-10 grid.
-assert convex_hull([(i // 10, i % 10) for i in range(100)]) == [
+if convex_hull([(i // 10, i % 10) for i in range(100)]) != [
     (0, 0),
     (9, 0),
     (9, 9),
     (0, 9),
-]
+]:
+    raise AssertionError
 print(convex_hull([(i // 10, i % 10) for i in range(100)]))
