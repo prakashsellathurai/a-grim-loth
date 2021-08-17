@@ -1,5 +1,6 @@
 import numpy as np
 from fractions import Fraction  # so that numbers are not displayed in decimal.
+import sys
 
 print("\n				 ****SiMplex Algorithm ****\n\n")
 
@@ -152,7 +153,7 @@ print()
 print("***************************************************************")
 if unbounded == 1:
     print("UNBOUNDED LPP")
-    exit()
+    sys.exit()
 if alternate == 1:
     print("ALTERNATE Solution")
 
