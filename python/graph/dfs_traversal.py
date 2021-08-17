@@ -51,7 +51,7 @@ class Graph:
         visited = [False for vertex in list(self.graph)]
         stack = []
         stack.append(0)
-        while len(stack):
+        while stack:
             s = stack.pop(-1)
             if not visited[s]:
                 print(s, end=" ")
