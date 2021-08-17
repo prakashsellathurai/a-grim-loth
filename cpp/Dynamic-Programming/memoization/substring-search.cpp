@@ -39,12 +39,8 @@ int substring_matching(string T, string P) {
   }
   // column init
   for (j = 0; j <= m; j++) {
-    dp[0][i].cost = i;
-    if (i > 0) {
-      dp[0][i].parent = DELETE;
-    } else {
-      dp[0][i].parent = -1;
-    }
+   dp[0][j].cost = 0;
+    dp[0][j].parent = -1;
   }
   // fill dp
   for (i = 1; i <= n; i++) {
@@ -68,7 +64,7 @@ int substring_matching(string T, string P) {
   }
 
   // goal cell
-  i = T.length() - 1;
+  i = T.length() ;
   j = 0;
   for (k = 1; k <= P.length(); k++) {
     if (dp[i][k].cost < dp[i][j].cost) {
@@ -76,12 +72,14 @@ int substring_matching(string T, string P) {
     }
   }
 
+
+  
   return dp[i][j].cost;
 }
 
 int main(int argc, const char **argv) {
-  string T = "looooong text";
-  string P = "ooong";
+  string T = "text";
+  string P = "ext";
 
  cout<< substring_matching(T,P)<<endl;
  
