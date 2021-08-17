@@ -16,7 +16,7 @@
 using namespace std;
 
 int binomial_coefficient_dp(int n, int k) {
-  vector<vector<int>> dp(n + 1, vector<int>(k + 1, 0));
+  vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
 
   // base case
   // when k=0 dp[i][0] = 1
