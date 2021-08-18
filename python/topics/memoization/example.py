@@ -12,7 +12,6 @@ def fib(n):
 
 def estimate(f):
     start = time.time_ns()
-    f
     print(time.time_ns() - start)
 
 
