@@ -58,4 +58,4 @@ def american_flag_sort(a_list, radix) -> None:
 if __name__ == "__main__":
     arr = [1, 3, 0, 8, 5, 2, 5, 5, 9]
     american_flag_sort(arr, 2)
-    print([i for i in arr])
+    print(list(arr))
