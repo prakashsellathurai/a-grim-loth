@@ -24,7 +24,7 @@ Matrix = NewType("Matrix", Sequence[Sequence[AnyNum]])
 # Constants
 
 
-class DISALLOWED_OBJ(object):
+class DISALLOWED_OBJ:
     pass
 
 

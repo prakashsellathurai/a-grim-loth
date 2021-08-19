@@ -1,4 +1,4 @@
-class FlowNetwork(object):
+class FlowNetwork:
     """This class is copied from wiki for benchmark."""
 
     def __init__(self):
@@ -46,7 +46,7 @@ class FlowNetwork(object):
         )
 
 
-class UndirectedGraph(object):
+class UndirectedGraph:
     def __init__(self):
         self.vertices = []
         self.edges = {}
@@ -122,7 +122,7 @@ def minimum_cut(g, a):
     return min_cut
 
 
-class Reader(object):
+class Reader:
     """A file reader: read the formated input data provided by Q2914: Minimum Cut"""
 
     def __init__(self, fd):
