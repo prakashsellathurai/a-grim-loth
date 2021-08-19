@@ -64,7 +64,6 @@ int main() {
   //       not changing the order of them.What is the longest sequence such that
   //       each
   //           element is bigger than the previous one
- 
 
   int a[] = {2, 4, 3, 5, 1, 7, 6, 9, 8};
   int n = sizeof(a) / sizeof(a[0]);
@@ -74,11 +73,12 @@ int main() {
     for (int j = i + 1; j < n; j++) {
       if (a[j] > a[i]) {
         m[i] = max(m[i], m[j] + 1);
-        predeccesor[j] -= predeccesor[i];
+        predeccesor[j] += max(1,predeccesor[i]);
       }
     }
   }
-  int ans = 0;
+  int ans = 0, tab = 0;
+
   for (int i = 0; i < n; i++) {
     cout << m[i] << " ";
     ans = max(ans, m[i]);
