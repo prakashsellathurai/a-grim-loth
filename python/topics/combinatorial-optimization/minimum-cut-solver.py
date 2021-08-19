@@ -96,7 +96,7 @@ def w(g, A, y):
 
 
 def min_cut_phase(g, a):
-    A = set([a])
+    A = {a}
     V = set(g.vertices)
     order = [a]
     while A != V:
