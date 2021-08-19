@@ -10,7 +10,7 @@ def sqd(p1, p2):
     return sum((c1 - c2) ** 2 for c1, c2 in zip(p1, p2))
 
 
-class KdNode(object):
+class KdNode:
     __slots__ = ("dom_elt", "split", "left", "right")
 
     def __init__(self, dom_elt, split, left, right):
@@ -20,14 +20,14 @@ class KdNode(object):
         self.right = right
 
 
-class Orthotope(object):
+class Orthotope:
     __slots__ = ("min", "max")
 
     def __init__(self, mi, ma):
         self.min, self.max = mi, ma
 
 
-class KdTree(object):
+class KdTree:
     __slots__ = ("n", "bounds")
 
     def __init__(self, pts, bounds):
