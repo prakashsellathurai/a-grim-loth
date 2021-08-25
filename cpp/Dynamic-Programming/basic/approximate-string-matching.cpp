@@ -33,7 +33,8 @@ using namespace std;
 
 #define MATCH 0
 #define INSERT 1
-#define DELETE 2
+#define SWAPS 2
+#define DELETE 3
 typedef struct cell {
   int cost;
   int parent;
@@ -49,12 +50,21 @@ int matchCost(char &a, char &b) {
   return 1;
 }
 
+int swapCost(string &a, string &b, int i, int j) {
+  if (a[i] == b[j - 1] && a[i - 1] == b[j])
+    return 1;
+  return 10;
+}
+
 void match_out(string &a, string &b, int i, int j) {
-  if(a[i]==b[j])cout<< 'M';else {
-    cout<<'S';
-  }}
-void insert_out(string &a, string &b, int i, int j) {cout<< 'I';}
-void delete_out(string &a, string &b, int i, int j) {cout<< 'D';}
+  if (a[i] == b[j])
+    cout << 'M';
+  else {
+    cout << 'S';
+  }
+}
+void insert_out(string &a, string &b, int i, int j) { cout << 'I'; }
+void delete_out(string &a, string &b, int i, int j) { cout << 'D'; }
 
 void reconstruct_path(string &s, string &t, int i, int j, cell *dp[]) {
   if (dp[i][j].parent == -1) {
@@ -90,7 +100,7 @@ void reconstruct_path(string &s, string &t, int i, int j, cell *dp[]) {
  */
 int string_compare_recursive(string S, string T, int i, int j) {
   int k;      /*counter*/
-  int opt[3]; /* cost of three options*/
+  int opt[4]; /* cost of three options*/
   int lowest_cost;
 
   // base case
@@ -120,24 +130,24 @@ int string_compare_dp(string s, string T) {
   cell dp[s.length() + 1][T.length() + 1];
 
   int i, j, k;
-  int opt[3];
+  int opt[4];
 
   // init row
   for (i = 0; i <= s.length(); i++) {
     dp[i][0].cost = i;
-    if(i>0){
+    if (i > 0) {
       dp[i][0].parent = INSERT;
-    }else {
-     dp[i][0].parent = -1;
+    } else {
+      dp[i][0].parent = -1;
     }
   }
 
   for (i = 0; i <= T.length(); i++) {
-       dp[0][i].cost = i;
-    if(i>0){
+    dp[0][i].cost = i;
+    if (i > 0) {
       dp[0][i].parent = DELETE;
-    }else {
-     dp[0][i].parent = -1;
+    } else {
+      dp[0][i].parent = -1;
     }
   }
   // fill dp
@@ -145,6 +155,12 @@ int string_compare_dp(string s, string T) {
     for (j = 1; j <= T.length(); j++) {
       opt[MATCH] = (dp[i - 1][j - 1]).cost + matchCost(s[i - 1], T[j - 1]);
       opt[INSERT] = (dp[i][j - 1]).cost + indelCost(T[j - 1]);
+      if (i > 1 && j > 1) {
+        opt[SWAPS] = (dp[i - 2][j - 2]).cost + swapCost(s, T, i - 1, j - 1);
+      } else {
+        opt[SWAPS] = INT_MAX;
+      }
+
       opt[DELETE] = (dp[i - 1][j]).cost + indelCost(s[i - 1]);
 
       (dp[i][j]).cost = opt[MATCH];
@@ -166,24 +182,24 @@ void visulaize_dp_and_recosntruct_path(string S, string T) {
   int n = S.length(), m = T.length();
   cell dp[n + 1][m + 1];
   int i, j, k;
-  int opts[3];
+  int opts[4];
   int lowest_cost;
 
   for (i = 0; i <= n; i++) {
     dp[i][0].cost = i;
-    if(i>0){
+    if (i > 0) {
       dp[i][0].parent = INSERT;
-    }else {
-     dp[i][0].parent = -1;
+    } else {
+      dp[i][0].parent = -1;
     }
   }
 
   for (i = 0; i <= m; i++) {
-       dp[0][i].cost = i;
-    if(i>0){
+    dp[0][i].cost = i;
+    if (i > 0) {
       dp[0][i].parent = DELETE;
-    }else {
-     dp[0][i].parent = -1;
+    } else {
+      dp[0][i].parent = -1;
     }
   }
 
@@ -205,60 +221,12 @@ void visulaize_dp_and_recosntruct_path(string S, string T) {
   }
 
   lowest_cost = dp[n][m].cost;
-  cout << Color::FG_DEFAULT << "lowest cost is " << lowest_cost << endl
-       << endl
-       << "\t ";
-
-  for (i = 0; i <= m; i++) {
-    cout << Color::FG_DEFAULT << T[i] << "   ";
-  }
-
-  cout << endl << "   ";
-  for (i = 0; i <= m; i++) {
-    cout << "  " << '-' << '-';
-  }
-  cout << endl;
-  for (i = 0; i <= n; i++) {
-    if (i > 0)
-      cout << Color::FG_DEFAULT << S[i - 1] << " | ";
-    else
-      cout << "    ";
-    for (j = 0; j <= m; j++) {
-      int cost = dp[i][j].cost;
-      if (dp[i][j].parent == MATCH) {
-        cout << Color::FG_RED;
-      } else if (dp[i][j].parent == INSERT) {
-        cout << Color::FG_BLUE;
-      } else if (dp[i][j].parent == DELETE) {
-        cout << Color::FG_GREEN;
-      } else {
-        cout << Color::FG_DEFAULT;
-      }
-      if (i == j)
-        cout << '|';
-      else
-        cout << ' ';
-      cout << cost;
-      if (i == j)
-        cout << '|';
-      else
-        cout << ' ';
-      cout << " ";
-    }
-    cout << endl;
-  }
-  // reconstruct_path(S, T, S.length() ,T.length(), dp);
+  cout << Color::FG_DEFAULT << "lowest cost is " << lowest_cost << endl;
 }
 int main(int argc, const char **argv) {
 
   cout << string_compare_dp("thou shalt", "you should") << endl;
-
-  /*
-  cout << "some terminals do not support  ANSI coloring, output may break in
-  some terminals" << endl;
-  */
-
-  visulaize_dp_and_recosntruct_path("thou-shalt", "you-should");
+  cout << string_compare_dp("steve", "setve") << endl;
 
   return 0;
 }
