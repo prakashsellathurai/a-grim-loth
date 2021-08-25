@@ -3,7 +3,7 @@
  * @author prakash (prakashsellathurai@gmail.com)
  * @brief
  Up to k steps in a single bound! A child is running up a staircase with n
-steps and can hop between 1 and k steps at a time. Design an algorithm to
+steps and can hop between 1 and 2 steps at a time. Design an algorithm to
 count how many possible ways the child can run up the stairs, as a function of
 n and k. What is the running time of your algorithm?
  * @version 0.1
