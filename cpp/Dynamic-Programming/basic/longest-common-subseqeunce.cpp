@@ -9,11 +9,12 @@
  *
  */
 
+#include <algorithm>
 #include <iostream>
 #include <string>
 using namespace std;
 
-#define MAXLEN 1000
+#define MAXLEN 100
 #define MATCH 0
 #define INSERT 1
 #define DELETE 2
@@ -57,8 +58,8 @@ int LCS(string s, string T) {
     }
   }
   // fill dp
-  for (i = 1; i <= s.length(); i++) {
-    for (j = 1; j <= T.length(); j++) {
+  for (i = 1; i < s.length(); i++) {
+    for (j = 1; j < T.length(); j++) {
       opt[MATCH] = (dp[i - 1][j - 1]).cost + matchCost(s[i - 1], T[j - 1]);
       opt[INSERT] = (dp[i][j - 1]).cost + indelCost(T[j - 1]);
       opt[DELETE] = (dp[i - 1][j]).cost + indelCost(s[i - 1]);
@@ -74,11 +75,15 @@ int LCS(string s, string T) {
       }
     }
   }
-  return s.length() - dp[s.length()][T.length()].cost;
+  int complen =  dp[s.length()-1][T.length()-1].cost;
+
+  return (s.length() + T.length()  - complen) / 2;
 }
 int main(int argc, const char **argv) {
-  cout << "Longest common subsequence : " << LCS("quick brown fox", "fox")
-       << endl;
+  cout << "Longest common subsequence : " << LCS("quickbrownfox", "fox")
+       << endl
+       << LCS("democrats","republicans");
+      
 
   return 0;
 }

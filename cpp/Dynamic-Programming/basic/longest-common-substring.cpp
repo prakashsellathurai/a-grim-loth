@@ -46,6 +46,7 @@ void LCS(string X, string Y) {
         row = i;
         col = j;
       }
+      
     }
   }
 
