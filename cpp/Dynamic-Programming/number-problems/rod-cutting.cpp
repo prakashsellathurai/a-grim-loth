@@ -28,8 +28,11 @@ int main(int argc, const char **argv) {
 
   int n = prices.size();
 
-  int dp[n + 1] = {0};
+  int dp[n + 1];
 
+  for (int i = 0; i <= n; i++) {
+    dp[i] = 0;
+  }
   for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= i; j++) {
       dp[i] = max(dp[i], prices[j - 1] + dp[i - j]);
