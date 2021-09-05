@@ -64,22 +64,29 @@ int main() {
   //       not changing the order of them.What is the longest sequence such that
   //       each
   //           element is bigger than the previous one
-  //       ? "
-  int a[] = {1,2,3,4,5,6,9,8};
-  int n = sizeof(a)/sizeof(a[0]);
-  vector<int> m(n);
+
+  int a[] = {2, 4, 3, 5, 1, 7, 6, 9, 8};
+  int n = sizeof(a) / sizeof(a[0]);
+  vector<int> m(n), predeccesor(n, -1);
   for (int i = n - 1; i >= 0; i--) {
     m[i] = 1;
     for (int j = i + 1; j < n; j++) {
-      if (a[j] > a[i]  ) {
-        m[i] = max(m[i],m[j] + 1);
+      if (a[j] > a[i]) {
+        m[i] = max(m[i], m[j] + 1);
+        predeccesor[j] += max(1,predeccesor[i]);
       }
     }
   }
-  int ans = 0;
-  for (int i = 0; i < n; ++i) {
-      std::cout << m[i] << '\t';
-    ans =max(ans, m[i]);
+  int ans = 0, tab = 0;
+
+  for (int i = 0; i < n; i++) {
+    cout << m[i] << " ";
+    ans = max(ans, m[i]);
   }
-  std::cout << "Longest Increasing subsequrence " << ans << std::endl;
+  std::cout << endl << "Longest Increasing subsequrence " << ans << std::endl;
+
+  cout << "Predecessor :" << endl;
+  for (int i = 0; i < n; ++i) {
+    cout << predeccesor.at(i) << " ";
+  }
 }

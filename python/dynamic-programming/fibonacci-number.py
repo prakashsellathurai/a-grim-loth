@@ -1,32 +1,61 @@
-# Fibonacci Series using Dynamic Programming
-def fibonacci(n):
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-    # Taking 1st two fibonacci nubers as 0 and 1
-    f = [0, 1]
+"""
+fibonacci sequence
+"""
+__author__ = "prakashsellathurai"
+__copyright__ = "Copyright 2021"
+__version__ = "1.0.1"
+__email__ = "prakashsellathurai@gmail.com"
+
+import time
+
+
+def fib_recursive(n: int):
+    if n <= 1:
+        return n
+    return fib_recursive(n - 1) + fib_recursive(n - 2)
+
+
+def fib_dp(n: int):
+    dp = [0] * (n + 1)
+
+    dp[0] = 0
+    dp[1] = 1
 
     for i in range(2, n + 1):
-        f.append(f[i - 1] + f[i - 2])
-    return f
+        dp[i] = dp[i - 1] + dp[i - 2]
+    return dp[n]
 
 
-def fibonacci_at(n):
-    a = 0
-    b = 1
-    if n < 0:
-        print("Incorrect input")
-    elif n == 0:
-        return a
-    elif n == 1:
-        return b
-    else:
-        for i in range(2, n + 1):
-            c = a + b
-            a = b
-            b = c
-        return b
+def fib_ultimate(n: int):
+    next = 0
+    back2 = 0
+    back1 = 1
+
+    if n == 0:
+        return 0
+
+    for i in range(2, n + 1):
+        next = back1 + back2
+        back2 = back1
+        back1 = next
+    return next
 
 
-# Driver Program
 if __name__ == "__main__":
-    print(fibonacci(9))
-    print(fibonacci_at(9))
+    start = time.time()
+    fib_recursive(35)
+    end = time.time()
+    print(" recursive took ", end - start)
+
+    start = time.time()
+    fib_dp(35)
+    end = time.time()
+    print(" dp took ", end - start)
+
+    start = time.time()
+    fib_ultimate(35)
+    end = time.time()
+    print(" dp ultimate took ", end - start)

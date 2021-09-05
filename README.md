@@ -62,9 +62,43 @@
 			- [reducedspace](./cpp/Dynamic-Programming/Longest-common-subsequence/reducedspace.cpp)
 		- Max-sum-on-line
 			- [basic](./cpp/Dynamic-Programming/Max-sum-on-line/basic.cpp)
+		- basic
+			- [binomial-coefficient](./cpp/Dynamic-Programming/basic/binomial-coefficient.cpp)
+			- [climb-stairs](./cpp/Dynamic-Programming/basic/climb-stairs.cpp)
+			- [coin-change-variant-basket-balls-2](./cpp/Dynamic-Programming/basic/coin-change-variant-basket-balls-2.cpp)
+			- [coin-change-variant-basket-balls](./cpp/Dynamic-Programming/basic/coin-change-variant-basket-balls.cpp)
+			- [coin-change](./cpp/Dynamic-Programming/basic/coin-change.cpp)
+			- [fibonacci-sequence-cache-vs-computation](./cpp/Dynamic-Programming/basic/fibonacci-sequence-cache-vs-computation.cpp)
+			- [is-shuffle-of-two-strings](./cpp/Dynamic-Programming/basic/is-shuffle-of-two-strings.cpp)
+			- [longest-common-subseqeunce](./cpp/Dynamic-Programming/basic/longest-common-subseqeunce.cpp)
+			- [longest-common-substring](./cpp/Dynamic-Programming/basic/longest-common-substring.cpp)
+			- [minimum-path-sum](./cpp/Dynamic-Programming/basic/minimum-path-sum.cpp)
+			- [professional-thief](./cpp/Dynamic-Programming/basic/professional-thief.cpp)
+			- [substring-search](./cpp/Dynamic-Programming/basic/substring-search.cpp)
+		- edit-distance
+			- [approximate-string-matching](./cpp/Dynamic-Programming/edit-distance/approximate-string-matching.cpp)
+			- [poker-chips](./cpp/Dynamic-Programming/edit-distance/poker-chips.cpp)
+		- number-problems
+			- [data-compression](./cpp/Dynamic-Programming/number-problems/data-compression.cpp)
+			- [divide-luggage](./cpp/Dynamic-Programming/number-problems/divide-luggage.cpp)
+			- [integer-partition-inclusion-exclusion](./cpp/Dynamic-Programming/number-problems/integer-partition-inclusion-exclusion.cpp)
+			- [knapsack-problem-with-unique-elements](./cpp/Dynamic-Programming/number-problems/knapsack-problem-with-unique-elements.cpp)
+			- [max-circular-subarray-sum](./cpp/Dynamic-Programming/number-problems/max-circular-subarray-sum.cpp)
+			- [max-contiguous-sum](./cpp/Dynamic-Programming/number-problems/max-contiguous-sum.cpp)
+			- [maximize-parentization](./cpp/Dynamic-Programming/number-problems/maximize-parentization.cpp)
+			- [perfect-squares](./cpp/Dynamic-Programming/number-problems/perfect-squares.cpp)
+			- [rod-cutting](./cpp/Dynamic-Programming/number-problems/rod-cutting.cpp)
+		- partition
+			- integer-partition
+				- [without-rearrangement](./cpp/Dynamic-Programming/partition/integer-partition/without-rearrangement.cpp)
+		- shortest-common-supersequence
+			- [scs](./cpp/Dynamic-Programming/shortest-common-supersequence/scs.cpp)
 		- subset-sum
 			- [coin-change](./cpp/Dynamic-Programming/subset-sum/coin-change.cpp)
 			- [subset-sum](./cpp/Dynamic-Programming/subset-sum/subset-sum.cpp)
+			- [three-subset-sum](./cpp/Dynamic-Programming/subset-sum/three-subset-sum.cpp)
+		- tree
+			- [optimal-binary-tree](./cpp/Dynamic-Programming/tree/optimal-binary-tree.cpp)
 		- vertex-cover
 			- [tree](./cpp/Dynamic-Programming/vertex-cover/tree.cpp)
 	- Graphs
