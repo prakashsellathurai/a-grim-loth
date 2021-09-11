@@ -251,6 +251,8 @@
 			- [construct-valid-n-pair-parenteses](./python/Combinatorial-search/backtracking/construct-valid-n-pair-parenteses.py)
 			- [multiset-add-upto-t](./python/Combinatorial-search/backtracking/multiset-add-upto-t.py)
 		- [permutation-vs-subset](./python/Combinatorial-search/permutation-vs-subset.ipynb)
+	- Recursion
+		- [checkerboard-covering](./python/Recursion/checkerboard-covering.py)
 	- advanced
 		- range-queries
 			- [merge-sort-tree](./python/advanced/range-queries/merge-sort-tree.py)
