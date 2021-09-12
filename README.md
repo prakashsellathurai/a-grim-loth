@@ -252,6 +252,7 @@
 			- [multiset-add-upto-t](./python/Combinatorial-search/backtracking/multiset-add-upto-t.py)
 		- [permutation-vs-subset](./python/Combinatorial-search/permutation-vs-subset.ipynb)
 	- Recursion
+		- [Finding-Maximum-Permutation](./python/Recursion/Finding-Maximum-Permutation.py)
 		- [checkerboard-covering](./python/Recursion/checkerboard-covering.py)
 	- advanced
 		- range-queries
@@ -322,6 +323,7 @@
 		- [american-flag-sort](./python/sorting/american-flag-sort.py)
 		- [bubblesort](./python/sorting/bubblesort.py)
 		- [bucket-sort](./python/sorting/bucket-sort.py)
+		- [counting-sort](./python/sorting/counting-sort.py)
 		- [heap-sort](./python/sorting/heap-sort.py)
 		- [in-place-merge-sort](./python/sorting/in-place-merge-sort.py)
 		- [intro-sort](./python/sorting/intro-sort.py)
