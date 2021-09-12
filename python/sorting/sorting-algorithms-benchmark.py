@@ -1,6 +1,6 @@
 from random import randint
 from timeit import repeat
-
+from collections import defaultdict
 
 def run_sorting_algorithm(algorithm, array):
     # Set up the context and prepare the call to the specified
@@ -252,6 +252,14 @@ def selectionsort(arr):
     return arr
 
 
+def counting_sort(A,key=lambda x:x):
+    B,C = [],defaultdict(list)
+    for x in A:
+        C[key(x)].append(x)
+    for k in range(min(C),max(C)+1):
+        B.extend(C[k])
+    return B
+
 if __name__ == "__main__":
     ARRAY_LENGTH = 1000
     # Generate a sorted array of ARRAY_LENGTH items
@@ -265,3 +273,4 @@ if __name__ == "__main__":
     run_sorting_algorithm(algorithm="bubblesort", array=array)
     run_sorting_algorithm(algorithm="heapSort", array=array)
     run_sorting_algorithm(algorithm="selectionsort", array=array)
+    run_sorting_algorithm(algorithm="counting_sort", array=array)
