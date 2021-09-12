@@ -254,10 +254,6 @@
 	- Recursion
 		- [Finding-Maximum-Permutation](./python/Recursion/Finding-Maximum-Permutation.py)
 		- [checkerboard-covering](./python/Recursion/checkerboard-covering.py)
-	- advanced
-		- range-queries
-			- [merge-sort-tree](./python/advanced/range-queries/merge-sort-tree.py)
-			- [number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries](./python/advanced/range-queries/number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries.py)
 	- dynamic-programming
 		- 2-D
 			- [place-of-sign](./python/dynamic-programming/2-D/place-of-sign.py)
@@ -381,6 +377,9 @@
 		- number-theory
 			- [fibonacci-sequenc](./python/topics/number-theory/fibonacci-sequenc.py)
 			- [simplex](./python/topics/number-theory/simplex.py)
+		- range-queries
+			- [merge-sort-tree](./python/topics/range-queries/merge-sort-tree.py)
+			- [number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries](./python/topics/range-queries/number-of-elements-greater-than-k-in-the-range-l-to-r-using-fenwick-tree-offline-queries.py)
 		- shortest-path
 			- [Floyd-Warshall](./python/topics/shortest-path/Floyd-Warshall.py)
 			- [bellman-ford](./python/topics/shortest-path/bellman-ford.py)
