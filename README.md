@@ -253,7 +253,9 @@
 		- [permutation-vs-subset](./python/Combinatorial-search/permutation-vs-subset.ipynb)
 	- Recursion
 		- [Finding-Maximum-Permutation](./python/Recursion/Finding-Maximum-Permutation.py)
+		- [celebrity-problem](./python/Recursion/celebrity-problem.py)
 		- [checkerboard-covering](./python/Recursion/checkerboard-covering.py)
+		- [top-sort](./python/Recursion/top-sort.py)
 	- dynamic-programming
 		- 2-D
 			- [place-of-sign](./python/dynamic-programming/2-D/place-of-sign.py)
