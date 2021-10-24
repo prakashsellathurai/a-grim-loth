@@ -6,7 +6,7 @@ def maxProd(n):
 
     # n equals to 2 or 3 must
     # be handled explicitly
-    if n == 2 or n == 3:
+    if n in (2, 3):
         return n - 1
 
     # Keep removing parts of size 3

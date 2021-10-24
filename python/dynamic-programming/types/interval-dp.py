@@ -28,7 +28,7 @@ def lcs(X, Y, m, n):
 	and Y[0..j - 1] """
     for i in range(m + 1):
         for j in range(n + 1):
-            if i == 0 or j == 0:
+            if 0 in (i, j):
                 L[i][j] = 0
 
             elif X[i - 1] == Y[j - 1]:

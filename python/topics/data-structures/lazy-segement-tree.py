@@ -26,7 +26,7 @@ class LPSTree:
             reducef = sum
         if reducef == sum:
             self.nodef = lambda val, n: val * n
-        elif reducef == max or reducef == min:
+        elif reducef in (max, min):
             self.nodef = lambda val, n: val
         else:
             raise ValueError("reducef can only be sum, max or min")
