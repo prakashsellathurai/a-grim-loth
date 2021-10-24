@@ -35,7 +35,7 @@ def printInorder(root):
         printInorder(root.left)
 
         # then print the data of node
-        print(root.val, end=" "),
+        (print(root.val, end=" "),)
 
         # now recur on right child
         printInorder(root.right)
@@ -56,7 +56,7 @@ def printPreorder(root):
     if root:
 
         # First print the data of node
-        print(root.val, end=" "),
+        (print(root.val, end=" "),)
 
         # Then recur on left child
         printPreorder(root.left)
@@ -86,7 +86,7 @@ def printPostorder(root):
         printPostorder(root.right)
 
         # now print the data of node
-        print(root.val, end=" "),
+        (print(root.val, end=" "),)
 
 
 if __name__ == "__main__":
