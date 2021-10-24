@@ -68,8 +68,7 @@ class randRangesparse(object):
             if self.weights[coin] != 0:
                 self.weights[coin] -= 1
                 return coin
-            else:
-                coin = randrange(self.n - 1)
+            coin = randrange(self.n - 1)
 
         self.weights = self.regenerate_weights()
         return self.get_random()
