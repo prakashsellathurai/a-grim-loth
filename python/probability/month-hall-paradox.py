@@ -13,7 +13,7 @@ class MontyHall:
     def host_door(self):
         # host door should not be the selected nor prize door
         d = random.randint(1, 3)
-        while d == self.selected_door or d == self.prize_door:
+        while d in (self.selected_door, self.prize_door):
             d = random.randint(1, 3)
         self.opened_door = d
 

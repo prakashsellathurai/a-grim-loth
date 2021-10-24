@@ -10,7 +10,7 @@ def knapSack(W, wt, val, n):
     # Build table K[][] in bottom up manner
     for i in range(n + 1):
         for w in range(W + 1):
-            if i == 0 or w == 0:
+            if 0 in (i, w):
                 K[i][w] = 0
             elif wt[i - 1] <= w:
                 K[i][w] = max(val[i - 1] + K[i - 1]

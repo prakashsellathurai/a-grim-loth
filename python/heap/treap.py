@@ -196,7 +196,7 @@ class Treap:
                     parent = node.parent
                     if node.heap_id >= parent.heap_id:
                         raise AssertionError
-                    if not (parent.left == node or parent.right == node):
+                    if not node in (parent.left, parent.right):
                         raise AssertionError
                 nodes.append((node.left, min_bound, node.key))
                 nodes.append((node.right, node.key, max_bound))

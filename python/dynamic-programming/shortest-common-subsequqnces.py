@@ -33,7 +33,7 @@ index_b = []
 
 
 def index(dp, a, b, size_a, size_b):
-    if size_a == 0 or size_b == 0:
+    if 0 in (size_a, size_b):
         return
     if a[size_a - 1] == b[size_b - 1]:
         index(dp, a, b, size_a - 1, size_b - 1)
