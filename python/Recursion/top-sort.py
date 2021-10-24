@@ -34,7 +34,7 @@ def naive_topsort(G, S=None):
 
 
 def topsort(G):
-    count = dict((u, 0) for u in G)  # The in-degree for each node
+    count = {u: 0 for u in G}  # The in-degree for each node
     for u in G:
         for v in G[u]:
             count[v] += 1  # Count every in-edge
