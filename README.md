@@ -308,6 +308,7 @@
 		- [absolute-integer](./python/problems/absolute-integer.py)
 		- [bit-mainpulation](./python/problems/bit-mainpulation.py)
 		- [count-set-bits](./python/problems/count-set-bits.py)
+		- [first-and-last-position-of-target-in-list](./python/problems/first-and-last-position-of-target-in-list.py)
 		- [min_substring](./python/problems/min_substring.py)
 		- [palindrome-construction](./python/problems/palindrome-construction.py)
 		- [recursion-and-backtracking](./python/problems/recursion-and-backtracking.py)
