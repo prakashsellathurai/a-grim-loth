@@ -75,16 +75,18 @@ class WordDictionary(object):
 
         def _search(root, index):
             if index == len(word):
-                return root.isEnd == True
-            if word[index] == ".":
-                for l, child in root.children.items():
-                    if _search(child, index + 1):
-                        return True
+                return root.isEnd is True
             else:
-                if word[index] in root.children:
-                    root = root.children[word[index]]
-                    return _search(root, index + 1)
-            return False
+                if word[index] == ".":
+                    for l, child in root.children.items():
+                        if _search(child, index + 1):
+                            return True
+                else:
+                    if word[index] in root.children:
+                        root = root.children[word[index]]
+                        return _search(root, index + 1)
+                return False
+
 
         return _search(self.root, 0)
 
