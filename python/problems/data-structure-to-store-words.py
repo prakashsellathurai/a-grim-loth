@@ -87,6 +87,7 @@ class WordDictionary(object):
                         return _search(root, index + 1)
                 return False
 
+
         return _search(self.root, 0)
 
 
