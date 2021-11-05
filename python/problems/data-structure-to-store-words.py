@@ -75,7 +75,7 @@ class WordDictionary(object):
 
         def _search(root, index):
             if index == len(word):
-                return root.isEnd == True
+                return root.isEnd is True
             else:
                 if word[index] == ".":
                     for l, child in root.children.items():
