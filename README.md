@@ -8,6 +8,7 @@
 
 [//]: # (TOCSTART)
 
+- [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md)
 - cpp
 	- Arrays
 		- [kth-smallest-or-subarray](./cpp/Arrays/kth-smallest-or-subarray.cpp)
