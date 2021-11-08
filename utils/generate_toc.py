@@ -59,7 +59,7 @@ def walk_directory(path=".", exclude=None, level=0):
         "LICENSE",
         ".gitmodules",
         ".vscode",
-        "CODE_OF_CONDUCT.md"
+        "CODE_OF_CONDUCT.md",
     ]
 
     # Sort by directory/name
