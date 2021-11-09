@@ -257,6 +257,7 @@
 		- [checkerboard-covering](./python/Recursion/checkerboard-covering.py)
 		- [top-sort](./python/Recursion/top-sort.py)
 	- dynamic-programming
+		- [0-1-matrix](./python/dynamic-programming/0-1-matrix.py)
 		- 2-D
 			- [place-of-sign](./python/dynamic-programming/2-D/place-of-sign.py)
 		- [boolean-paranthesis](./python/dynamic-programming/boolean-paranthesis.py)
