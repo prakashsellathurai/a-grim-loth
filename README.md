@@ -260,6 +260,8 @@
 		- [0-1-matrix](./python/dynamic-programming/0-1-matrix.py)
 		- 2-D
 			- [place-of-sign](./python/dynamic-programming/2-D/place-of-sign.py)
+		- backtracking
+			- [valid-sudoku](./python/dynamic-programming/backtracking/valid-sudoku.py)
 		- [boolean-paranthesis](./python/dynamic-programming/boolean-paranthesis.py)
 		- [box-stacking](./python/dynamic-programming/box-stacking.py)
 		- [coin-change-2](./python/dynamic-programming/coin-change-2.py)
@@ -278,6 +280,7 @@
 		- [matrix-chain-multiplication](./python/dynamic-programming/matrix-chain-multiplication.py)
 		- [maximum-product-cutting](./python/dynamic-programming/maximum-product-cutting.py)
 		- [minimum-partition](./python/dynamic-programming/minimum-partition.py)
+		- [n-th-tribonacci-number](./python/dynamic-programming/n-th-tribonacci-number.py)
 		- [optimal-strategy](./python/dynamic-programming/optimal-strategy.py)
 		- [partition-problem](./python/dynamic-programming/partition-problem.py)
 		- [shortest-common-subsequqnces](./python/dynamic-programming/shortest-common-subsequqnces.py)
