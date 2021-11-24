@@ -310,6 +310,8 @@
 		- [month-hall-paradox](./python/probability/month-hall-paradox.py)
 	- problems
 		- [Divide-arrays](./python/problems/Divide-arrays.py)
+		- Find-Klargest-number-in-unsorted-array
+			- [sorting-nlogn](./python/problems/Find-Klargest-number-in-unsorted-array/sorting-nlogn.py)
 		- [Minimum-operations](./python/problems/Minimum-operations.py)
 		- [absolute-integer](./python/problems/absolute-integer.py)
 		- [bit-mainpulation](./python/problems/bit-mainpulation.py)
