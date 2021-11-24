@@ -311,6 +311,7 @@
 	- problems
 		- [Divide-arrays](./python/problems/Divide-arrays.py)
 		- Find-Klargest-number-in-unsorted-array
+			- [min-heap-nlogk](./python/problems/Find-Klargest-number-in-unsorted-array/min-heap-nlogk.py)
 			- [sorting-nlogn](./python/problems/Find-Klargest-number-in-unsorted-array/sorting-nlogn.py)
 		- [Minimum-operations](./python/problems/Minimum-operations.py)
 		- [absolute-integer](./python/problems/absolute-integer.py)
