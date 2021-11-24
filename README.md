@@ -402,6 +402,7 @@
 		- [dfs_traversal](./python/tree/dfs_traversal.py)
 		- [diameter-of-a-tree](./python/tree/diameter-of-a-tree.py)
 		- [fenwick-binary-indexed-trees](./python/tree/fenwick-binary-indexed-trees.py)
+		- [morris-inorder-traversal](./python/tree/morris-inorder-traversal.py)
 		- [quadtree](./python/tree/quadtree.ipynb)
 		- [suffix-tree](./python/tree/suffix-tree.py)
 		- [tree](./python/tree/tree.py)
