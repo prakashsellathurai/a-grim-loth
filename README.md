@@ -313,6 +313,7 @@
 		- Find-Klargest-number-in-unsorted-array
 			- [max-heap](./python/problems/Find-Klargest-number-in-unsorted-array/max-heap.py)
 			- [min-heap-nlogk](./python/problems/Find-Klargest-number-in-unsorted-array/min-heap-nlogk.py)
+			- [quick-select-worst-case-linear-time](./python/problems/Find-Klargest-number-in-unsorted-array/quick-select-worst-case-linear-time.py)
 			- [sorting-nlogn](./python/problems/Find-Klargest-number-in-unsorted-array/sorting-nlogn.py)
 		- [Minimum-operations](./python/problems/Minimum-operations.py)
 		- [absolute-integer](./python/problems/absolute-integer.py)
