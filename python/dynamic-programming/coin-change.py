@@ -14,7 +14,8 @@ from typing import List
 
 
 class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
+    @staticmethod
+    def coinChange(coins: List[int], amount: int) -> int:
         dp = [0 for _ in range(amount + 1)]
         dp[0] = 0
 

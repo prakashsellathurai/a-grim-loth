@@ -11,7 +11,8 @@ __email__ = "prakashsellathurai@gmail.com"
 
 
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    @staticmethod
+    def isValidSudoku(board: List[List[str]]) -> bool:
 
         boardMap = collections.defaultdict(list)
         for x in range(9):

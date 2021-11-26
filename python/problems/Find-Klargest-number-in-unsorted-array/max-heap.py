@@ -27,7 +27,8 @@ class Maxheap:
 
 
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
+    @staticmethod
+    def findKthLargest(nums: List[int], k: int) -> int:
         """
         >>> Solution().findKthLargest([3,2,1,5,6,4],2)
         5
