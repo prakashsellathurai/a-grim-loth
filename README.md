@@ -297,6 +297,7 @@
 	- graph
 		- [adjacency-matrix](./python/graph/adjacency-matrix.py)
 		- [adjancy-list](./python/graph/adjancy-list.py)
+		- [articulation-points](./python/graph/articulation-points.py)
 		- [bfs_traversal](./python/graph/bfs_traversal.py)
 		- [count_nodes](./python/graph/count_nodes.py)
 		- [dfs_traversal](./python/graph/dfs_traversal.py)
