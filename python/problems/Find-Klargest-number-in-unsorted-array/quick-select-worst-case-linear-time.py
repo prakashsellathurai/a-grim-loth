@@ -64,11 +64,10 @@ class Solution:
                 # print "pvt",pvt
                 if pvt - i == k - 1:
                     return nums[pvt]
-                elif pvt - i > k - 1:
+                if pvt - i > k - 1:
                     return modifiedQuickSelect(nums, i, pvt - 1, k)
                 return modifiedQuickSelect(nums, pvt + 1, j, k - pvt + i - 1)
-            else:
-                return sys.maxint
+            return sys.maxint
 
         return modifiedQuickSelect(nums, 0, len(nums) - 1, len(nums) - k + 1)
 
