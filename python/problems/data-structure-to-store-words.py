@@ -16,7 +16,7 @@ __version__ = "1.0.1"
 __email__ = "prakashsellathurai@gmail.com"
 
 
-class TrieNode(object):
+class TrieNode:
     """docstring for TrieNode."""
 
     def __init__(self, val=None):
@@ -26,7 +26,7 @@ class TrieNode(object):
         self.isEnd = False
 
 
-class WordDictionary(object):
+class WordDictionary:
     """docstring for WordDictionary.
 
     >>> wordDictionary =  WordDictionary()
