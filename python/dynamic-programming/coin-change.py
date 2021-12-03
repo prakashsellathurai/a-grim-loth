@@ -24,4 +24,4 @@ class Solution:
             for coin in coins:
                 if coin <= i:
                     dp[i] = min(dp[i], 1 + dp[i - coin])
-        return dp[amount] > amount and -1 or dp[amount]
+        return -1 if dp[amount] > amount else dp[amount]
