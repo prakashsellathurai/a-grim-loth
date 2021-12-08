@@ -14,7 +14,8 @@ from typing import List
 
 
 class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
+    @staticmethod
+    def coinChange(coins: List[int], amount: int) -> int:
         dp = [0 for _ in range(amount + 1)]
         dp[0] = 0
 
@@ -23,4 +24,4 @@ class Solution:
             for coin in coins:
                 if coin <= i:
                     dp[i] = min(dp[i], 1 + dp[i - coin])
-        return dp[amount] > amount and -1 or dp[amount]
+        return -1 if dp[amount] > amount else dp[amount]

@@ -1,5 +1,6 @@
 class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    @staticmethod
+    def inorderTraversal(root: Optional[TreeNode]) -> List[int]:
         res = []
         cur = root
 

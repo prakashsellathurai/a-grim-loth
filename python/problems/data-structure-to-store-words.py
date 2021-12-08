@@ -16,7 +16,7 @@ __version__ = "1.0.1"
 __email__ = "prakashsellathurai@gmail.com"
 
 
-class TrieNode(object):
+class TrieNode:
     """docstring for TrieNode."""
 
     def __init__(self, val=None):
@@ -26,7 +26,7 @@ class TrieNode(object):
         self.isEnd = False
 
 
-class WordDictionary(object):
+class WordDictionary:
     """docstring for WordDictionary.
 
     >>> wordDictionary =  WordDictionary()
@@ -76,16 +76,15 @@ class WordDictionary(object):
         def _search(root, index):
             if index == len(word):
                 return root.isEnd is True
+            if word[index] == ".":
+                for l, child in root.children.items():
+                    if _search(child, index + 1):
+                        return True
             else:
-                if word[index] == ".":
-                    for l, child in root.children.items():
-                        if _search(child, index + 1):
-                            return True
-                else:
-                    if word[index] in root.children:
-                        root = root.children[word[index]]
-                        return _search(root, index + 1)
-                return False
+                if word[index] in root.children:
+                    root = root.children[word[index]]
+                    return _search(root, index + 1)
+            return False
 
         return _search(self.root, 0)
 

@@ -14,7 +14,8 @@ from collections import deque
 
 
 class Solution:
-    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+    @staticmethod
+    def updateMatrix(mat: List[List[int]]) -> List[List[int]]:
         m = len(mat)
         n = len(mat[0])
 
