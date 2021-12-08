@@ -348,6 +348,7 @@
 		- [find-max-frequent-words-with-trie](./python/strings/find-max-frequent-words-with-trie.py)
 		- [group-identical-strings](./python/strings/group-identical-strings.py)
 		- [rolling-polynomial-hash](./python/strings/rolling-polynomial-hash.py)
+		- [score-of-parenthesis](./python/strings/score-of-parenthesis.py)
 		- [suffix-trie](./python/strings/suffix-trie.py)
 	- topics
 		- Graph-algorithms
