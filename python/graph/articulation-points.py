@@ -1,4 +1,4 @@
-##!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -29,53 +29,54 @@ __email__ = "prakashsellathurai@gmail.com"
 # 2) vertex with tree edge
 from collections import defaultdict
 
+
 class Graph:
-  def __init__(self,V):
-    self.V = V
-    self.graph = defaultdict(list)
-    self.time = 0
+    def __init__(self, V):
+        self.V = V
+        self.graph = defaultdict(list)
+        self.time = 0
 
+    def addEdge(self, u, v):
+        self.graph[u].append(u)
+        self.graph[v].append(u)
 
-  def addEdge(self,u,v):
-    self.graph[u].append(u)
-    self.graph[v].append(u)
-  
-  def dfs(self,u,visited,ap,parent,low,disc):
-    children= 0
-    visited[u] = True
+    def dfs(self, u, visited, ap, parent, low, disc):
+        children = 0
+        visited[u] = True
 
-    disc[u] = self.time
-    low[u] = self.time
-    self.time+=1
+        disc[u] = self.time
+        low[u] = self.time
+        self.time += 1
 
-    for v in self.graph[u]:
-      if not visited[v]:
-        parent[v] = u
-        children+=1
-        self.dfs(v,visited,ap,parent,low,disc)
-        low[u] = min(low[u],low[v])
+        for v in self.graph[u]:
+            if not visited[v]:
+                parent[v] = u
+                children += 1
+                self.dfs(v, visited, ap, parent, low, disc)
+                low[u] = min(low[u], low[v])
 
-        if parent[u] == -1 and children >1:
-          ap[u] = True
+                if parent[u] == -1 and children > 1:
+                    ap[u] = True
 
-        if parent[u] != -1 and low[v] >= disc[u]:
-          ap[u] = True
-      elif v != parent[u]:
-        low[u] = min(low[u],disc[v])
-  def Articulation_points(self):
-    visited = [False] * (self.V)
-    disc = [float("Inf")] * (self.V)
-    low = [float("Inf")] * (self.V)
-    parent = [-1] * (self.V)
-    ap = [False] * (self.V) 
-  
-    for i in range(self.V):
-      if not visited[i]:
-        self.dfs(i, visited, ap, parent, low, disc)
+                if parent[u] != -1 and low[v] >= disc[u]:
+                    ap[u] = True
+            elif v != parent[u]:
+                low[u] = min(low[u], disc[v])
 
-    for i,v in enumerate(ap):
-        if  v:
-          print(i,end=" ")
+    def Articulation_points(self):
+        visited = [False] * (self.V)
+        disc = [float("Inf")] * (self.V)
+        low = [float("Inf")] * (self.V)
+        parent = [-1] * (self.V)
+        ap = [False] * (self.V)
+
+        for i in range(self.V):
+            if not visited[i]:
+                self.dfs(i, visited, ap, parent, low, disc)
+
+        for i, v in enumerate(ap):
+            if v:
+                print(i, end=" ")
 
 
 g1 = Graph(5)
@@ -86,7 +87,3 @@ g1.addEdge(0, 3)
 g1.addEdge(3, 4)
 
 g1.Articulation_points()
-
-
-
-  
