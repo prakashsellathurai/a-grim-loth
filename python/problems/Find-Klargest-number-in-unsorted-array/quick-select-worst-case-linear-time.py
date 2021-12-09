@@ -5,7 +5,6 @@ from typing import List
 
 
 class Solution:
-
     @staticmethod
     def findKthLargest(nums: List[int], k: int) -> int:
         """
