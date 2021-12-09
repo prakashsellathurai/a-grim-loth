@@ -1,7 +1,7 @@
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/21be0b605cd341e2a5647b1f47a1e3ea)](https://app.codacy.com/gh/prakashsellathurai/a-grim-loth?utm_source=github.com&utm_medium=referral&utm_content=prakashsellathurai/a-grim-loth&utm_campaign=Badge_Grade_Settings)
 [![generate-markdown](https://github.com/prakashsellathurai/a-grim-loth/actions/workflows/generate-markdown.yaml/badge.svg)](https://github.com/prakashsellathurai/a-grim-loth/actions/workflows/generate-markdown.yaml)
 [![DeepSource](https://deepsource.io/gh/prakashsellathurai/a-grim-loth.svg/?label=active+issues&show_trend=true&token=2GQZZg8j7n1V4XpuruMWsk1O)](https://deepsource.io/gh/prakashsellathurai/a-grim-loth/?ref=repository-badge)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fprakashsellathurai%2Fa-grim-loth.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fprakashsellathurai%2Fa-grim-loth?ref=badge_shield)
 
 ## Table of Contents:
 
@@ -297,6 +297,7 @@
 	- graph
 		- [adjacency-matrix](./python/graph/adjacency-matrix.py)
 		- [adjancy-list](./python/graph/adjancy-list.py)
+		- [articulation-points](./python/graph/articulation-points.py)
 		- [bfs_traversal](./python/graph/bfs_traversal.py)
 		- [count_nodes](./python/graph/count_nodes.py)
 		- [dfs_traversal](./python/graph/dfs_traversal.py)
@@ -313,6 +314,7 @@
 		- Find-Klargest-number-in-unsorted-array
 			- [max-heap](./python/problems/Find-Klargest-number-in-unsorted-array/max-heap.py)
 			- [min-heap-nlogk](./python/problems/Find-Klargest-number-in-unsorted-array/min-heap-nlogk.py)
+			- [quick-select-worst-case-linear-time](./python/problems/Find-Klargest-number-in-unsorted-array/quick-select-worst-case-linear-time.py)
 			- [sorting-nlogn](./python/problems/Find-Klargest-number-in-unsorted-array/sorting-nlogn.py)
 		- [Minimum-operations](./python/problems/Minimum-operations.py)
 		- [absolute-integer](./python/problems/absolute-integer.py)
@@ -346,6 +348,7 @@
 		- [find-max-frequent-words-with-trie](./python/strings/find-max-frequent-words-with-trie.py)
 		- [group-identical-strings](./python/strings/group-identical-strings.py)
 		- [rolling-polynomial-hash](./python/strings/rolling-polynomial-hash.py)
+		- [score-of-parenthesis](./python/strings/score-of-parenthesis.py)
 		- [suffix-trie](./python/strings/suffix-trie.py)
 	- topics
 		- Graph-algorithms
@@ -414,3 +417,7 @@
 		- [word-break-trie](./python/tree/word-break-trie.py)
 
 [//]: # (TOCEND)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fprakashsellathurai%2Fa-grim-loth.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fprakashsellathurai%2Fa-grim-loth?ref=badge_large)

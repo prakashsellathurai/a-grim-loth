@@ -50,7 +50,7 @@ def topsort(G):
     return S
 
 
-class randRangesparse(object):
+class randRangesparse:
     """docstring for randRangesparse."""
 
     def __init__(self, n):
