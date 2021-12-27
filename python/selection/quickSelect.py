@@ -1,5 +1,8 @@
+import random
+import unittest
 from typing import List
-  
+
+
 def partition(arr, low, high):
     i = low - 1  # index of smaller element
     pivot = arr[high]  # pivot
@@ -40,29 +43,30 @@ def quickSort(arr, low, high):
         quickSort(arr, low, pi - 1)
         quickSort(arr, pi + 1, high)
 
-def QuickSelect(arr: List[int],k: int)-> List[int]:
-  quickSort(arr,0,len(arr)-1)
-  return arr[:k]
+
+def QuickSelect(arr: List[int], k: int) -> List[int]:
+    quickSort(arr, 0, len(arr) - 1)
+    return arr[:k]
 
 
-
-import unittest
-import random
 class TestCases(unittest.TestCase):
-  def testcase1(self):
-    k = random.randint(3,9)
-    arr = [random.randrange(1, 50, 1) for i in range(9)]
-    self.assertEqual(QuickSelect(arr,k),sorted(arr)[:k])
-  def testcase2(self):
-    max_num = 100
-    k = random.randint(0,max_num)
-    arr = [random.randrange(1, max_num, 1) for i in range(max_num)]
-    self.assertEqual(QuickSelect(arr,k),sorted(arr)[:k])
-  def testcase3(self):
-    max_num = 10**5
-    k = random.randint(0,max_num)
-    arr = [random.randrange(1, max_num, 1) for i in range(max_num)]
-    self.assertEqual(QuickSelect(arr,k),sorted(arr)[:k])
+    def testcase1(self):
+        k = random.randint(3, 9)
+        arr = [random.randrange(1, 50, 1) for i in range(9)]
+        self.assertEqual(QuickSelect(arr, k), sorted(arr)[:k])
+
+    def testcase2(self):
+        max_num = 100
+        k = random.randint(0, max_num)
+        arr = [random.randrange(1, max_num, 1) for i in range(max_num)]
+        self.assertEqual(QuickSelect(arr, k), sorted(arr)[:k])
+
+    def testcase3(self):
+        max_num = 10 ** 5
+        k = random.randint(0, max_num)
+        arr = [random.randrange(1, max_num, 1) for i in range(max_num)]
+        self.assertEqual(QuickSelect(arr, k), sorted(arr)[:k])
+
 
 if __name__ == "__main__":
-  unittest.main(verbosity=2)
+    unittest.main(verbosity=2)
