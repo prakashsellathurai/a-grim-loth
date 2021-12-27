@@ -5,7 +5,8 @@ from typing import List
 
 
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
+    @staticmethod
+    def findKthLargest(nums: List[int], k: int) -> int:
         """
         >>> Solution().findKthLargest([3,2,1,5,6,4],2)
         5
@@ -63,11 +64,13 @@ class Solution:
                 # print "pvt",pvt
                 if pvt - i == k - 1:
                     return nums[pvt]
-                elif pvt - i > k - 1:
+
+                if pvt - i > k - 1:
                     return modifiedQuickSelect(nums, i, pvt - 1, k)
                 return modifiedQuickSelect(nums, pvt + 1, j, k - pvt + i - 1)
-            else:
-                return sys.maxint
+            return sys.maxsize
+
+
 
         return modifiedQuickSelect(nums, 0, len(nums) - 1, len(nums) - k + 1)
 
