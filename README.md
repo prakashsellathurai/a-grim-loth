@@ -331,6 +331,8 @@
 		- [trapping-water](./python/problems/trapping-water.py)
 		- [two-sums](./python/problems/two-sums.py)
 		- [unpredictable-array](./python/problems/unpredictable-array.py)
+	- selection
+		- [quickSelect](./python/selection/quickSelect.py)
 	- sorting
 		- [Insertion-Sort](./python/sorting/Insertion-Sort.py)
 		- [american-flag-sort](./python/sorting/american-flag-sort.py)
