@@ -12,13 +12,13 @@ __email__ = "prakashsellathurai@gmail.com"
 
 
 def cover(board,lab=1,top=0,left=0,side=None):
-    
+
     if side is None: side = len(board)
-    
+
     s = side // 2
-    
+
     offsets = (0,-1),(side-1,0)
-    
+
     for dy_outer,dy_inner in offsets:
         for dx_outer,dx_inner in offsets:
 
