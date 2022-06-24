@@ -332,6 +332,7 @@
 		- [two-sums](./python/problems/two-sums.py)
 		- [unpredictable-array](./python/problems/unpredictable-array.py)
 	- selection
+		- [k-largest-quickselect](./python/selection/k-largest-quickselect.py)
 		- [quickSelect](./python/selection/quickSelect.py)
 	- sorting
 		- [Insertion-Sort](./python/sorting/Insertion-Sort.py)
