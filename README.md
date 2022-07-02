@@ -256,6 +256,8 @@
 		- [celebrity-problem](./python/Recursion/celebrity-problem.py)
 		- [checkerboard-covering](./python/Recursion/checkerboard-covering.py)
 		- [top-sort](./python/Recursion/top-sort.py)
+	- concurrency
+		- [multi-threaded-fizzbuzz](./python/concurrency/multi-threaded-fizzbuzz.py)
 	- dynamic-programming
 		- [0-1-matrix](./python/dynamic-programming/0-1-matrix.py)
 		- 2-D
